@@ -11,5 +11,7 @@ int main(void)
     while( 1 >= s && s <= 8 ) ;
         printf("Stored: %i\n", s) ;
 
+    
+
 
 }
