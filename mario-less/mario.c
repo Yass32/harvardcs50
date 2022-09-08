@@ -9,12 +9,11 @@ int main(void)
         s = get_int("Height: ") ;
     }
     while( 1 >= s && s <= 8 ) ;
-        printf("Stored: %i\n", s) ;
+        //printf("Stored: %i\n", s) ;
 
     for(int i = 0; i < s; i++)
     {
         printf("#\n") ;
-        
     }
 
 
