@@ -5,19 +5,19 @@ int pyramid(void);
 
 int main(void)
 {
-    int s;
+    int h;
     do
     {
-        s = get_int("Height: ") ;
+        h = get_int("Height: ") ;
     }
-    while( 1 >= s && s <= 8 ) ;
+    while( 1 >= h && h <= 8 ) ;
         //printf(pyramid) ;
 
     int pyramid(void);
     {
-        for(int i = 0; i < s; i++)
+        for(int i = 0; i < h; i++)
         {
-            for(int j = 0; j < s; j++)
+            for(int j = 0; j < (h + 1); j++)
             {
                 printf("#\n") ;
             }
