@@ -17,7 +17,7 @@ int main(void)
     {
         for(int row = 0; row < height; row++)
         {
-            for(int column = 0; column < h; column++)
+            for(int hash = 0; hash < h; hash++)
             {
                 printf("#") ;
             }
