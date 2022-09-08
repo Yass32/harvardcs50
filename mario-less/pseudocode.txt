@@ -1,1 +1,1 @@
-Prompt the user for the size of pyramid while the integer is 
+Prompt the user for the size of pyramid while the integer is between 1 and 8
