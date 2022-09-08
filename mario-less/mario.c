@@ -19,7 +19,8 @@ int main(void)
         {
             for(int hash = 0; hash < height; hash++)
             {
-                printf("#") ;
+                s = printf("#") ;
+                s++;
             }
                 printf("\n") ;
         }
