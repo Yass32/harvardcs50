@@ -18,7 +18,10 @@ int main(void)
         for(int i = 0; i < s; i++)
         {
             for(int j = 0; j < s; j++)
-                printf("#\n") ;
+            {
+                printf("#") ;
+            }
+                printf("\n") ;
         }
     }
 
