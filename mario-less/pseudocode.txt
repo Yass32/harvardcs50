@@ -1,3 +1,2 @@
 Prompt the user for the size of pyramid while the integer is between 1 and 8
-Print hash if above command is true
-Next line
+Print hash and increase after every new line
