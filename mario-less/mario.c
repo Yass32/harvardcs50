@@ -11,6 +11,8 @@ int main(void)
     }
     while(s >= 1 && s <= 8)
 
+    
+
 
 
 }
