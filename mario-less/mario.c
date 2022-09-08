@@ -15,7 +15,7 @@ int main(void)
 
     int pyramid(void);
     {
-        for(int row = 0; row < height; i++)
+        for(int column = 0; column < height; i++)
         {
             for(int j = 0; j < h; j++)
             {
