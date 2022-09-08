@@ -23,8 +23,8 @@ int main(void)
                 printf("%s", s) ;
 
             }
-                s++;
-                printf("\n") ;
+                //s++;
+                printf("#\n") ;
         }
     }
 
