@@ -19,12 +19,15 @@ int main(void)
         {
             for(int hash = 0; hash < height; hash++)
             {
-                string s = "#" ;
-                printf("%s", s) ;
+                //string s = "#" ;
+                //printf("%s", s) ;
+                printf("#\n") ;
 
             }
-                //s++;
-                printf("#\n") ;
+                string s = "#" ;
+                printf("%s", s) ;
+                s++;
+                //printf("#\n") ;
         }
     }
 
