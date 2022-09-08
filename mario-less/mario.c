@@ -19,9 +19,9 @@ int main(void)
         {
             for(int j = 0; j < s; j--)
             {
-                printf("#") ;
+                printf("#\n") ;
             }
-                printf("\n") ;
+                //printf("\n") ;
         }
     }
 
