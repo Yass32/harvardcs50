@@ -15,9 +15,9 @@ int main(void)
 
     int pyramid(void);
     {
-        for(int column = 0; column < height; column++)
+        for(int row = 0; row < height; row++)
         {
-            for(int row = 0; row < h; row++)
+            for(int column = 0; column < h; column++)
             {
                 printf("#\n") ;
             }
