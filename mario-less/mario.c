@@ -19,9 +19,9 @@ int main(void)
         {
             for(int column = 0; column < h; column++)
             {
-                printf("#\n") ;
+                printf("#") ;
             }
-                //printf("\n") ;
+                printf("\n") ;
         }
     }
 
