@@ -19,7 +19,7 @@ int main(void)
         {
             for(int column = 0; column < height; column++)
             {
-                char h = '#'
+                char h = '#' + 1
                 //printf("#") ;
                 //for(char hash = '#'; hash < height; hash++)
                 //{
