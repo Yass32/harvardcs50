@@ -22,7 +22,7 @@ int main(void)
                 //printf("#") ;
                 for(int hash = 0; hash < height; hash++)
                 {
-                //printf("#") ;
+                    printf("#") ;
                 }
             }
                 //printf("\n") ;
