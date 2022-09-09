@@ -20,8 +20,11 @@ int main(void)
             for(int column = 0; column < height; column++)
             {
                 //printf("#") ;
-                char hash = "#"
-                printf("%c", hash * column )
+                for(char hash = '#'; char < height; hash++)
+                {
+                    printf("%c", hash)
+                }
+
                 //printf("\n") ;
             }
                 //printf("\n") ;
