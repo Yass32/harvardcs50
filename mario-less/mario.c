@@ -19,11 +19,12 @@ int main(void)
         {
             for(int column = 0; column < height; column++)
             {
+                char h = '#'
                 //printf("#") ;
-                for(char hash = '#'; hash < height; hash++)
-                {
-                    printf("%c", hash) ;
-                }
+                //for(char hash = '#'; hash < height; hash++)
+                //{
+                    //printf("%c", hash) ;
+                //}
 
                 //printf("\n") ;
             }
