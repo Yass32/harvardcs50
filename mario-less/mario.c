@@ -10,7 +10,7 @@ int main(void)
     {
         height = get_int("Height: ") ;
     }
-    while( 1 >= height && height <= 8 ) ;
+    while( height >= 1 && height <= 8 ) ;
         //printf(pyramid) ;
 
     int pyramid(void);
