@@ -10,7 +10,7 @@ int main(void)
     {
         height = get_int("Height: ") ;
     }
-    while( height >= 1 && height <= 8 ) ;
+    while( 1 >= height && height <= 8 ) ;
         //printf(pyramid) ;
 
     int pyramid(void);
@@ -20,10 +20,9 @@ int main(void)
             for(int column = 0; column < height; column++)
             {
                 //printf("#") ;
-                for (string hash = "#";
+                for (string hash = "#"; ; hash++)
                 {
                     printf("%s", hash) ;
-                    hash++ ;
                 }
                 //printf("\n") ;
             }
