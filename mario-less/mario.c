@@ -27,7 +27,7 @@ int main(void)
                 string s = "#" ;
                 printf("%s", s) ;
                 s++;
-                //printf("#\n") ;
+                printf("n") ;
         }
     }
 
