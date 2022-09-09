@@ -21,7 +21,7 @@ int main(void)
             {
                 //printf("#") ;
                 char hash = "#"
-                printf("%c" * column)
+                printf("%c", hash * column )
                 //printf("\n") ;
             }
                 //printf("\n") ;
