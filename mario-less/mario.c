@@ -17,11 +17,15 @@ int main(void)
     {
         for(int row = 0; row < height; row++)
         {
-            for(int hash = 0; hash < height; hash++)
+            for(int column = 0; column < height; column++)
             {
-                printf("#") ;
+                //printf("#") ;
+                for(int hash = 0; hash < height; hash++)
+                {
+                //printf("#") ;
+                }
             }
-                printf("\n") ;
+                //printf("\n") ;
         }
     }
 
