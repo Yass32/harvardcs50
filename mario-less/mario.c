@@ -22,12 +22,8 @@ int main(void)
                 //string s = "#" ;
                 //printf("%s", s) ;
                 printf("#\n") ;
-
             }
-                string s = "#" ;
-                printf("%s", s) ;
-                s++;
-                printf("n") ;
+                printf("\n") ;
         }
     }
 
