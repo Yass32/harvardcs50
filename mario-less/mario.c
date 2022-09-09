@@ -20,9 +20,10 @@ int main(void)
             for(int column = 0; column < height; column++)
             {
                 //printf("#") ;
-                for(int hash = 0; hash < height; hash++)
+                for(string hash = "#"  )
                 {
-                    printf("#") ;
+                    printf("%s", hash) ;
+                    hash++ ;
                 }
                 //printf("\n") ;
             }
