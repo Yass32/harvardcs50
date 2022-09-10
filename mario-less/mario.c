@@ -23,7 +23,7 @@ int main(void)
         {
             printf("\n") ;
             //For each column
-            for(column = height; column <= height; column++)
+            for(column = 0; column < height; column++)
             {
                 printf("#");
             }
