@@ -22,9 +22,9 @@ int main(void)
         for(row = 0; row < height; row++)
         {
             //For each column
-            for(column = 0; column < row; column++)
+            for(column = 0; column < height; column++)
             {
-                printf("#");
+                printf("%i", column);
             }
             //printf("#") ;
             //Move to newline
