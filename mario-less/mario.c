@@ -14,7 +14,6 @@ int main(void)
         height = get_int("Height: ") ;
     }
     while( 1 >= height && height <= 8 ) ;
-        printf(pyramid);
 
     //Create function that builds the bricks
     void pyramid(void);
