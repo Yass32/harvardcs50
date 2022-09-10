@@ -21,7 +21,6 @@ int main(void)
         //For each row
         for(row = 0; row < height; row++)
         {
-            printf("\n") ;
             //For each column
             for(column = 0; column < height; column++)
             {
@@ -29,8 +28,9 @@ int main(void)
             }
             //printf("#") ;
             //Move to newline
-            //printf("\n") ;
+            printf("\n") ;
         }
+        return 0;
     }
 
 }
