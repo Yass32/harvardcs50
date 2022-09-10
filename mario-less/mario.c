@@ -22,7 +22,7 @@ int main(void)
         for(column = 0; column <= row; column++)
         {
             //Print brick
-            printf("");
+            printf("°");
         }
         //Move to newline
         printf("\n") ;
