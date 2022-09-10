@@ -22,7 +22,7 @@ int main(void)
         for(row = 0; row < height; row++)
         {
             //For each column
-            for(column = 0; column < row; column++)
+            for(column = 1; column < row; column++)
             {
                 printf("#");
             }
