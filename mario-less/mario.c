@@ -15,20 +15,16 @@ int main(void)
     }
     while( 1 >= height && height <= 8 ) ;
 
-    //Create function that builds the bricks
-    void pyramid(void);
+    //For each row
+    for(row = 0; row < height; row++)
     {
-        //For each row
-        for(row = 0; row < height; row++)
+        //For each column
+        for(column = 0; column <= row; column++)
         {
-            //For each column
-            for(column = 0; column <= row; column++)
-            {
-                //Print brick
-                printf("#");
-            }
-            //Move to newline
-            printf("\n") ;
+            //Print brick
+            printf("#");
         }
+        //Move to newline
+        printf("\n") ;
     }
 }
