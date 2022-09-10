@@ -1,11 +1,14 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int pyramid(void);
+void pyramid(void);
 
 int main(void)
 {
-    int height;
+    int height, row, column;
+    char h = '#';
+
+    //Prompt user for input
     do
     {
         height = get_int("Height: ") ;
@@ -13,22 +16,19 @@ int main(void)
     while( 1 >= height && height <= 8 ) ;
         //printf(pyramid) ;
 
-    int pyramid(void);
+    void pyramid(void);
     {
-        for(int row = 0; row < height; row++)
+        //For each row
+        for(row = 0; row < height; row++)
         {
-            for(int column = 0; column < height; column++)
+            //For each column
+            for(column = height; column <= height; column++)
             {
-                char h = '#' + 1
-                //printf("#") ;
-                //for(char hash = '#'; hash < height; hash++)
-                //{
-                    //printf("%c", hash) ;
-                //}
-
-                //printf("\n") ;
+                printf(" ");
             }
-                //printf("\n") ;
+            printf("#") ;
+            //Move to newline
+            printf("\n") ;
         }
     }
 
