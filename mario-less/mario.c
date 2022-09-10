@@ -14,8 +14,9 @@ int main(void)
         height = get_int("Height: ") ;
     }
     while( 1 >= height && height <= 8 ) ;
-        //printf(pyramid) ;
+        printf(pyramid);
 
+    //Create function that builds the bricks
     void pyramid(void);
     {
         //For each row
@@ -24,13 +25,11 @@ int main(void)
             //For each column
             for(column = 0; column <= row; column++)
             {
-                printf("%c", h);
+                //Print brick
+                printf("#");
             }
-            //printf("#") ;
             //Move to newline
             printf("\n") ;
         }
-        //return 0;
     }
-
 }
