@@ -24,7 +24,7 @@ int main(void)
             //For each column
             for(column = 0; column <= row; column++)
             {
-                printf("%i", column);
+                printf("%c", h);
             }
             //printf("#") ;
             //Move to newline
