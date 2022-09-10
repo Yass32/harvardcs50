@@ -21,14 +21,15 @@ int main(void)
         //For each row
         for(row = 0; row < height; row++)
         {
+            printf("\n") ;
             //For each column
             for(column = height; column <= height; column++)
             {
-                printf(" ");
+                printf("#");
             }
-            printf("#") ;
+            //printf("#") ;
             //Move to newline
-            printf("\n") ;
+            //printf("\n") ;
         }
     }
 
