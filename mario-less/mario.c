@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(void)
+/*int main(void)
 {
     int height, row, column;
 
@@ -30,5 +30,26 @@ int main(void)
         }
         //Move to newline
         printf("\n") ;
+    }
+} */
+
+int main(void)
+{
+    int answer = get_int("Input Size ") ;
+
+    for(int row = 1; row <= 4; row++)
+    {
+        for(int column = 4; column > 0 ; column--)
+        {
+            if(column > row)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf("#");
+            }
+        }
+        printf("\n");
     }
 }
