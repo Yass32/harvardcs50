@@ -18,7 +18,7 @@ int main(void)
         //For each column
         for(column = height; column > 0; column--)
         {
-            //Print brick
+            //Print space and brick
             if(column > row)
             {
                 printf(" ");
