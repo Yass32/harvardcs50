@@ -1,2 +1,3 @@
 Prompt the user for the size of pyramid while the integer is between 1 and 8
 Print hash and increase after every new line
+For right alignment print dots height - 1 times
