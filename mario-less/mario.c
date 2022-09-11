@@ -21,7 +21,7 @@ int main(void)
             //Print brick
             if(column > row)
             {
-                printf(".");
+                printf(" ");
             }
             else
             {
