@@ -16,10 +16,10 @@ int main(void)
     while( 1 >= height && height <= 8 ) ;
 
     //For each row
-    for(row = 0; row < height; row++)
+    for(row = 1; row <= height; row++)
     {
         //For each column
-        for(column = 0; column <= row; column++)
+        for(column = 1; column <= row; column++)
         {
             //Print brick
             printf("°");
