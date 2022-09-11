@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-/*int main(void)
+int main(void)
 {
     int height, row, column;
 
@@ -16,7 +16,7 @@
     for(row = 1; row <= height; row++)
     {
         //For each column
-        for(column = height; column < 0; column--)
+        for(column = height; column > 0; column--)
         {
             //Print brick
             if(column > row)
@@ -30,26 +30,5 @@
         }
         //Move to newline
         printf("\n") ;
-    }
-} */
-
-int main(void)
-{
-    int answer = get_int("Input Size ") ;
-
-    for(int row = 1; row <= 4; row++)
-    {
-        for(int column = 4; column > 0 ; column--)
-        {
-            if(column > row)
-            {
-                printf("*");
-            }
-            else
-            {
-                printf("#");
-            }
-        }
-        printf("\n");
     }
 }
