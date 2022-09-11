@@ -10,16 +10,16 @@ int main(void)
     {
         height = get_int("Height: ") ;
     }
-    while( !( (1 <= height) && (height <= 8) ) ) ;
+    while (!((1 <= height) && (height <= 8))) ;
 
     //For each row
-    for(row = 1; row <= height; row++)
+    for (row = 1; row <= height; row++)
     {
         //For each column
-        for(column = height; column > 0; column--)
+        for (column = height; column > 0; column--)
         {
             //Print space and brick
-            if(column > row)
+            if (column > row)
             {
                 printf(" ");
             }
