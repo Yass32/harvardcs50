@@ -13,7 +13,7 @@
     "tomoki1207.pdf",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:159af2f67751e7e2657255a4220df9962b1239e9",
+  "image": "ghcr.io/cs50/codespace:e3e85cef24fb5470585231ba16175b3b5060e45b",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -85,16 +85,6 @@
     "html.suggest.html5": false,
     "javascript.suggest.enabled": false,
     "javascript.validate.enable": false,
-    "presentation-mode.active": {
-      "commands": [
-        "workbench.action.closeSidebar"
-      ]
-    },
-    "presentation-mode.inactive": {
-      "commands": [
-        "workbench.action.focusSideBar"
-      ]
-    },
     "problems.decorations.enabled": false,
     "remote.otherPortsAttributes": {
       "onAutoForward": "silent"
