@@ -50,7 +50,7 @@ int get_cents(void)
     return cents;
 }
 
-int calculate_quarters(int cents)
+/*int calculate_quarters(int cents)
 {
     // TODO
     cents / 25 = int quart;
@@ -79,4 +79,4 @@ int calculate_pennies(int cents)
     // TODO
     cents / 1 = int pen;
     printf("%i", pen);
-}
+}/*
