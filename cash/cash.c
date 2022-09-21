@@ -51,7 +51,7 @@ int calculate_quarters(int cents)
         {
             return i ;
         }
-    }
+    } printf("%i", i);
 }
 
 int calculate_dimes(int cents)
