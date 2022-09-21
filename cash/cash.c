@@ -35,15 +35,16 @@ int main(void)
     printf("%i\n", coins);
 }
 
+int cents;
+
 int get_cents(void)
 {
     // TODO
-    int num;
     do
     {
-        num = get_int("Number of cents? ");
+        cents = get_int("Number of cents? ");
     }
-    while (!(num > 0));
+    while (!(cents > 0));
 }
 
 int calculate_quarters(int cents)
