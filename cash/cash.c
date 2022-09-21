@@ -47,9 +47,7 @@ int calculate_quarters(int cents)
     // TODO
     int i;
     if (cents / 25 == i)
-    {
-        return i ;
-    }
+    return i;
 }
 
 int calculate_dimes(int cents)
