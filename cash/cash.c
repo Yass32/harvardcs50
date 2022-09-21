@@ -56,7 +56,6 @@ int calculate_quarters(int cents)
             i++ ;
         }
     }
-    return 0;
 }
 
 int calculate_dimes(int cents)
