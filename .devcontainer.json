@@ -10,10 +10,12 @@
     "ms-vscode.cpptools",
     "ms-vscode.hexeditor",
     "ms-vsliveshare.vsliveshare-pack",
+    "redhat.java",
     "tomoki1207.pdf",
+    "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:e3e85cef24fb5470585231ba16175b3b5060e45b",
+  "image": "ghcr.io/cs50/codespace:892a47376b4e621c65a277b9e25ee752465b1e5a",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -83,6 +85,14 @@
     "gitdoc.pullOnOpen": false,
     "github.gitAuthentication": true,
     "html.suggest.html5": false,
+    "java.configuration.runtimes": [
+      {
+        "default": true,
+        "name": "JavaSE-18",
+        "path": "/opt/jdk-18.0.2.1"
+      }
+    ],
+    "java.server.launchMode": "Standard",
     "javascript.suggest.enabled": false,
     "javascript.validate.enable": false,
     "problems.decorations.enabled": false,
@@ -111,6 +121,7 @@
     "terminal.integrated.tabs.description": "${task}${separator}${local}",
     "terminal.integrated.tabs.showActiveTerminal": "never",
     "window.autoDetectColorScheme": true,
+    "window.commandCenter": false,
     "workbench.colorCustomizations": {
       "[GitHub Dark Default]": {
         "activityBar.background": "#000",
