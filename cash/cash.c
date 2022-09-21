@@ -51,10 +51,6 @@ int calculate_quarters(int cents)
         {
             return i ;
         }
-        else
-        {
-            i++ ;
-        }
     }
 }
 
