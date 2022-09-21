@@ -35,11 +35,12 @@ int main(void)
     printf("%i\n", coins);
 }
 
-int cents;
+
 
 int get_cents(void)
 {
     // TODO
+    int cents;
     do
     {
         cents = get_int("Number of cents? ");
