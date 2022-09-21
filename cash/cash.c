@@ -45,6 +45,17 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
+    for (int i = 1; i > 0; i++)
+    {
+        if (cents / 25 == i)
+        {
+            return i ;
+        }
+        else
+        {
+            i++ ;
+        }
+    }
     return 0;
 }
 
