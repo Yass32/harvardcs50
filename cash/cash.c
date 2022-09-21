@@ -51,23 +51,28 @@ int calculate_quarters(int cents)
     // TODO
     cents / 25 = int quart;
     printf("%i", quart);
-    return 0;
+
 }
 
 int calculate_dimes(int cents)
 {
     // TODO
-    return 0;
+    cents / 10 = int dim;
+    printf("%i", dim);
+
 }
 
 int calculate_nickels(int cents)
 {
     // TODO
-    return 0;
+    cents / 5 = int nick;
+    printf("%i", nick);
+
 }
 
 int calculate_pennies(int cents)
 {
     // TODO
-    return 0;
+    cents / 1 = int pen;
+    printf("%i", pen);
 }
