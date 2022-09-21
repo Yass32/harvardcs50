@@ -45,9 +45,9 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    int i;
-    if (cents / 25 == i)
-    return i;
+    int ine;
+    if (cents / 25 == ine)
+    return 0;
 }
 
 int calculate_dimes(int cents)
