@@ -48,8 +48,6 @@ int get_cents(void)
     while (!(cents > 0));
 
     return cents;
-
-    printf("%i", calculate_quarters(cents));
 }
 
 int calculate_quarters(int cents)
