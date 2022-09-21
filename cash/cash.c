@@ -53,7 +53,7 @@ int calculate_quarters(int cents)
 {
     // TODO
     cents / 25 = int quart;
-    printf("%i", quart);
+    return quart;
 
 }
 
