@@ -45,13 +45,11 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    for (int i = 1; i > 0; i++)
+    int i;
+    if (cents / 25 == i)
     {
-        if (cents / 25 == i)
-        {
-            return i ;
-        }
-    } printf("%i", i);
+        return i ;
+    }
 }
 
 int calculate_dimes(int cents)
