@@ -15,7 +15,7 @@
     "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:892a47376b4e621c65a277b9e25ee752465b1e5a",
+  "image": "ghcr.io/cs50/codespace:7408c5ca5777389118ef3c5c1c66e4490299b1a7",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -92,6 +92,7 @@
         "path": "/opt/jdk-18.0.2.1"
       }
     ],
+    "java.debug.settings.enableRunDebugCodeLens": false,
     "java.server.launchMode": "Standard",
     "javascript.suggest.enabled": false,
     "javascript.validate.enable": false,
