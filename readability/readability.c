@@ -19,7 +19,7 @@ int main(void)
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     int index = 0.0588 * L - 0.296 * S - 15.8 ;
 
-    int number = round(g);
+    int number = round(index);
         if (number < 1 )
         {
             printf("Before Grade 1\n");
