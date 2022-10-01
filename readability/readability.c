@@ -47,15 +47,7 @@ int main(void)
         int j, numb = 0;
         for (j = 0; j < strlen(input); j++)
         {
-            if (input[j] == '.')
-            {
-                numb++;
-            }
-            else if (input[j] == '?')
-            {
-                numb++;
-            }
-            else if (input[j] == '!')
+            if (input[j] == '.' || input[j] == '?' || input[j] == '!')
             {
                 numb++;
             }
