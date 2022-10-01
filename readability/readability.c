@@ -64,7 +64,7 @@ int main(void)
     int count_sentences(string input)
     {
         int j, numb = 0;
-        for (j = 0; j < strlen(input); j++)
+        while (input[j] != '\0')
         {
             if (input[j] == '.' || input[j] == '?' || input[j] == '!')
             {
@@ -72,4 +72,12 @@ int main(void)
             }
         }
         return numb;
+        /*for (j = 0; j < strlen(input); j++)
+        {
+            if (input[j] == '.' || input[j] == '?' || input[j] == '!')
+            {
+                numb++;
+            }
+        }
+        return numb;*/
     }
