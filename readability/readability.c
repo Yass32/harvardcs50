@@ -19,7 +19,7 @@ int main(void)
     {
         for (int h = 0; h < strlen(input); h++)
         {
-            if (isalpha(input))
+            if (isalpha(input[h]))
             {
                 int nu = 0;
                 nu++;
