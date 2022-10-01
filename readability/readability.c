@@ -28,10 +28,6 @@ int main(void)
         {
             printf("Grade 16+\n");
         }
-        /*else if (number = 16)
-        {
-            printf("Grade 16+\n");
-        }*/
         else
         {
             printf("Grade %i\n", number);
