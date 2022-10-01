@@ -12,7 +12,7 @@ int main(void)
     string input = get_string("Text: ");
     printf("Text: %s\n", input);
     printf("%i letters\n", count_letters(input));
-    //printf("%i words\n", count_words);
+    printf("%i words\n", count_words(input));
     //printf("%i sentences\n", count_sentences);
 }
 
@@ -29,7 +29,7 @@ int main(void)
         return nu;
     }
 
-    /*int count_words(string input)
+    int count_words(string input)
     {
         int i, num = 0;
         for (i = 0; i < strlen(input); i++)
@@ -42,7 +42,7 @@ int main(void)
         return num;
     }
 
-    int count_sentences(string input)
+    /*int count_sentences(string input)
     {
         int j, numb = 0;
         for (j = 0; j < strlen(input); j++)
