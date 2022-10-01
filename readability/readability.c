@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-
+int count_letters(string input);
+int count_words(string input);
 
 int main(void)
 {
@@ -11,7 +12,7 @@ int main(void)
 
     int count_letters(string input)
     {
-        printf("%i/n", strlen(text));
+        printf("%i/n", strlen(input));
     }
 
     int count_words(string input)
@@ -26,5 +27,7 @@ int main(void)
         }
         printf("%i\n", num);
     }
+
+    int
 
 }
