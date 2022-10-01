@@ -11,7 +11,7 @@ int main(void)
 {
     string input = get_string("Text: ");
     printf("Text: %s\n", input);
-    printf("%c letters\n", count_letters);
+    printf("%i letters\n", count_letters);
     //printf("%i words\n", count_words);
     //printf("%i sentences\n", count_sentences);
 
@@ -22,7 +22,6 @@ int main(void)
         {
             if (isalpha(text[h]))
             {
-                int nu = 0;
                 nu++;
             }
         }
