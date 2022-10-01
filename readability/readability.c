@@ -47,7 +47,7 @@ int main(void)
         int j, numb = 0;
         for (j = 0; j < strlen(input); j++)
         {
-            if (input[j] == '.' || '!' || '?')
+            if (ispunct(input[j]))
             {
                 numb++;
             }
