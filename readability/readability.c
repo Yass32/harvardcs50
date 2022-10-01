@@ -74,6 +74,6 @@ int main(void)
         }
         else
         {
-            printf("Grade %i", number);
+            printf("Grade %i\n", number);
         }
     }
