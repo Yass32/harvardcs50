@@ -66,6 +66,14 @@ int main(void)
         int number = round(g);
         if (number < 1 )
         {
-            printf("Before Grade %i", )
+            printf("Before Grade 1\n");
+        }
+        else if (number >= 16)
+        {
+            printf("Grade 16+\n");
+        }
+        else
+        {
+            printf("Grade %i", number);
         }
     }
