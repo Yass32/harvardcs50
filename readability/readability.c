@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int count_letters(string input);
 int count_words(string input);
