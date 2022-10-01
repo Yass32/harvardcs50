@@ -77,5 +77,5 @@ int main(void)
         {
             printf("Grade %i\n", number);
         }
-        return nul;
+        return 0;
     }
