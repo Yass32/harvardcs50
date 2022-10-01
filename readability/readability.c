@@ -34,7 +34,11 @@ int main(void)
 
     int count_sentences(string input)
     {
-        int
+        int j, numb;
+        for (j = 0; j < strlen(input); j++)
+        {
+            if (input[i] == "." || "!" || "?")
+        }
     }
 
 }
