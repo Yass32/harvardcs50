@@ -16,9 +16,8 @@ int main(void)
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     int index = 0.0588 * L - 0.296 * S - 15.8 ;
 
-
     printf("%s\n", input);
-    printf("Grade %i \n", grade(index));
+    printf("%i \n", grade(index));
 
 }
 
