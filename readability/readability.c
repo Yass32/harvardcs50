@@ -24,7 +24,6 @@ int main(void)
         {
             if (isalpha(input[h]))
             {
-                int nu = 0;
                 nu++;
             }
         }
