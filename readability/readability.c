@@ -34,7 +34,7 @@ int main(void)
         int num = 0;
         for (int i = 0; i < strlen(input); i++)
         {
-            if (input[i] == " ")
+            if (isspace(input[i]))
             {
                 num++;
             }
