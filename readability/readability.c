@@ -24,14 +24,14 @@ int main(void)
         {
             printf("Before Grade 1\n");
         }
-        else if (number > 16)
+        else if (number > 16 || number == 16)
         {
             printf("Grade 16+\n");
         }
-        else if (number = 16)
+        /*else if (number = 16)
         {
             printf("Grade 16+\n");
-        }
+        }*/
         else
         {
             printf("Grade %i\n", number);
