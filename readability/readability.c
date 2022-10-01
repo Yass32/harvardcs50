@@ -65,4 +65,7 @@ int main(void)
     {
         int number = round(g);
         if (number < 1 )
+        {
+            j
+        }
     }
