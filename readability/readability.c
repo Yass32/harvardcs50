@@ -9,13 +9,13 @@ int main(void)
 {
     string input = get_string("Text: ");
     printf("Text: %s\n", input);
-    printf("%i letters\n", input);
-    printf("%i words\n", input);
-    printf("%i sentences\n", input);
+    printf("%i letters\n", count_letters);
+    printf("%i words\n", count_words);
+    printf("%i sentences\n", count_sentences);
 
     int count_letters(string input)
     {
-        printf("%i/n", strlen(input));
+        return strlen(input);
     }
 
     int count_words(string input)
@@ -28,7 +28,7 @@ int main(void)
                 num++;
             }
         }
-        printf("%i\n", num);
+        return num;
     }
 
     int
