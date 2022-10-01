@@ -14,6 +14,10 @@ int main(void)
     printf("%i letters\n", count_letters(input));
     printf("%i words\n", count_words(input));
     printf("%i sentences\n", count_sentences(input));
+
+    int L = 
+
+    int index = 0.0588 * L - 0.296 * S - 15.8
 }
 
     int count_letters(string input)
