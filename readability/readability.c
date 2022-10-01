@@ -51,7 +51,7 @@ int main(void)
     int count_words(string input)
     {
         int num = 1;
-        for (int i = 0; i < strlen(input); i++)
+        for (int i = 0; i <= strlen(input); i++)
         {
             if (isspace(input[i]))
             {
@@ -64,7 +64,7 @@ int main(void)
     int count_sentences(string input)
     {
         int j, numb = 0;
-        while (input[j] != '\0')
+        for (j = 0; j <= strlen(input); j++)
         {
             if (input[j] == '.' || input[j] == '?' || input[j] == '!')
             {
@@ -72,12 +72,4 @@ int main(void)
             }
         }
         return numb;
-        /*for (j = 0; j < strlen(input); j++)
-        {
-            if (input[j] == '.' || input[j] == '?' || input[j] == '!')
-            {
-                numb++;
-            }
-        }
-        return numb;*/
     }
