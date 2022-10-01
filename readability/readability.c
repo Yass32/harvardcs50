@@ -7,6 +7,8 @@
 int count_letters(string input);
 int count_words(string input);
 int count_sentences(string input);
+int grade(int g);
+
 
 int main(void)
 {
