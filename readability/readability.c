@@ -17,7 +17,8 @@ int main(void)
 
     int count_letters(string text)
     {
-        for (int h = 0; h < strlen(text); h++)
+        int h, nu = 0, length = strlen(text)
+        for (h = 0; h < length; h++)
         {
             if (isalpha(text[h]))
             {
