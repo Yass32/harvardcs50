@@ -15,7 +15,7 @@ int main(void)
     //printf("%i words\n", count_words);
     //printf("%i sentences\n", count_sentences);
 
-    int count_letters(string input)
+    int count_letters(string input[])
     {
         for (int h = 0; h < strlen(input); h++)
         {
