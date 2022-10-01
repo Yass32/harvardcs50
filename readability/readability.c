@@ -14,10 +14,11 @@ int main(void)
     printf("%i letters\n", count_letters(input));
     //printf("%i words\n", count_words);
     //printf("%i sentences\n", count_sentences);
+}
 
     int count_letters(string input)
     {
-        int h, nu = 0, length = strlen(input)
+        int h, nu = 0, length = strlen(input);
         for (h = 0; h < length; h++)
         {
             if (isalpha(input[h]))
@@ -53,5 +54,3 @@ int main(void)
         }
         return numb;
     }*/
-
-}
