@@ -20,11 +20,15 @@ int main(void)
     int index = 0.0588 * L - 0.296 * S - 15.8 ;
 
     int number = round(index);
-        if (number > 16 || number = 16)
+        if (number < 1)
         {
             printf("Before Grade 1\n");
         }
-        else if (number < 1)
+        else if (number > 16)
+        {
+            printf("Grade 16+\n");
+        }
+        else if (number = 16)
         {
             printf("Grade 16+\n");
         }
