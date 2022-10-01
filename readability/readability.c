@@ -51,7 +51,7 @@ int main(void)
     int count_words(string input)
     {
         int num = 1;
-        for (int i = 0; i < strlen(input) + 1; i++)
+        for (int i = 0; i < strlen(input); i++)
         {
             if (isspace(input[i]))
             {
