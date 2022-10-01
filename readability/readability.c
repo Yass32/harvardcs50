@@ -12,9 +12,13 @@ int main(void)
 {
     string input = get_string("Text: ");
 
+    int L = (float) count_letters(input) / count_words(input) * 100 ;
+    int S = (float) count_sentences(input) / count_words(input) * 100 ;
+    int index = 0.0588 * L - 0.296 * S - 15.8 ;
+
 
     printf("%s\n", input);
-    printf("Grade %i \n", round(index));
+    printf("Grade %i \n", grade(index));
 
 }
 
@@ -59,9 +63,6 @@ int main(void)
 
     int grade(int g)
     {
-        int L = (float) count_letters(input) / count_words(input) * 100 ;
-        int S = (float) count_sentences(input) / count_words(input) * 100 ;
-        int index = 0.0588 * L - 0.296 * S - 15.8 ;
-
-        if (index = )
+        int number = round(g);
+        if (number < 1 )
     }
