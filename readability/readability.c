@@ -11,11 +11,11 @@ int main(void)
 {
     string input = get_string("Text: ");
     printf("Text: %s\n", input);
-    printf("%i letters\n", count_letters);
+    printf("%c letters\n", count_letters);
     //printf("%i words\n", count_words);
     //printf("%i sentences\n", count_sentences);
 
-    int count_letters(string text)
+    string count_letters(string text)
     {
         for (int h = 0; h < strlen(text); h++)
         {
