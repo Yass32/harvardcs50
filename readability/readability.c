@@ -10,7 +10,7 @@ int count_sentences(string input);
 int main(void)
 {
     string input = get_string("Text: ");
-    printf("Text: %s\n", input);
+    printf("%s\n", input);
     printf("%i letters\n", count_letters(input));
     printf("%i words\n", count_words(input));
     //printf("%i sentences\n", count_sentences);
