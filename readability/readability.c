@@ -51,11 +51,11 @@ int main(void)
             {
                 numb++;
             }
-            elif (input[j] == '?')
+            else if (input[j] == '?')
             {
                 numb++;
             }
-            elif (input[j] == '!')
+            else if (input[j] == '!')
             {
                 numb++;
             }
