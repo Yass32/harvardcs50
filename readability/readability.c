@@ -13,7 +13,6 @@ int grade(int g);
 int main(void)
 {
     string input = get_string("Text: ");
-    printf("%s\n", input);
 
     int L = (float) count_letters(input) / count_words(input) * 100 ;
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
