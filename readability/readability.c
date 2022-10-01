@@ -13,13 +13,25 @@ int grade(int g);
 int main(void)
 {
     string input = get_string("Text: ");
+    printf("%s\n", input);
 
     int L = (float) count_letters(input) / count_words(input) * 100 ;
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     int index = 0.0588 * L - 0.296 * S - 15.8 ;
 
-    printf("%s\n", input);
-    printf("%i \n", grade(index));
+    int number = round(g);
+        if (number < 1 )
+        {
+            printf("Before Grade 1\n");
+        }
+        else if (number >= 16)
+        {
+            printf("Grade 16+\n");
+        }
+        else
+        {
+            printf("Grade %i\n", number);
+        }
 
 }
 
