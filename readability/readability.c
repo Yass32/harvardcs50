@@ -17,6 +17,7 @@ int main(void)
 
     int count_letters(string input)
     {
+        if (isalpha(input))
         return strlen(input);
     }
 
