@@ -38,7 +38,7 @@ int main(void)
     int count_letters(string input)
     {
         int nu = 0;
-        for (int h = 0; h < strlen(input); h++)
+        for (int h = 0; h <= strlen(input); h++)
         {
             if (isalpha(input[h]))
             {
