@@ -21,7 +21,7 @@ int main(void)
 
     int count_words(string input)
     {
-        int i, num;
+        int i, num = 0;
         for (i = 0; i < strlen(input); i++)
         {
             if (input[i] == " ")
@@ -34,11 +34,15 @@ int main(void)
 
     int count_sentences(string input)
     {
-        int j, numb;
+        int j, numb = 0;
         for (j = 0; j < strlen(input); j++)
         {
             if (input[i] == "." || "!" || "?")
+            {
+                numb++;
+            }
         }
+        return numb;
     }
 
 }
