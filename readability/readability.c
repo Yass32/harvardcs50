@@ -16,8 +16,6 @@ int main(void)
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     int index = 0.0588 * L - 0.296 * S - 15.8 ;
 
-    printf("%i letters %i words %i sentences", count_letters(input), count_words(input), count_sentences(input));
-
 
     int number = round(index);
         if (number < 1)
