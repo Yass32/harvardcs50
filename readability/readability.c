@@ -16,11 +16,10 @@ int main(void)
     //printf("%i sentences\n", count_sentences);
 }
 
-    length = strlen(input);
-
     int count_letters(string input)
     {
-        for (int h = 0; h < length; h++)
+        int nu = 0;
+        for (int h = 0; h < strlen(input); h++)
         {
             if (isalpha(input[h]))
             {
@@ -33,7 +32,7 @@ int main(void)
     int count_words(string input)
     {
         int num = 0;
-        for (int i = 0; i < lenght; i++)
+        for (int i = 0; i < strlen(input); i++)
         {
             if (input[i] == " ")
             {
