@@ -11,6 +11,7 @@ int main(void)
     printf("%s\n", input);
     printf("%s\n", input);
     printf("%s\n", input);
+    printf("%s\n", input);
 
     int count_letters(string input)
     {
