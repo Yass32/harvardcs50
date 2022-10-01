@@ -8,10 +8,10 @@ int count_words(string input);
 int main(void)
 {
     string input = get_string("Text: ");
-    printf("%s\n", input);
-    printf("%s\n", input);
-    printf("%s\n", input);
-    printf("%s\n", input);
+    printf("Text: %s\n", input);
+    printf("%i letters\n", input);
+    printf("%i words\n", input);
+    printf("%i sentences\n", input);
 
     int count_letters(string input)
     {
