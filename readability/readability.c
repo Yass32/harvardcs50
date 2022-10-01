@@ -4,6 +4,7 @@
 
 int count_letters(string input);
 int count_words(string input);
+int count_sentences(string input);
 
 int main(void)
 {
@@ -31,6 +32,9 @@ int main(void)
         return num;
     }
 
-    int
+    int count_sentences(string input)
+    {
+        int
+    }
 
 }
