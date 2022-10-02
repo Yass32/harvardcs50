@@ -28,6 +28,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    
     string text = get_string("Plaintext: ");
 
 
