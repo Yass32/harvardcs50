@@ -15,7 +15,7 @@ int main(void)
     int L = (float) count_letters(input) / count_words(input) * 100 ;
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     float index = 0.0588 * L - 0.296 * S - 15.8 ;
-    
+    // Coleman-Liau index to calculate readability of a text.
 
 
     int number = round(index);
