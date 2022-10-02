@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 bool only_digits(string s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -46,3 +47,4 @@ bool only_digits(string s)
     }
     return 0;
 }
+char rotate(char c, int n);
