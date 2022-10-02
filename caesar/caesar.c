@@ -8,3 +8,4 @@ int main(int argc, string argv[])
 }
 
 // Make main take only one arguement whereby it only accepts positive integers
+// Condition for if no arg
