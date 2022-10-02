@@ -48,3 +48,6 @@ bool only_digits(string s)
     return 0;
 }
 char rotate(char c, int n);
+{
+    f
+}
