@@ -9,7 +9,7 @@ int main(int argc, string argv[])
 {
     if (argc == 2)
     {
-        printf("% \n")
+        printf("\n")
         return 0;
     }
     else
