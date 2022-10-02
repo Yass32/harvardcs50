@@ -10,17 +10,20 @@ int count_sentences(string input);
 
 int main(void)
 {
+    //Requesting input from the user
     string input = get_string("Text: ");
 
+    //Coleman-Liau index to calculate readability of a text.
     int L = (float) count_letters(input) / count_words(input) * 100 ;
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
     float index = 0.0588 * L - 0.296 * S - 15.8 ;
-    // Coleman-Liau index to calculate readability of a text.
 
 
-    int number = round(index); //Using round to approximate index to the nearest int.
+    //Using round to approximate index to the nearest int.
+    int number = round(index);
 
-    if (number < 1) //Conditions depending on the value of the rounded index.
+    //Conditions depending on the value of the rounded index.
+    if (number < 1)
     {
         printf("Before Grade 1\n");
     }
@@ -35,6 +38,7 @@ int main(void)
 
 }
 
+//Function to count number of letters by incrementing everytime alphabet is detected
 int count_letters(string input)
 {
     int nu = 0;
@@ -47,8 +51,8 @@ int count_letters(string input)
     }
     return nu;
 }
-//Function to count number of letters by incrementing everytime alphabet is detected
 
+//Function to count number of words by incrementing everytime space is detected
 int count_words(string input)
 {
     int num = 1;
@@ -61,8 +65,8 @@ int count_words(string input)
     }
     return num;
 }
-//Function to count number of words by incrementing everytime space is detected
 
+//Function to count number of sentences by incrementing everytime period exclamation or question mark is detected
 int count_sentences(string input)
 {
     int j, numb = 0;
@@ -75,4 +79,3 @@ int count_sentences(string input)
     }
     return numb;
 }
-//Function to count number of sentences by incrementing everytime period exclamation or question mark is detected
