@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+bool only_digits(string s);
+
 int main(int argc, string argv[])
 {
     if (argc == 2)
