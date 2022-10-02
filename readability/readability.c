@@ -18,8 +18,9 @@ int main(void)
     // Coleman-Liau index to calculate readability of a text.
 
 
-    int number = round(index);
-    if (number < 1)
+    int number = round(index); //Using round to approximate index to the nearest int.
+
+    if (number < 1) //Conditions depending on the value of the rounded index.
     {
         printf("Before Grade 1\n");
     }
