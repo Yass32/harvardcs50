@@ -44,4 +44,5 @@ bool only_digits(string s)
             return false;
         }
     }
+    return 0;
 }
