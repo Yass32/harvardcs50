@@ -36,7 +36,7 @@ int main(void)
     int count_letters(string input)
     {
         int nu = 0;
-        for (int h = 0; h < strlen(input); h++)
+        for (int h = 0; h <= strlen(input); h++)
         {
             if (isalpha(input[h]))
             {
@@ -49,7 +49,7 @@ int main(void)
     int count_words(string input)
     {
         int num = 1;
-        for (int i = 0; i < strlen(input); i++)
+        for (int i = 0; i <= strlen(input); i++)
         {
             if (isspace(input[i]))
             {
@@ -62,7 +62,7 @@ int main(void)
     int count_sentences(string input)
     {
         int j, numb = 0;
-        for (j = 0; j < strlen(input); j++)
+        for (j = 0; j <= strlen(input); j++)
         {
             if (input[j] == '.' || input[j] == '?' || input[j] == '!')
             {
