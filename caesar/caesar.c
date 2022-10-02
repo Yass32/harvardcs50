@@ -55,5 +55,12 @@ bool only_digits(string s)
 }
 char rotate(char c, int n);
 {
-    f
+    if ()
+    {
+        g
+    }
+    else
+    {
+        return c;
+    }
 }
