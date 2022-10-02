@@ -14,7 +14,7 @@ int main(void)
 
     int L = (float) count_letters(input) / count_words(input) * 100 ;
     int S = (float) count_sentences(input) / count_words(input) * 100 ;
-    int index = 0.0588 * L - 0.296 * S - 15.8 ;
+    float index = 0.0588 * L - 0.296 * S - 15.8 ;
 
 
     int number = round(index);
