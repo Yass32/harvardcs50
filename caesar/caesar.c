@@ -12,6 +12,7 @@ int main(int argc, string argv[])
 {
     if (argc == 2)
     {
+        string argv = atoi(argv[1])
         if (only_digits(argv[1]) == true)
         {
             return 0;
@@ -28,7 +29,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    
+
     string text = get_string("Plaintext: ");
 
 
