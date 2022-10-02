@@ -19,4 +19,7 @@ int main(int argc, string argv[])
 // Make main take only one arguement whereby it only accepts positive integers
 // Condition for if no arguement or more than one argument is given print error
 
-int only
+int only_digits(string array)
+{
+    if
+}
