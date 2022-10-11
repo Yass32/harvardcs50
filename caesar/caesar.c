@@ -59,7 +59,7 @@ bool only_digits(string s)
     return 0;
 }
 
-char rotate(char c, int n);
+char rotate(char c, int k);
 {
 
     if(isaplha(c))
@@ -67,11 +67,12 @@ char rotate(char c, int n);
         if(isupper(c))
         {
             int p = (int) c - 65;
-            fjf
+            int ans = (p + k) % 26;
         }
         else if(islower(c))
         {
-            f
+            int p = (int) c - 97;
+            int ans = (p + k) % 26;
         }
     }
     else
