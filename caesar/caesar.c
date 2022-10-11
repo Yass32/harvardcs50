@@ -19,8 +19,8 @@ int main(int argc, string argv[])
             printf("Ciphertext: ");
             for (int i = 0; i < strlen(text); i++)
             {
-               int sum = rotate(text[i], atoi(argv[1]));
-               printf("%c", sum);
+                int sum = rotate(text[i], atoi(argv[1]));
+                printf("%c", sum);
             }
             printf("\n");
 
@@ -50,7 +50,7 @@ bool only_digits(string s)
 {
     for (int i = 0; i < strlen(s); i++)
     {
-        if (isdigit(s[i]))
+        if(isdigit(s[i]))
         {
             return true;
         }
