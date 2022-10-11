@@ -9,6 +9,9 @@ bool only_digits(string s);
 char rotate(char c, int k);
 
 int main(int argc, string argv[])
+
+int i
+
 {
     if (argc == 2)
     {
