@@ -62,7 +62,7 @@ bool only_digits(string s) // Make sure every character in argv[1] is a digit
     return 0;
 }
 
-char rotate(char c, int k)
+char rotate(char c, int k) //that takes a char as input, and rotates that char by that many positions
 {
     if (isalpha(c))
     {
