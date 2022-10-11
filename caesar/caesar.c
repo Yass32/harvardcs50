@@ -15,18 +15,16 @@ int main(int argc, string argv[])
         if (only_digits(argv[1]) == true)
         {
             string text = get_string("Plaintext:  ");
-            printf("Ciphertext: %c\n", rotate('Z', atoi(argv[1])));
-            /*
-            // string argv[1] = atoi(argv[1]);
-            string text = get_string("Plaintext:  ");
-            // int sum = 0;
 
             for (int i = 0; i < strlen(text); i++)
             {
                int sum = rotate(text[i], atoi(argv[1]));
-               printf("Ciphertext: %i\n", sum);
+               return sum;
+               //printf("Ciphertext: %c\n", rotate('Z', atoi(argv[1])));
             }
-            // printf("Ciphertext: %i\n", sum);*/
+            printf("Ciphertext: %c\n", sum);
+
+            //printf("Ciphertext: %c\n", rotate('Z', atoi(argv[1])));
         }
         else
         {
