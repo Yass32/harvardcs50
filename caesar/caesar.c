@@ -18,7 +18,7 @@ int main(int argc, string argv[])
             string text = get_string("Plaintext:  ");
             // int sum = 0;
 
-            for (int i = 0; i < strlen(text); i++)
+            for (int i = text[0]; i < strlen(text); i++)
             {
                int sum = rotate(i, atoi(argv[1]));
                printf("Ciphertext: %i\n", sum);
