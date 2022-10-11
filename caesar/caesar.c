@@ -12,14 +12,14 @@ int main(int argc, string argv[])
 {
     if (argc == 2) // Make sure program was run with just one command-line argument
     {
-        if (only_digits(argv[1]) == true)
+        if (only_digits(argv[1]) == true) // Convert argv[1] from a `string` to an `int`
         {
-            string text = get_string("Plaintext:  ");
+            string text = get_string("Plaintext:  ");  // Prompt user for plaintext
 
             printf("Ciphertext: ");
-            for (int i = 0; i < strlen(text); i++)
+            for (int i = 0; i < strlen(text); i++)  // For each character in the plaintext:
             {
-                int sum = rotate(text[i], atoi(argv[1]));
+                int sum = rotate(text[i], atoi(argv[1]));  // Rotate the character if it's a letter
                 printf("%c", sum);
             }
             printf("\n");
