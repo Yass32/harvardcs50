@@ -10,7 +10,7 @@ char rotate(char c, int k);
 
 int main(int argc, string argv[])
 {
-    if (argc == 2)
+    if (argc == 2) // Make sure program was run with just one command-line argument
     {
         if (only_digits(argv[1]) == true)
         {
@@ -46,7 +46,7 @@ int main(int argc, string argv[])
 // Make main take only one arguement whereby it only accepts positive integers
 // Condition for if no arguement or more than one argument is given print error
 
-bool only_digits(string s)
+bool only_digits(string s) // Make sure every character in argv[1] is a digit
 {
     for (int i = 0; i < strlen(s); i++)
     {
