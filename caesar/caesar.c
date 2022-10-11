@@ -67,7 +67,7 @@ char rotate(char c, int n);
         if(isupper(c))
         {
             int p = (int) c - 65;
-            f
+            fjf
         }
         else if(islower(c))
         {
