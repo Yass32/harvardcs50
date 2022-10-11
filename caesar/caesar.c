@@ -14,7 +14,16 @@ int main(int argc, string argv[])
     {
         if (only_digits(argv[1]) == true)
         {
-            return 0;
+            // string argv[1] = atoi(argv[1]);
+            string text = get_string("Plaintext:  ");
+            int sum = 0;
+
+            for (int i = 0; i < strlen(text); i++)
+            {
+               rotate(i, atoi(argv[1]));
+               sum = sum + i;
+            }
+            printf("Ciphertext: %c", sum);return 0;
         }
         else
         {
@@ -28,17 +37,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // string argv[1] = atoi(argv[1]);
-    string text = get_string("Plaintext:  ");
 
-    int sum = 0;
-
-    for (int i = 0; i < strlen(text); i++)
-    {
-       rotate(i, atoi(argv[1]));
-       sum = sum + i;
-    }
-    printf("Ciphertext: %c", sum);
 
 
 
