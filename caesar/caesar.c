@@ -16,17 +16,11 @@ int main(int argc, string argv[])
         {
             string text = get_string("Plaintext:  ");
 
+            printf("Ciphertext: ");
             for (int i = 0; i < strlen(text); i++)
             {
-               /*for (int j = 0; j < strlen(text); j++)
-               {
-                g
-               }*/
                int sum = rotate(text[i], atoi(argv[1]));
-               //sum += i;
-               printf("Ciphertext: ");
                printf("%c", sum);
-
             }
             printf("\n");
 
