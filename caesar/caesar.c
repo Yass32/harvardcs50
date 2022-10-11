@@ -28,14 +28,14 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    string argv[1] = atoi(argv[1]);
+    // string argv[1] = atoi(argv[1]);
     string text = get_string("Plaintext:  ");
 
-    int sum = 0
+    int sum = 0;
 
     for (int i = 0; i < strlen(text); i++)
     {
-       rotate(i, argv[1]);
+       rotate(i, atoi(argv[1]));
        sum = sum + i;
     }
     printf("Ciphertext: %c", sum);
@@ -65,7 +65,6 @@ bool only_digits(string s)
 
 char rotate(char c, int k);
 {
-
     if(isaplha(c))
     {
         if(isupper(c))
