@@ -16,14 +16,14 @@ int main(int argc, string argv[])
         {
             // string argv[1] = atoi(argv[1]);
             string text = get_string("Plaintext:  ");
-            int sum = 0;
+            // int sum = 0;
 
             for (int i = 0; i < strlen(text); i++)
             {
-               rotate(i, atoi(argv[1]));
-               sum = sum + i;
+               int sum = rotate(i, atoi(argv[1]));
+               printf("Ciphertext: %c\n", sum);
             }
-            printf("Ciphertext: %i\n", sum);return 0;
+            // printf("Ciphertext: %i\n", sum);
         }
         else
         {
