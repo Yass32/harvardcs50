@@ -63,9 +63,9 @@ bool only_digits(string s)
     return 0;
 }
 
-char rotate(char c, int k);
+char rotate(char c, int k)
 {
-    if(isaplha(c))
+    if(isalpha(c))
     {
         if(isupper(c))
         {
