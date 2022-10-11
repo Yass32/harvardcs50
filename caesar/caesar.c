@@ -29,12 +29,16 @@ int main(int argc, string argv[])
     }
 
     string argv[1] = atoi(argv[1]);
-    string text = get_string("Plaintext: ");
+    string text = get_string("Plaintext:  ");
+
+    int sum = 0
 
     for (int i = 0; i < strlen(text); i++)
     {
        rotate(i, argv[1]);
+       sum = sum + i;
     }
+    printf("Ciphertext: %c", sum);
 
 
 
