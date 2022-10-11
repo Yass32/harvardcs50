@@ -14,16 +14,19 @@ int main(int argc, string argv[])
     {
         if (only_digits(argv[1]) == true)
         {
+            string text = get_string("Plaintext:  ");
+            printf("Ciphertect: %c\n", rotate('h', atoi(argv[1])));
+            /*
             // string argv[1] = atoi(argv[1]);
             string text = get_string("Plaintext:  ");
             // int sum = 0;
 
-            for (int i = text[0]; i < strlen(text); i++)
+            for (int i = 0; i < strlen(text); i++)
             {
-               int sum = rotate(i, atoi(argv[1]));
+               int sum = rotate(text[i], atoi(argv[1]));
                printf("Ciphertext: %i\n", sum);
             }
-            // printf("Ciphertext: %i\n", sum);
+            // printf("Ciphertext: %i\n", sum);*/
         }
         else
         {
