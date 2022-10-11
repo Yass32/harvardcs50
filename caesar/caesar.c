@@ -24,7 +24,9 @@ int main(int argc, string argv[])
                }*/
                int sum = rotate(text[i], atoi(argv[1]));
                //sum += i;
+               printf("Ciphertext: ");
                printf("%c", sum);
+
             }
             printf("\n");
 
