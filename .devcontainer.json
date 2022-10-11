@@ -15,7 +15,7 @@
     "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:7408c5ca5777389118ef3c5c1c66e4490299b1a7",
+  "image": "ghcr.io/cs50/codespace:700a75850b6e2fca70217f9a0e42197e909c84d4",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -93,6 +93,7 @@
       }
     ],
     "java.debug.settings.enableRunDebugCodeLens": false,
+    "java.inlayHints.parameterNames.enabled": "none",
     "java.server.launchMode": "Standard",
     "javascript.suggest.enabled": false,
     "javascript.validate.enable": false,
@@ -154,7 +155,12 @@
       "editorWarning.foreground": "#0000"
     },
     "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.enablePreview": false,
     "workbench.editor.untitled.hint": "hidden",
+    "workbench.editorAssociations": {
+      "*.wav": "vscode.audioPreview",
+      "README.md": "lab50.editor"
+    },
     "workbench.iconTheme": "vs-minimal",
     "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "workbench.preferredLightColorTheme": "GitHub Light Default",

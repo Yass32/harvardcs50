@@ -12,7 +12,6 @@ int main(int argc, string argv[])
 {
     if (argc == 2)
     {
-        string argv[] = atoi(argv[]);
         if (only_digits(argv[1]) == true)
         {
             return 0;
@@ -29,8 +28,14 @@ int main(int argc, string argv[])
         return 1;
     }
 
-
+    string argv[1] = atoi(argv[1]);
     string text = get_string("Plaintext: ");
+
+    //for (int i = 0; i < strlen(text); i++)
+    //{
+    //   rotate(i, 1);
+    //}
+
 
 
 }
@@ -53,11 +58,20 @@ bool only_digits(string s)
     }
     return 0;
 }
+
 char rotate(char c, int n);
 {
-    if (isalpha(c))
+
+    if(isaplha(c))
     {
-        g
+        if(isupper(c))
+        {
+            f
+        }
+        else if(islower(c))
+        {
+            f
+        }
     }
     else
     {
