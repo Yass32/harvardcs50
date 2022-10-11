@@ -6,7 +6,7 @@
 
 
 bool only_digits(string s);
-char rotate(char c, int n);
+char rotate(char c, int k);
 
 int main(int argc, string argv[])
 {
@@ -31,10 +31,10 @@ int main(int argc, string argv[])
     string argv[1] = atoi(argv[1]);
     string text = get_string("Plaintext: ");
 
-    //for (int i = 0; i < strlen(text); i++)
-    //{
-    //   rotate(i, 1);
-    //}
+    for (int i = 0; i < strlen(text); i++)
+    {
+       rotate(i, argv[1]);
+    }
 
 
 
