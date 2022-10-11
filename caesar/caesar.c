@@ -26,7 +26,7 @@ int main(int argc, string argv[])
                //sum += i;
                printf("%c", sum);
             }
-            //printf("Ciphertext: %c\n", sum);
+            printf("\n");
 
         }
         else
