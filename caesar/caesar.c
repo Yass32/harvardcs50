@@ -15,7 +15,7 @@ int main(int argc, string argv[])
         if (only_digits(argv[1]) == true)
         {
             string text = get_string("Plaintext:  ");
-            printf("Ciphertect: %c\n", rotate('h', atoi(argv[1])));
+            printf("Ciphertect: %c\n", rotate('A', atoi(argv[1])));
             /*
             // string argv[1] = atoi(argv[1]);
             string text = get_string("Plaintext:  ");
