@@ -68,6 +68,7 @@ char rotate(char c, int k);
         {
             int p = (int) c - 65;
             int ans = (p + k) % 26;
+            return 
         }
         else if(islower(c))
         {
