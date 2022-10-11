@@ -23,7 +23,7 @@ int main(int argc, string argv[])
                rotate(i, atoi(argv[1]));
                sum = sum + i;
             }
-            printf("Ciphertext: %c", sum);return 0;
+            printf("Ciphertext: %i\n", sum);return 0;
         }
         else
         {
