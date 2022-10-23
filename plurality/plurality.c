@@ -74,12 +74,8 @@ bool vote(string name)
             candidates[i].votes += 1;
             return true;
         }
-        else
-        {
-            return false;
-        }
     }
-    //return false;
+    return false;
 
     /*if (strcmp(name, candidates[MAX] == 0))
     {
