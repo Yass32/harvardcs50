@@ -5,6 +5,7 @@
     "cs50.ddb50",
     "cs50.extension-uninstaller",
     "cs50.lab50",
+    "cs50.markdown50",
     "cs50.vscode-presentation-mode",
     "ms-python.python",
     "ms-vscode.cpptools",
@@ -15,7 +16,7 @@
     "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:700a75850b6e2fca70217f9a0e42197e909c84d4",
+  "image": "ghcr.io/cs50/codespace:a4185d8fa5b886e44db17cf6b7b637a0f1fb7da1",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
