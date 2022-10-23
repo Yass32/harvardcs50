@@ -90,8 +90,9 @@ void print_winner(void)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > candidates[i + 1].votes)
+        if (candidates[0].votes > candidates[i].votes)
         {
+            int min =
             printf("%s \n", candidates[i].name);
         }
     }
