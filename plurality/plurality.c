@@ -90,7 +90,7 @@ void print_winner(void)
     // TODO
     for (int i = 0; i < candidate_count - 1; i++)
     {
-        int min_position = i;
+        int max_vote = 0;
         for (int j = 0; j < candidate_count; j++)
         {
             if (candidates[j].votes < candidates[min_position].votes)
