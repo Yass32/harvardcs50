@@ -95,8 +95,9 @@ void print_winner(void)
         {
             if (candidates[j].votes < candidates[min_position].votes)
             {
-            //candidates[0].votes = candidates[i].votes;
-            //printf("%s \n", candidates[i].name);
+                min_position = j;
+                //candidates[0].votes = candidates[i].votes;
+                //printf("%s \n", candidates[i].name);
             }
         }
     }
