@@ -93,7 +93,7 @@ void print_winner(void)
         int min_position = i;
         for (int j = 0; j < candidate_count; j++)
         {
-            if (candidates[0].votes < candidates[i].votes)
+            if (candidates[j].votes < candidates[min_position].votes)
             {
             //candidates[0].votes = candidates[i].votes;
             //printf("%s \n", candidates[i].name);
