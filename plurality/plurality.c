@@ -99,6 +99,7 @@ void print_winner(void)
                 //candidates[0].votes = candidates[i].votes;
                 //printf("%s \n", candidates[i].name);
             }
+            printf("%s \n", candidates[min].name);
         }
     }
     //printf("%s \n", candidates[i].name);
