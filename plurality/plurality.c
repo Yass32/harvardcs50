@@ -93,7 +93,8 @@ void print_winner(void)
         if (candidates[0].votes > candidates[i].votes)
         {
             int min = candidates[i].votes;
-            printf("%s \n", candidates[i].name);
+            candidates[i].votes = candidates[0].votes
+            ccccprintf("%s \n", candidates[i].name);
         }
     }
     //printf("\n");
