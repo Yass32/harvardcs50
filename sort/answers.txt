@@ -36,3 +36,7 @@ real    0m0.032s
 user    0m0.004s
 sys     0m0.023s
 
+time ./sort3 reversed5000.txt
+real    0m0.049s
+user    0m0.036s
+sys     0m0.012s
