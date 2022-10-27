@@ -56,3 +56,5 @@ int compute_score(string word)
     }
     return score;
 }
+
+// Complete the implementation of scrabble.c, such that it determines the winner of a short scrabble-like game, where two players each enter their word, and the higher scoring player wins
