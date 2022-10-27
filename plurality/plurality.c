@@ -76,12 +76,6 @@ bool vote(string name)
         }
     }
     return false;
-
-    /*if (strcmp(name, candidates[MAX] == 0))
-    {
-        h
-    }
-    return false;*/
 }
 
 // Print the winner (or winners) of the election
@@ -89,22 +83,19 @@ void print_winner(void)
 {
     // TODO
     int max_vote = 0;
-    for (int i = 1; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[max_vote].votes < candidates[i].votes)
+        if (candidates[i].votes > max_vote)
         {
-            candidates[max_vote].votes = candidates[i].votes;
+            max_vote = candidates[i].votes;
         }
-        /*for (int j = 0; j < candidate_count; j++)
-        {
-            if (candidates[j].votes < candidates[min_position].votes)
-            {
-                min_position = j;
-                //candidates[0].votes = candidates[i].votes;
-                //printf("%s \n", candidates[i].name);
-            }
-            printf("%s \n", candidates[min].name);
-        }*/
     }
-    printf("%s \n", candidates[max_vote].name);
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == max_vote)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
+    //printf("%s %s %s\n", candidates[max_vote].name, candidates[i+1].votes, candidates[i].votes);
 }
