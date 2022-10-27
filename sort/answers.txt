@@ -10,6 +10,7 @@ sort3 uses: TODO
 
 How do you know?: TODO
 
+
 time ./sort1 reversed10000.txt
 real    0m0.297s
 user    0m0.186s
