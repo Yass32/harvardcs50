@@ -19,6 +19,18 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
+    if (score1 > score2)
+    {
+        print("Player 1 wins!!");
+    }
+    else if (score2 > score1)
+    {
+        print("Player 2 wins!!");
+    }
+    else
+    {
+        print("Both Players win!!");
+    }
 }
 
 int compute_score(string word)
