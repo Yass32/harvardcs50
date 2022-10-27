@@ -97,5 +97,4 @@ void print_winner(void)
             printf("%s\n", candidates[i].name);
         }
     }
-    //printf("%s %s %s\n", candidates[max_vote].name, candidates[i+1].votes, candidates[i].votes);
 }
