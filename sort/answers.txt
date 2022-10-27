@@ -9,3 +9,18 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+time ./sort1 reversed10000.txt
+real    0m0.297s
+user    0m0.186s
+sys     0m0.058s
+
+time ./sort2 reversed10000.txt
+real    0m0.114s
+user    0m0.009s
+sys     0m0.044s
+
+time ./sort3 reversed10000.txt
+real    0m0.203s
+user    0m0.106s
+sys     0m0.049s
