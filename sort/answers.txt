@@ -1,11 +1,17 @@
-sort1 uses: TODO Selection Sort
+sort1 uses: TODO
+Bubble Sort
 
-How do you know?: TODO It uses the most amount of time to sort the array
+How do you know?: TODO
+It uses the most amount of time to sort the array
 
-sort2 uses: TODO Merge Sort
+sort2 uses: TODO
+Merge Sort
 
-How do you know?: TODO It uses the least amount of time to sort the array
+How do you know?: TODO
+It uses the least amount of time to sort the array
 
-sort3 uses: TODO Bubble Sort
+sort3 uses: TODO
+Selection Sort
 
-How do you know?: TODO It takes more time than sort2 and less time than sort1
+How do you know?: TODO
+It takes more time than sort2 and less time than sort1
