@@ -25,3 +25,14 @@ time ./sort3 reversed10000.txt
 real    0m0.203s
 user    0m0.106s
 sys     0m0.049s
+
+time ./sort1 reversed5000.txt
+real    0m0.097s
+user    0m0.047s
+sys     0m0.027s
+
+time ./sort2 reversed5000.txt
+real    0m0.032s
+user    0m0.004s
+sys     0m0.023s
+
