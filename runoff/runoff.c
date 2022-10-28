@@ -134,9 +134,14 @@ bool vote(int voter, int rank, string name)
         if (int strcmp(name, candidates[i].name) == 0)
         {
             ff
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
-    return false;
+    //return false;
 }
 
 // Tabulate votes for non-eliminated candidates
