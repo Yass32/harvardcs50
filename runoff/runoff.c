@@ -165,6 +165,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    gg
     return false;
 }
 
