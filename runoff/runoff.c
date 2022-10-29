@@ -167,7 +167,10 @@ bool print_winner(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        g
+        if (candidates[i].votes >= voter_count / 2)
+        {
+            g
+        }
     }
     return false;
 }
