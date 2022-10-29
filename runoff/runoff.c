@@ -146,7 +146,7 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        if (vote(voter, rank, name) == true)
+        if (vote() == true)
         {
             candidates[i].votes += 1;
         }
