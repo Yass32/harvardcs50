@@ -165,7 +165,10 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    gg
+    for (int i = 0; i < voter_count; i++)
+    {
+        g
+    }
     return false;
 }
 
