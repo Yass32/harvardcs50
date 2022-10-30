@@ -196,6 +196,14 @@ int find_min(void)
 bool is_tie(int min)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].eliminated && candidates[i].votes < min_vote)
+        {
+            min_vote = candidates[i].votes;
+            //return min_vote;
+        }
+    }
     return false;
 }
 
