@@ -182,7 +182,7 @@ int find_min(void)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].eliminated)
+        if (candidates[i].eliminated && )
         {
             preferences[voter][rank] = i;
             return true;
