@@ -201,10 +201,10 @@ bool is_tie(int min)
         {
             return true;
         }
-        else
+        /*else
         {
             return false;
-        }
+        }*/
     //return true;
     }
     //return false;
