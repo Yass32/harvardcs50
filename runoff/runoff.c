@@ -184,9 +184,13 @@ int find_min(void)
         {
             min_vote = candidates[i].votes;
         }
-    return min_vote;
-    }
+        else
+        {
+            return 1;
+        }
     //return min_vote;
+    }
+    return min_vote;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
