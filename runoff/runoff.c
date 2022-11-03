@@ -198,15 +198,6 @@ bool is_tie(int min)
         {
             return false;
         }
-        /*else if (candidates[i].eliminated && candidates[i].votes != min)
-        {
-            return true;
-        }
-        else
-        {
-            //return false;
-            break;
-        }*/
     }
     return true;
 }
