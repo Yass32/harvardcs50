@@ -16,7 +16,7 @@
     "vscjava.vscode-java-debug",
     "vsls-contrib.gitdoc"
   ],
-  "image": "ghcr.io/cs50/codespace:64c83e6c1be193b71040d139f57abb1107ff8cf7",
+  "image": "ghcr.io/cs50/codespace:722040a89b11df6212a566b0618e1dda5e81f6cc",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
