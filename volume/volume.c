@@ -35,8 +35,7 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     fread(&HEADER_SIZE, sizeof(44), 1, input);
-    int *input_file = HEADER_SIZE;
-    int *output_file = *input_file;
+    fwrite(&HEADER_SIZE, sizeof(44), 1, output);
 
     // TODO: Read samples from input file and write updated data to output file
 
