@@ -4,11 +4,11 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int i = 0; i <= height; i++)
+    for (int i = 0; i <= height; i++) //Loops through rows
     {
-        for (int j = 0; j <= width; j++)
+        for (int j = 0; j <= width; j++) //Loops through column
         {
-            double Avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0;
+            double Avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0; //Find the avg color value of pixel and s
             int x = (int) round(Avg);
             image[i][j].rgbtBlue = x;
             image[i][j].rgbtGreen = x;
