@@ -43,7 +43,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 sepiaRed = 255;
             }
 
-            image[i][j].rgbtBlue = sepiaBlue; //Applies x to each colour to create grayscale
+            image[i][j].rgbtBlue = sepiaBlue; //Applies new colour values
             image[i][j].rgbtGreen = sepiaGreen;
             image[i][j].rgbtRed = sepiaRed;
         }
