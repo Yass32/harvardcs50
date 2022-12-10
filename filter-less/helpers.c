@@ -54,6 +54,17 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int i = 0; i < height; i++) //Loops through rows
+    {
+        for (int j = width - 1; j >= 0; j--) //Loops through column
+        {
+            double Avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0; //Find the avg color value of pixel and store in x
+            int x = round(Avg);
+            image[i][j].rgbtBlue = x; //Applies x to each colour to create grayscale
+            image[i][j].rgbtGreen = x;
+            image[i][j].rgbtRed = x;
+        }
+    }
     return;
 }
 
