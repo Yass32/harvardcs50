@@ -57,10 +57,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE temp[height][width]; //Make a copy of the image
     for (int i = 0; i < height; i++) //Loops through rows
     {
-        int CurPos = 0;
-        for (int j = width - 1; j >= 0; j--, CurPos++) //Loops through column
+        int Curr_Post = 0;
+        for (int j = width - 1; j >= 0; j--, Curr_Post++) //Loops through column
         {
-            temp[i][CurPos] = image[i][j]; //Assign opposite/reflected pixels to a buffer
+            temp[i][Curr_Post] = image[i][j]; //Assign opposite/reflected pixels to a buffer
         }
     }
     for (int i = 0; i < height; i++) //Loops through rows
@@ -79,10 +79,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE temp[height][width]; //Make a copy of the image
     for (int i = 0; i < height; i++) //Loops through rows
     {
-        int CurPos = 0;
-        for (int j = width - 1; j >= 0; j--, CurPos++) //Loops through column
+        for (int j = 0; j < width; j++) //Loops through column
         {
-            temp[i][CurPos] = image[i][j]; //Assign opposite/reflected pixels to a buffer
+            temp[i][CurPos] = image[i][j]; //Copy each pixel
         }
     }
     return;
