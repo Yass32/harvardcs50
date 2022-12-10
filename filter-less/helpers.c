@@ -8,8 +8,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //Loops through column
         {
-            double Avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / \n;
-                         3.0; //Find the avg color value of pixel and store in x
+            //Find the avg color value of pixel and store in x
+            double Avg = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0;
             int x = round(Avg);
             image[i][j].rgbtBlue = x; //Applies x to each colour to create grayscale
             image[i][j].rgbtGreen = x;
