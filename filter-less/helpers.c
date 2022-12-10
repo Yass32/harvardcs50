@@ -43,7 +43,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 sepiaRed = 255;
             }
 
-            image[i][j].rgbtBlue = sepiaBlue; //Applies new colour values
+            image[i][j].rgbtBlue = sepiaBlue; //Applies new colour to final image
             image[i][j].rgbtGreen = sepiaGreen;
             image[i][j].rgbtRed = sepiaRed;
         }
@@ -67,7 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //Loops through column
         {
-            image[i][j] = temp[i][j]; //Assign buffer pixels to new image
+            image[i][j] = temp[i][j]; //Assign buffer pixels to final image
         }
     }
     return;
