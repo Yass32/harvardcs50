@@ -63,6 +63,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             temp[i][CurPos] = image[i][j];
         }
     }
+    for (int i = 0; i < height; i++) //Loops through rows
+    {
+        for (int j = 0; j < width; j++) //Loops through column
+        {
+            image[i][j] = temp[i][j];
+        }
+    }
     return;
 }
 
