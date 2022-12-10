@@ -60,14 +60,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         int CurPos = 0;
         for (int j = width - 1; j >= 0; j--, CurPos++) //Loops through column
         {
-            temp[i][CurPos] = image[i][j];
+            temp[i][CurPos] = image[i][j]; //Assign opposite/reflected pixels to a buffer
         }
     }
     for (int i = 0; i < height; i++) //Loops through rows
     {
         for (int j = 0; j < width; j++) //Loops through column
         {
-            image[i][j] = temp[i][j];
+            image[i][j] = temp[i][j]; //Assign buffer pixels to new image
         }
     }
     return;
