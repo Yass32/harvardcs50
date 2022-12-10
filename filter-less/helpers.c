@@ -89,7 +89,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             float counter = 0.00;
-            int total_blue = 0, total_green = 0,total_red = 0;
+            int total_blue = 0, total_green = 0, total_red = 0;
 
             for (int x = -1; x < 2; x++) //To get the neighbouring pixels
             {
