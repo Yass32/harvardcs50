@@ -81,7 +81,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //Loops through column
         {
-            temp[i][j] = image[i][j]; //Copy each pixel
+            temp[i][j] = image[i][j]; //Copy each pixel into buffer
         }
     }
     for (int i = 0; i < height; i++)
@@ -119,7 +119,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j] = temp[i][j]; //Assign buffer pixels to final image
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue; //Assign buffer pixels to final image
+            image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
         }
     }
     return;
