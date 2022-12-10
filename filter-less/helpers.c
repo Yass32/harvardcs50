@@ -81,7 +81,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //Loops through column
         {
-            temp[i][CurPos] = image[i][j]; //Copy each pixel
+            temp[i][j] = image[i][j]; //Copy each pixel
         }
     }
     return;
