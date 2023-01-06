@@ -1,7 +1,7 @@
 # TODO
 while True:
-    height = input("Enter half pyramid height: ")
-    if (isdigit(height) and 1 <= height <= 8) :
+    height = int(input("Enter half pyramid height: "))
+    if (height(range(0,10)) and 1 <= height <= 8) :
         break
     else:
         print("Error, positive integer between 1 and 8, inclusive.")
