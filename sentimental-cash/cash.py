@@ -1,9 +1,11 @@
 # TODO
 import cs50
 while True:
-    change = cs50.get_float("Enter change owed ")
+    get_dollars = cs50.get_float("Enter change owed ")
     if change < 0:
         print("Error, invalid amount")
         continue
     else:
         break
+
+
