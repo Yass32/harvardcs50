@@ -12,6 +12,9 @@ for i in range(1, height + 1):
     print(" " * space, "#" * i)
     space = space - 1
 
+for x in range (height):
+    print((height-x - 1)*' ' + (x+1)*'#')
+
 
 
 """
