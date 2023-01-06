@@ -1,7 +1,8 @@
 # TODO
 import cs50
 
-
+def calculate_quarters:
+    e
 
 while True:
     get_dollars = cs50.get_float("Enter change owed ")
