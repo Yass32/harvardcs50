@@ -9,7 +9,7 @@ while True:
 
 
 for i in range(height):
-    print()
+    print(" " * height - 1, "#" * i)
 
 """
 i = 0
