@@ -40,7 +40,7 @@ pennies = calculate_pennies(dollars)
 dollars = dollars - pennies * 1
 
 #The minimum number of coins
-coins = quart + dimes + nickels + pennies
+coins = int(quart + dimes + nickels + pennies)
 
 #Print total number of coins to give the customer
 print(f"{coins}")
