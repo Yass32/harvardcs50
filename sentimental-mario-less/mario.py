@@ -10,5 +10,5 @@ while True:
         continue
 
 # Print out the pyramid
-for i in range(height):
+for i in range(int(height)):
     print(" " * (height - 1 - i) + "#" * (i + 1))
