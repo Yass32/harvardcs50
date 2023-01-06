@@ -9,7 +9,8 @@ while True:
 
 space = height - 1
 for i in range(1, height + 1):
-    print(" " * space, end= "#" * i)
+    print(" " * space, "#" * i)
+    print()
     space = space - 1
 
 """
