@@ -2,7 +2,16 @@
 import cs50
 
 def calculate_quarters(dollars):
-    quart = dollars / 
+    return (dollars * 100) / 25
+
+def calculate_dimes(dollars):
+    return (dollars * 100) / 10
+
+def calculate_nickels(dollars):
+    return (dollars * 100) / 5
+
+def calculate_pennies(dollars):
+    return (dollars * 100) / 1
 
 while True:
     get_dollars = cs50.get_float("Enter change owed ")
