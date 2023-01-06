@@ -3,13 +3,13 @@ from cs50 import get_float
 
 #Define the funcctions
 def calculate_quarters(dollars):
-    return int((dollars * 100) // 25)
+    return int(dollars * 4)
 
 def calculate_dimes(dollars):
-    return int((dollars * 100) // 10)
+    return int(dollars * 10)
 
 def calculate_nickels(dollars):
-    return int((dollars * 100) // 5)
+    return int(dollars * 20)
 
 def calculate_pennies(dollars):
     return int((dollars * 100) // 1)
