@@ -1,70 +1,37 @@
 # TODO
 from cs50 import get_float
 
-#Define the funcctions
-def calculate_quarters(dollars):
-    return dollars * 4
-
-def calculate_dimes(dollars):
-    return dollars * 10
-
-def calculate_nickels(dollars):
-    return dollars * 20
-
-def calculate_pennies(dollars):
-    return dollars * 100
-
-#Ask how many dollars the customer is owed
+#Ask how many coins the customer is owed
 while True:
-    dollars = get_float("Enter change owed ")
+    change_dollars = get_float("Enter change owed ")
     if dollars < 0:
         print("Error, invalid amount")
         continue
     else:
-        cents = dollars * 100
+        cents = change_dollars * 100
         break
 
 coins = 0
+
+#Calculate the number of quarters to give the customer
 while cents >= 25:
     cents = cents - 25
     coins = coins + 1
 
+#Calculate the number of dimes to give the customer
 while cents >= 10:
     cents = cents - 10
     coins = coins + 1
 
+#Calculate the number of nickels to give the customer
 while cents >= 5:
     cents = cents - 5
     coins = coins + 1
 
-while cents >= 1:
-    centys = cents - 1
-    coins = coins + 1
-
-return coins
-
-"""
-
-#Calculate the number of quarters to give the customer
-quart = int(calculate_quarters(dollars))
-dollars = dollars - quart * 25
-
-#Calculate the number of dimes to give the customer
-dimes = int(calculate_dimes(dollars))
-dollars = dollars - dimes * 10
-
-#Calculate the number of nickels to give the customer
-nickels = int(calculate_nickels(dollars))
-dollars = dollars - nickels * 5
-
 #Calculate the number of pennies to give the customer
-pennies = int(calculate_pennies(dollars))
-dollars = dollars - pennies * 1
-
-#The minimum number of coins
-coins = int(quart + dimes + nickels + pennies)
+while cents >= 1:
+    cents = cents - 1
+    coins = coins + 1
 
 #Print total number of coins to give the customer
 print(coins)
-"""
-
