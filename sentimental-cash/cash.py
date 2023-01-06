@@ -3,20 +3,20 @@ from cs50 import get_float
 
 #Define the funcctions
 def calculate_quarters(dollars):
-    return (dollars * 100) // 25
+    return int((dollars * 100) // 25)
 
 def calculate_dimes(dollars):
-    return (dollars * 100) // 10
+    return int((dollars * 100) // 10)
 
 def calculate_nickels(dollars):
-    return (dollars * 100) // 5
+    return int((dollars * 100) // 5)
 
 def calculate_pennies(dollars):
-    return (dollars * 100) // 1
+    return int((dollars * 100) // 1)
 
 #Ask how many dollars the customer is owed
 while True:
-    dollars = get_float("Enter change owed")
+    dollars = get_float("Enter change owed ")
     if dollars < 0:
         print("Error, invalid amount")
         continue
