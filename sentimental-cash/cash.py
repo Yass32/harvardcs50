@@ -43,6 +43,6 @@ dollars = dollars - pennies * 1
 coins = int(quart + dimes + nickels + pennies)
 
 #Print total number of coins to give the customer
-print(f"{coins}")
+print(coins)
 
 
