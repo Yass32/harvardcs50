@@ -12,7 +12,7 @@ def calculate_nickels(dollars):
     return int(dollars * 20)
 
 def calculate_pennies(dollars):
-    return int((dollars * 100) // 1)
+    return int(dollars * 100)
 
 #Ask how many dollars the customer is owed
 while True:
