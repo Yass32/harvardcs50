@@ -8,14 +8,16 @@ while True:
         continue
 
 for i in range(height):
-    print(" " * (height - 1 - i), "#" * (i + 1))
+    print(" " * (height - 1 - i) + "#" * (i + 1))
 
-for x in range (height):
-    print((height-x - 1)*' ' + (x+1)*'#')
+
 
 
 
 """
+for x in range (height):
+    print((height-x - 1)*' ' + (x+1)*'#')
+
 for i in range(height):
     for j in range(i + 1):
         print(" " * space, "#" * i)
