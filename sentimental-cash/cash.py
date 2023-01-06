@@ -3,16 +3,16 @@ from cs50 import get_float
 
 #Define the funcctions
 def calculate_quarters(dollars):
-    return (dollars * 100) // 25.0
+    return (dollars * 100) // 25
 
 def calculate_dimes(dollars):
-    return (dollars * 100) // 10.0
+    return (dollars * 100) // 10
 
 def calculate_nickels(dollars):
-    return (dollars * 100) // 5.0
+    return (dollars * 100) // 5
 
 def calculate_pennies(dollars):
-    return (dollars * 100) // 1.0
+    return (dollars * 100) // 1
 
 #Ask how many dollars the customer is owed
 while True:
@@ -25,19 +25,19 @@ while True:
 
 #Calculate the number of quarters to give the customer
 quart = calculate_quarters(dollars)
-dollars = dollars - quart * 25.0
+dollars = dollars - quart * 25
 
 #Calculate the number of dimes to give the customer
 dimes = calculate_dimes(dollars)
-dollars = dollars - dimes * 10.0
+dollars = dollars - dimes * 10
 
 #Calculate the number of nickels to give the customer
 nickels = calculate_nickels(dollars)
-dollars = dollars - nickels * 5.0
+dollars = dollars - nickels * 5
 
 #Calculate the number of pennies to give the customer
 pennies = calculate_pennies(dollars)
-dollars = dollars - pennies * 1.0
+dollars = dollars - pennies * 1
 
 #The minimum number of coins
 coins = quart + dimes + nickels + pennies
