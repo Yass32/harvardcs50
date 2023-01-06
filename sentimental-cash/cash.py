@@ -21,7 +21,16 @@ while True:
         print("Error, invalid amount")
         continue
     else:
+        cents = dollars * 100
         break
+
+coins = 0
+while cents >= 25:
+    cents = cents - 25
+    coins = coins + 1
+
+while cents >= 10:
+    cents = cents - 10
 
 #Calculate the number of quarters to give the customer
 quart = int(calculate_quarters(dollars))
