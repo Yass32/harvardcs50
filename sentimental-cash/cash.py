@@ -31,6 +31,19 @@ while cents >= 25:
 
 while cents >= 10:
     cents = cents - 10
+    coins = coins + 1
+
+while cents >= 5:
+    cents = cents - 5
+    coins = coins + 1
+
+while cents >= 1:
+    centys = cents - 1
+    coins = coins + 1
+
+return coins
+
+"""
 
 #Calculate the number of quarters to give the customer
 quart = int(calculate_quarters(dollars))
@@ -53,5 +66,5 @@ coins = int(quart + dimes + nickels + pennies)
 
 #Print total number of coins to give the customer
 print(coins)
-
+"""
 
