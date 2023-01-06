@@ -3,16 +3,16 @@ from cs50 import get_float
 
 #Define the funcctions
 def calculate_quarters(dollars):
-    return (dollars * 100) / 25.0
+    return (dollars * 100) // 25.0
 
 def calculate_dimes(dollars):
-    return (dollars * 100) / 10.0
+    return (dollars * 100) // 10.0
 
 def calculate_nickels(dollars):
-    return (dollars * 100) / 5.0
+    return (dollars * 100) // 5.0
 
 def calculate_pennies(dollars):
-    return (dollars * 100) / 1.0
+    return (dollars * 100) // 1.0
 
 #Ask how many dollars the customer is owed
 while True:
