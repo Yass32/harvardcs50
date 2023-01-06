@@ -1,6 +1,6 @@
 # TODO
 while True:
-    height = int(input("Enter half pyramid height: "))
+    height = input("Enter half pyramid height: ")
     if (isnumeric(height) and 1 <= height <= 8) :
         break
     else:
