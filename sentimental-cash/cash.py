@@ -24,19 +24,19 @@ while True:
         break
 
 #Calculate the number of quarters to give the customer
-quart = calculate_quarters(dollars)
+quart = int(calculate_quarters(dollars))
 dollars = dollars - quart * 25
 
 #Calculate the number of dimes to give the customer
-dimes = calculate_dimes(dollars)
+dimes = int(calculate_dimes(dollars))
 dollars = dollars - dimes * 10
 
 #Calculate the number of nickels to give the customer
-nickels = calculate_nickels(dollars)
+nickels = int(calculate_nickels(dollars))
 dollars = dollars - nickels * 5
 
 #Calculate the number of pennies to give the customer
-pennies = calculate_pennies(dollars)
+pennies = int(calculate_pennies(dollars))
 dollars = dollars - pennies * 1
 
 #The minimum number of coins
