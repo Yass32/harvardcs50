@@ -4,7 +4,7 @@ from cs50 import get_float
 # Ask how many coins the customer is owed
 while True:
     change_dollars = get_float("Enter change owed is ")
-    if dollars < 0:
+    if change_dollars < 0:
         print("Error, invalid amount")
         continue
     else:
