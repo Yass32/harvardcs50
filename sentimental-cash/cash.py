@@ -16,7 +16,7 @@ def calculate_pennies(dollars):
 
 #Ask how many dollars the customer is owed
 while True:
-    dollars = cs50.get_float("Enter change owed ")
+    dollars = get_float("Enter change owed ")
     if dollars < 0:
         print("Error, invalid amount")
         continue
