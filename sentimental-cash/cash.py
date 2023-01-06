@@ -1,5 +1,5 @@
 # TODO
-import cs50
+from cs50 import get_float
 
 #Define the funcctions
 def calculate_quarters(dollars):
