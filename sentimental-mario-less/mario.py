@@ -10,6 +10,8 @@ while True:
 
 i = 0
 j = i
-for i in range(height):
-    for j in range(i):
+while i < height:
+    while j <= i:
         print("#")
+        j = j + 1
+    i = i + 1
