@@ -1,5 +1,7 @@
 # TODO
-height = input("Enter half pyramid height: ")
+size = input("Enter half pyramid height: ")
 while True:
-    if (1 <= height <= 8) :
-        d
+    if (1 <= size <= 8) :
+        height = int(size)
+        break
+    else:
