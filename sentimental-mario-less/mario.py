@@ -9,8 +9,9 @@ while True:
         continue
 
 i = 0
-j = i
+
 while i < height:
+    j = i
     while j <= i:
         print("#")
         j = j + 1
