@@ -1,3 +1,5 @@
 # TODO
 height = input("Enter half pyramid height: ")
-if 
+while True:
+    if (1 <= height <= 8) :
+        d
