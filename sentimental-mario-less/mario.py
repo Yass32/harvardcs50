@@ -7,9 +7,9 @@ while True:
         print("Error, positive integer between 1 and 8, inclusive.")
         continue
 
-
+space = height - 1
 for i in range(height):
-    print(" " * height - 1, "#" * i)
+    print(" " * space, "#" * i)
 
 """
 i = 0
