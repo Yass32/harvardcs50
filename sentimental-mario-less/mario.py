@@ -8,12 +8,17 @@ while True:
         continue
 
 space = height - 1
-for i in range(1, height + 1):
-    print(" " * space, "#" * i)
-    print()
-    space = space - 1
+for i in range(height):
+    for j in range(i + 1):
+        print(" " * space, "#" * i)
+        space = space - 1
+
 
 """
+for i in range(1, height + 1):
+    print(" " * space, "#" * i)
+    space = space - 1
+
 i = 0
 
 while i < height:
@@ -22,4 +27,8 @@ while i < height:
         print("#")
         j = j + 1
     i = i + 1
+
+for i in range(height):
+    for j in range(i + 1):
+        print(" " * space, "#" * i)
 """
