@@ -7,3 +7,9 @@ while True:
     else:
         print("Error, positive integer between 1 and 8, inclusive.")
         continue
+
+i = 0
+j = i
+for i in range(height):
+    for j in range(i):
+        print("#")
