@@ -7,6 +7,10 @@ while True:
         print("Error, positive integer between 1 and 8, inclusive.")
         continue
 
+
+for i in range(height):
+    print()
+
 """
 i = 0
 
