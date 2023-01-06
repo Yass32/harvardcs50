@@ -2,8 +2,9 @@
 while True:
     # Check if user input is a positive integer no greater than 8
     height = input("Enter half pyramid height: ")
-    if height.isdigit() == True and 1 <= int(height) <= 8:
-        break
+    if height.isdigit() == True:
+        if 1 <= height <= 8:
+            break
     else:
         # Reprompt if user gives wrong input
         print("Error, positive integer between 1 and 8, inclusive.")
