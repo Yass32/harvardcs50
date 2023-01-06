@@ -8,8 +8,8 @@ while True:
         continue
 
 space = height - 1
-for i in range(1, height + 1):
-    print(" " * space, "#" * i)
+for i in range(height):
+    print(" " * (height - 1 - i), "#" * (i + 1))
     space = space - 1
 
 for x in range (height):
