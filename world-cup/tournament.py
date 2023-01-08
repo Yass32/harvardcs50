@@ -31,7 +31,9 @@ def main():
         team_name = simulate_tournament(teams)
         counts.append(team_name)
         counts[team_name] = x
+        x = 0
         if team_name in counts:
+            
 
 
 
