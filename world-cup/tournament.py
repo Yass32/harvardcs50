@@ -29,10 +29,10 @@ def main():
     i = 0
     while i < N:
         team_name = simulate_tournament(teams)
-        counts[team_name] = x
+        counts[team_name] = 0
         x = 0
         if team_name in counts:
-            counts[x] += 1
+            counts[team_name] = counts[team_name] + 1
         else:
             counts.append(team_name)
 
