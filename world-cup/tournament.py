@@ -21,6 +21,7 @@ def main():
       for x in reader:
         x["rating"] = int(x["rating"])
         teams.append(x)
+    print(teams)
 
 
     counts = {}
