@@ -30,8 +30,10 @@ def main():
         team_name = simulate_tournament(teams)
         if team_name in counts:
             counts[team_name] = counts[team_name] + 1
+            i +=1
         else:
             counts[team_name] = 0
+            i +=1
 
 
 
