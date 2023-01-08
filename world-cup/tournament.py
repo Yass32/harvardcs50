@@ -30,9 +30,9 @@ def main():
     while i < N:
         team_name = simulate_tournament(teams)
         counts.append(team_name)
-        x = counts[team_name]
+        counts[team_name] = x
         if team_name in counts:
-            x = x + 1
+
 
 
     # Print each team's chances of winning, according to simulation
