@@ -28,9 +28,10 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     i = 0
     while i < N:
-        win_team = simulate_tournament(teams)
-        counts.append(win_team)
-        if win_team in counts:
+        team_name = simulate_tournament(teams)
+        counts.append(team_name)
+        x = counts[team_name]
+        if team_name in counts:
             x = x + 1
 
 
