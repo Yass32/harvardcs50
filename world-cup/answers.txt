@@ -5,7 +5,7 @@ Times:
 1000 simulations: 0m0.035s
 10000 simulations: 0m0.099s
 100000 simulations: 0m0.833s
-1000000 simulations: TODO (record time using 0m0.000s format)
+1000000 simulations: 0m7.727s
 
 Questions:
 
