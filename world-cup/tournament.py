@@ -33,7 +33,7 @@ def main():
         counts[team_name] = x
         x = 0
         if team_name in counts:
-            counts[team_name] += 1
+            counts[x] += 1
 
 
 
