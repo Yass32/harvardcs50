@@ -22,12 +22,11 @@ def main():
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
         AATG_count = longest_match(txt_reader, "AATG")
-        AGATC,TTTTTTCT,AATG,TCTAG,GATA,TATC,GAAA,TCTG
         TCTAG_count = longest_match(txt_reader, "TCTAG")
         GATA_count = longest_match(txt_reader, "GATA")
         TATC_count = longest_match(txt_reader, "TATC")
-        TATC_count = longest_match(txt_reader, "GAAA")
-        TATC_count = longest_match(txt_reader, "TCTG")
+        GAAA_count = longest_match(txt_reader, "GAAA")
+        TCTG_count = longest_match(txt_reader, "TCTG")
 
     # TODO: Check database for matching profiles
 
