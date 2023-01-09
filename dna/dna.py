@@ -18,7 +18,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     recurrence = 0
-    for i in len(txt_reader):
+    for i in range(len(txt_reader)):
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         AATG_count = longest_match(txt_reader, "AATG")
         TATC_count = longest_match(txt_reader, "TATC")
