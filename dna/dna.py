@@ -13,8 +13,8 @@ def main():
         csv_reader = csv.DictReader(database_file)
 
     # TODO: Read DNA sequence file into a variable
-    with open('workfile', 'r') as f:
-        read_data = f.read()
+    with open(sys.argv[2]) as sequence_file:
+        txt_reader = f.read()
     with open(sys.argv[1]) as database_file:
         g
 
