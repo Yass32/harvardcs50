@@ -9,8 +9,8 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     # TODO: Read database file into a variable
-    with open(sys.argv[1]) as f:
-        reader = csv.DictReader(f)
+    with open(sys.argv[1]) as database_file:
+        csv_reader = csv.DictReader(database_file)
 
     # TODO: Read DNA sequence file into a variable
 
