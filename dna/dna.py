@@ -6,13 +6,15 @@ def main():
 
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
-        sys.exit("Usage: python tournament.py FILENAME")
+        sys.exit("Error, insufficient command line arguments")
 
     # TODO: Read database file into a variable
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file)
 
     # TODO: Read DNA sequence file into a variable
+    with open(sys.argv[1]) as database_file:
+        g
 
     # TODO: Find longest match of each STR in DNA sequence
 
