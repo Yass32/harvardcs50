@@ -18,7 +18,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     for i in txt_reader:
-        if txt_reader[i] == "A"
+        if txt_reader[i:] == "A"
         flongest_match(txt_reader, subsequence)
 
     # TODO: Check database for matching profiles
