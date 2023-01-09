@@ -15,6 +15,7 @@ def main():
         for i in csv_reader:
             i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             data.append(i)
+        print(data)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as sequence_file:
@@ -32,6 +33,7 @@ def main():
         GAAA_count = longest_match(txt_reader, "GAAA")
         TCTG_count = longest_match(txt_reader, "TCTG")
     profile.append(AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count)
+    print(profile)
     #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
