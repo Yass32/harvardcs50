@@ -9,12 +9,12 @@ def main():
         sys.exit("Error Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    data = {}
+    data = []
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file)
         for i in csv_reader:
             i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
-            teams.append(x)
+            data.append(i)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as sequence_file:
