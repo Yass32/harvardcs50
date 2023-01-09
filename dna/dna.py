@@ -18,7 +18,6 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     profile = {}
-    recurrence = 0
     for i in range(len(txt_reader)):
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
@@ -28,6 +27,7 @@ def main():
         TATC_count = longest_match(txt_reader, "TATC")
         GAAA_count = longest_match(txt_reader, "GAAA")
         TCTG_count = longest_match(txt_reader, "TCTG")
+    profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
 
