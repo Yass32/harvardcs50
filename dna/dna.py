@@ -6,7 +6,7 @@ def main():
 
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
-        sys.exit("Error Usage: python dna.py csv_file text_file")
+        sys.exit("Error Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
     with open(sys.argv[1]) as database_file:
