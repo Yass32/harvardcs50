@@ -10,6 +10,7 @@ def main():
 
     # TODO: Read database file into a variable
     data = {}
+    data = dict(name = "", AGATC = "", TTTTTTCT = "", AATG = "", TCTAG = "", GATA = "", TATC = "", GAAA = "", TCTG = "",)
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
