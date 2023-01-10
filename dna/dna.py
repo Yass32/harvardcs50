@@ -14,7 +14,7 @@ def main():
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
             #data.update(i)
-            i[1:] = int(i[1:])
+            #i[1:] = int(i[1:])
             print(i)
             #i[1:] = int(i[1:])
             data.append(i)
@@ -22,8 +22,10 @@ def main():
         print(data)
         # type conversation in list of dicts.
     for dicts in data:
-        for keys in dicts:
+        for keys in dicts[1:]:
             dicts[keys] = int(dicts[keys])
+
+        print(data)
 
     sequence = []
     # TODO: Read DNA sequence file into a variable
