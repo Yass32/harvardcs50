@@ -79,6 +79,9 @@ def main():
     #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
+    for dicts in data_b:
+        for value in list(dicts.values())[1:]:
+            if keys in sequence:
     """for i in csv_reader:
         if csv_reader[i] == profile:"""
 
