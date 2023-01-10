@@ -11,7 +11,7 @@ def main():
     # TODO: Read database file into a variable
     data = []
     with open(sys.argv[1]) as database_file:
-        csv_reader = csv.DictReader(database_file) #csv.DictReader
+        csv_reader = csv.reader(database_file) #csv.DictReader
         for i in csv_reader:
             for j in i.values():
                 if i.isalpha:
