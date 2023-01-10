@@ -67,7 +67,6 @@ def main():
     dna_profile = {}
     for i in range(len(sequence)):
         dna_profile[sequence[i]] = long_match[i]
-
     print(dna_profile)
 
 
