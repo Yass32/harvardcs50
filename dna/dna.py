@@ -89,12 +89,10 @@ def main():
     #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
-    for str, num in dna_profile.items():
-        if str,num == list(data_b)[1:]
     for dicts in data_b:
         i = 0
-        for value in list(dicts.values())[1:]:
-            if value == long_match[i]:
+        for str,num in list(dicts.values())[1:]:
+            if str,num == dna_profile
                 i += 1
                 continue
             else:
