@@ -32,8 +32,10 @@ def main():
 
         print(data_b)
         # type conversation in list of dicts.
-    """for dicts in data:
-        for keys in list(dicts.values())[1:]:
+    """for dicts in data_b:
+        for keys in list(dicts.keys())[1:]:
+            print(keys)
+            sequence.append(keys)
             dicts[keys] = int(dicts[keys])
 
     print(data)"""
@@ -44,6 +46,10 @@ def main():
         txt_reader = sequence_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    for dicts in data_b:
+        for keys in list(dicts.keys())[1:]:
+            print(keys)
+            sequence.append(keys)
 
     """profile = []
     for i in txt_reader:
