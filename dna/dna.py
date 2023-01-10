@@ -9,16 +9,11 @@ def main():
         sys.exit("Error Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    data = []
+    database = []
     with open(sys.argv[1]) as database_file:
-        csv_reader = csv.reader(database_file) #csv.DictReader
+        csv_reader = csv.DictReader(database_file)
         for i in csv_reader:
-            for j in i.values():
-                if i.isalpha:
-                    pass
-                else:
-                    j = int(j)
-            data.append(i)
+            database.append(i)
 
 
             """i["AGATC"] = int(i["AGATC"])
