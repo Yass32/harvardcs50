@@ -42,6 +42,8 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as sequence_file:
         txt_reader = sequence_file.read()
+        for i in txt_reader:
+            sequence
 
     # TODO: Find longest match of each STR in DNA sequence
     """profile = []
