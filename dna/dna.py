@@ -79,7 +79,7 @@ def main():
     #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
-    i =0
+    i = 0
     for dicts in data_b:
         for value in list(dicts.values())[1:]:
             if value == profile[i]:
