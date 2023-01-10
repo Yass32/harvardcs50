@@ -18,7 +18,10 @@ def main():
                     pass
                 else:
                     j = int(j)
-            i["AGATC"] = int(i["AGATC"])
+            data.append(i)
+
+
+            """i["AGATC"] = int(i["AGATC"])
             i["TTTTTTCT"] = int(i["TTTTTTCT"])
             i["AATG"] = int(i["AATG"])
             i["TCTAG"] = int(i["TCTAG"])
@@ -30,7 +33,7 @@ def main():
             #i[1:] = int(i[1:])
             print(i)
             #i[1:] = int(i[1:])
-            data.append(i)
+            data.append(i)"""
 
         print(data)
         # type conversation in list of dicts.
