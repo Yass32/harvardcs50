@@ -92,7 +92,7 @@ def main():
     for dicts in data_b:
         i = 0
         for str,num in list(dicts.values())[1:]:
-            if str,num == dna_profile
+            if str,num == dna_profile :
                 continue
             else:
                 pass
