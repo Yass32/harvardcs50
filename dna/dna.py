@@ -16,7 +16,6 @@ def main():
             #data.update(i)
             print(i)
             #i[1:] = int(i[1:])
-            #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             data.append(i)
         print(data)
 
