@@ -30,7 +30,7 @@ def main():
             #i[1:] = int(i[1:])
             data.append(i)"""
 
-        #print(data_b)
+        print(data_b)
         # type conversation in list of dicts.
     """for dicts in data_b:
         for keys in list(dicts.keys())[1:]:
@@ -79,13 +79,13 @@ def main():
     #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
 
     # TODO: Check database for matching profiles
-    for dicts in data_b:
+    """for dicts in data_b:
         for value in list(dicts.values())[1:]:
             if keys in sequence:
-    """for i in csv_reader:
-        if csv_reader[i] == profile:"""
+    for i in csv_reader:
+        if csv_reader[i] == profile:
 
-    return
+    return"""
 
 
 def longest_match(sequence, subsequence):
