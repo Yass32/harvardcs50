@@ -30,7 +30,7 @@ def main():
             #i[1:] = int(i[1:])
             data.append(i)"""
 
-        print(data_b)
+        #print(data_b)
         # type conversation in list of dicts.
     """for dicts in data_b:
         for keys in list(dicts.keys())[1:]:
@@ -40,12 +40,14 @@ def main():
 
     print(data)"""
 
-    sequence = []
+
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as sequence_file:
         txt_reader = sequence_file.read()
 
+    sequence = []
     # TODO: Find longest match of each STR in DNA sequence
+    #Add each STR to a list
     for dicts in data_b:
         for keys in list(dicts.keys())[1:]:
             if keys in sequence:
@@ -54,11 +56,20 @@ def main():
                 sequence.append(keys)
     print(sequence)
 
-    profile = []
+    #Add longest match of each STR to a loop
+    long_match = []
     for i in sequence:
         x = str(longest_match(txt_reader, i))
-        profile.append(x)
-    print(profile)
+        long_match.append(x)
+    print(long_match)
+
+    #Add key value pair to dictionary
+    dna_profile = {}
+    for i in range(len(sequence)):
+        dna_profile[sequence[i]] = long_match[i]
+
+    print(dna_profile)
+
 
     """profile = []
     for i in sequence:
@@ -82,7 +93,7 @@ def main():
     for dicts in data_b:
         i = 0
         for value in list(dicts.values())[1:]:
-            if value == profile[i]:
+            if value == long_match[i]:
                 i += 1
                 continue
             else:
