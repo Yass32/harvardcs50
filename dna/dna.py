@@ -46,7 +46,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
 
     """profile = []
-    for i in range(len(txt_reader)):
+    for i in txt_reader:
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
         AATG_count = longest_match(txt_reader, "AATG")
