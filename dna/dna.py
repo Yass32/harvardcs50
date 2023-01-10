@@ -14,7 +14,8 @@ def main():
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
             i["AGATC"] = int(i["AGATC"])
-            i["TTTTTTCT"] = int(i["TTTTTTCT"])
+            if i["TTTTTTCT"] :
+                i["TTTTTTCT"] = int(i["TTTTTTCT"])
             i["AATG"] = int(i["AATG"])
             i["TCTAG"] = int(i["TCTAG"])
             i["GATA"] = int(i["GATA"])
