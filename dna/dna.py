@@ -48,7 +48,10 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     for dicts in data_b:
         for keys in list(dicts.keys())[1:]:
-            sequence.append(keys)
+            if keys in sequence:
+                pass
+            else:
+                sequence.append(keys)
     print(sequence)
 
     profile = []
