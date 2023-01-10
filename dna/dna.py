@@ -21,7 +21,7 @@ def main():
 
         print(data)
         # type conversation in list of dicts.
-    for dicts in test_list:
+    for dicts in data:
         for keys in dicts:
             dicts[keys] = int(dicts[keys])
 
