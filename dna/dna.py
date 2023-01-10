@@ -11,12 +11,12 @@ def main():
     # TODO: Read database file into a variable
     data = []
     with open(sys.argv[1]) as database_file:
-        csv_reader = csv.reader(database_file) #csv.DictReader
+        csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
             print(i)
             #i[1:] = int(i[1:])
             #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
-            #data.append(i)
+            data.append(i)
         print(data)
 
     sequence = []
