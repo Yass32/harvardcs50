@@ -13,12 +13,12 @@ def main():
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
+            data.update(i)
             print(i)
             #i[1:] = int(i[1:])
             #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             #data.append(i)
             #data.update(i)
-        data.update(i)
         print(data)
 
     sequence = []
