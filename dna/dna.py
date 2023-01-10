@@ -22,7 +22,7 @@ def main():
         print(data)
         # type conversation in list of dicts.
     for dicts in data:
-        for keys in dicts[1:]:
+        for (keys + 1) in dicts:
             dicts[keys] = int(dicts[keys])
 
         print(data)
