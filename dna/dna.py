@@ -9,8 +9,7 @@ def main():
         sys.exit("Error Usage: python dna.py data.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    #data = {}
-    data = dict(name = "", AGATC = "", TTTTTTCT = "", AATG = "", TCTAG = "", GATA = "", TATC = "", GAAA = "", TCTG = "",)
+    data = {}
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
@@ -18,7 +17,8 @@ def main():
             #i[1:] = int(i[1:])
             #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             #data.append(i)
-            data.update(i)
+            #data.update(i)
+        data.update(i)
         print(data)
 
     sequence = []
