@@ -14,6 +14,7 @@ def main():
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
             #data.update(i)
+            i[1:] = int(i[1:])
             print(i)
             #i[1:] = int(i[1:])
             data.append(i)
