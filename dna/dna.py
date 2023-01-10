@@ -13,6 +13,11 @@ def main():
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
+            for j in i.values():
+                if i.isalpha:
+                    pass
+                else:
+                    j = int(j)
             i["AGATC"] = int(i["AGATC"])
             i["TTTTTTCT"] = int(i["TTTTTTCT"])
             i["AATG"] = int(i["AATG"])
