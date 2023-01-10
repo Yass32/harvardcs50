@@ -56,7 +56,7 @@ def main():
 
     profile = []
     for i in sequence:
-        x = longest_match(txt_reader, i)
+        x = str(longest_match(txt_reader, i))
         profile.append(x)
     print(profile)
 
