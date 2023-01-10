@@ -13,6 +13,14 @@ def main():
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.DictReader(database_file) #csv.DictReader
         for i in csv_reader:
+            i["AGATC"] = int(i["AGATC"])
+            i["TTTTTTCT"] = int(i["TTTTTTCT"])
+            i["AATG"] = int(i["AATG"])
+            i["TCTAG"] = int(i["TCTAG"])
+            i["GATA"] = int(i["GATA"])
+            i["TATC"] = int(i["TATC"])
+            i["GAAA"] = int(i["GAAA"])
+            i["TCTG"] = int(i["TCTG"])
             #data.update(i)
             #i[1:] = int(i[1:])
             print(i)
@@ -21,11 +29,11 @@ def main():
 
         print(data)
         # type conversation in list of dicts.
-    for dicts in data:
+    """for dicts in data:
         for keys in list(dicts.values())[1:]:
             dicts[keys] = int(dicts[keys])
 
-    print(data)
+    print(data)"""
 
     sequence = []
     # TODO: Read DNA sequence file into a variable
