@@ -30,7 +30,7 @@ def main():
             #i[1:] = int(i[1:])
             data.append(i)"""
 
-        print(data_b)
+        #print(data_b)
         # type conversation in list of dicts.
     """for dicts in data_b:
         for keys in list(dicts.keys())[1:]:
@@ -51,9 +51,18 @@ def main():
             sequence.append(keys)
     print(sequence)
 
+    profile = []
+    for i in sequence:
+        x = longest_match(txt_reader, i)
+        profile.append(x)
+    print(profile)
+
     """profile = []
     for i in sequence:
-        profile[i] = longest_match(txt_reader, i)
+        x = longest_match(txt_reader, i)
+        profile.append(x)
+
+    print(profile)
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
         AATG_count = longest_match(txt_reader, "AATG")
