@@ -90,7 +90,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for str, num in dna_profile.items():
-        if str,num == list(dicts.values())[1:]
+        if str,num == list(data_b)[1:]
     for dicts in data_b:
         i = 0
         for value in list(dicts.values())[1:]:
