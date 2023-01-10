@@ -93,7 +93,6 @@ def main():
         i = 0
         for str,num in list(dicts.values())[1:]:
             if str,num == dna_profile
-                i += 1
                 continue
             else:
                 pass
