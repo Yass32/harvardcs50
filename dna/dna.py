@@ -52,7 +52,8 @@ def main():
     print(sequence)
 
     """profile = []
-    for i in txt_reader:
+    for i in sequence:
+        profile[i] = longest_match(txt_reader, i)
         AAGATC_count = longest_match(txt_reader, "AAGATC")
         TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
         AATG_count = longest_match(txt_reader, "AATG")
