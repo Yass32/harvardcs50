@@ -81,7 +81,7 @@ def main():
     # TODO: Check database for matching profiles
     """for dicts in data_b:
         for value in list(dicts.values())[1:]:
-            if keys in sequence:
+            if value == profile[] in sequence:
     for i in csv_reader:
         if csv_reader[i] == profile:
 
