@@ -30,7 +30,7 @@ def main():
             #i[1:] = int(i[1:])
             data.append(i)"""
 
-        print(data)
+        print(data_b)
         # type conversation in list of dicts.
     """for dicts in data:
         for keys in list(dicts.values())[1:]:
@@ -44,7 +44,7 @@ def main():
         txt_reader = sequence_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    
+
     """profile = []
     for i in range(len(txt_reader)):
         AAGATC_count = longest_match(txt_reader, "AAGATC")
