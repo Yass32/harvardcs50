@@ -82,8 +82,8 @@ def main():
     i = 0
     for dicts in data_b:
         for value in list(dicts.values())[1:]:
-            if value == profile[i]:
-                i +=1
+            if value  profile[i+1]:
+                i += 1
                 continue
             else:
                 pass
