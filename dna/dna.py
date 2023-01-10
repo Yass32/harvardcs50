@@ -22,10 +22,10 @@ def main():
         print(data)
         # type conversation in list of dicts.
     for dicts in data:
-        for (keys + 1) in dicts:
+        for keys in list(dicts.values())[1:]:
             dicts[keys] = int(dicts[keys])
 
-        print(data)
+    print(data)
 
     sequence = []
     # TODO: Read DNA sequence file into a variable
