@@ -13,9 +13,7 @@ def main():
     with open(sys.argv[1]) as database_file:
         csv_reader = csv.reader(database_file) #csv.DictReader
         for i in csv_reader:
-            for j in i:
-                j[1:] = int(j[1:])
-                data.append(j)
+            print(i)
             #i[1:] = int(i[1:])
             #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             #data.append(i)
