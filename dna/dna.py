@@ -18,7 +18,6 @@ def main():
             #i[1:] = int(i[1:])
             #i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = int(i["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"])
             data.append(i)
-            #data.update(i)
         print(data)
 
     sequence = []
