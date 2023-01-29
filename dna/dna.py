@@ -14,100 +14,39 @@ def main():
         csv_reader = csv.DictReader(database_file)
         for i in csv_reader:
             data_b.append(i)
-
-
-            """i["AGATC"] = int(i["AGATC"])
-            i["TTTTTTCT"] = int(i["TTTTTTCT"])
-            i["AATG"] = int(i["AATG"])
-            i["TCTAG"] = int(i["TCTAG"])
-            i["GATA"] = int(i["GATA"])
-            i["TATC"] = int(i["TATC"])
-            i["GAAA"] = int(i["GAAA"])
-            i["TCTG"] = int(i["TCTG"])
-            #data.update(i)
-            #i[1:] = int(i[1:])
-            print(i)
-            #i[1:] = int(i[1:])
-            data.append(i)"""
-
         #print(data_b)
-        # type conversation in list of dicts.
-    """for dicts in data_b:
-        for keys in list(dicts.keys())[1:]:
-            print(keys)
-            sequence.append(keys)
-            dicts[keys] = int(dicts[keys])
-
-    print(data)"""
-
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as sequence_file:
         txt_reader = sequence_file.read()
 
-    sequence = []
+    sequences = []
     # TODO: Find longest match of each STR in DNA sequence
     #Add each STR to a list
-    for dicts in data_b:
-        for keys in list(dicts.keys())[1:]:
-            if keys in sequence:
-                pass
-            else:
-                sequence.append(keys)
-    print(sequence)
+    sequences = list(data_b[0].keys())[1:]
+    #print(sequences)
 
-    #Add longest match of each STR to a loop
-    long_match = []
-    for i in sequence:
-        x = str(longest_match(txt_reader, i))
-        long_match.append(x)
-    print(long_match)
-
-    #Add key value pair to dictionary
     dna_profile = {}
-    for i in range(len(sequence)):
-        dna_profile[sequence[i]] = long_match[i]
-    print(dna_profile)
-
-
-    """profile = []
-    for i in sequence:
-        x = longest_match(txt_reader, i)
-        profile.append(x)
-
-    print(profile)
-        AAGATC_count = longest_match(txt_reader, "AAGATC")
-        TTTTTTCT_count = longest_match(txt_reader, "TTTTTTCT")
-        AATG_count = longest_match(txt_reader, "AATG")
-        TCTAG_count = longest_match(txt_reader, "TCTAG")
-        GATA_count = longest_match(txt_reader, "GATA")
-        TATC_count = longest_match(txt_reader, "TATC")
-        GAAA_count = longest_match(txt_reader, "GAAA")
-        TCTG_count = longest_match(txt_reader, "TCTG")
-    profile.append(AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count)
-    print(profile)"""
-    #profile["AGATC","TTTTTTCT","AATG","TCTAG","GATA","TATC","GAAA","TCTG"] = [AAGATC_count, TTTTTTCT_count, AATG_count, TCTAG_count, GATA_count, TATC_count, GAAA_count, TCTG_count]
+    for sequence in sequences:
+        dna_profile[sequence] = longest_match(txt_reader, sequence)
+    #print(dna_profile)
 
     # TODO: Check database for matching profiles
-    for dicts in data_b:
-        i = 0
-        for str,num in list(dicts.values())[1:]:
-            if str,num == dna_profile :
-                continue
+    for profile in data_b:
+        match = 0
+        for sequence in sequences :
+            if int(profile[sequence]) == dna_profile[sequence] :
+                match =  match + 1
             else:
                 pass
-        return list(dicts.keys())[0]
-    """for dicts in data_b:
-        for value in list(dicts.values())[1:]:
-            if value == profile[i]:
-                i +=1
-                continue
-            else:
-                pass
-    for i in csv_reader:
-        if csv_reader[i] == profile:
 
-    return"""
+        #Check if all the sequences match:
+        if match == len(sequences):
+            print(profile["name"])
+            return
+
+    #If all profiles has been checked and no match
+    print("No match")
 
 
 def longest_match(sequence, subsequence):

@@ -23,7 +23,7 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:7a4093ea58e0f5e3f4b3e34cc7e52c29f841a09e",
+  "image": "ghcr.io/cs50/codespace:f16c7548115aed264f416b1ac4959cf176d66190",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
@@ -70,7 +70,7 @@
     "extension-uninstaller.uninstall": [
       "github.copilot",
       "github.copilot-nightly",
-      "ms-toolsai.jupyter",
+      "ms-toolsai.vscode-jupyter-cell-tags",
       "tabnine.tabnine-vscode"
     ],
     "extensions.ignoreRecommendations": true,
