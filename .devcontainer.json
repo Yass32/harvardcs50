@@ -23,8 +23,13 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:f16c7548115aed264f416b1ac4959cf176d66190",
+  "image": "ghcr.io/cs50/codespace:ff5f343b6bb02a376904405805099dcc6abe9134",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
+  "remoteEnv": {
+    "CS50_GH_USER": "${localEnv:GITHUB_USER}",
+    "GH_TOKEN": "${localEnv:CS50_TOKEN}",
+    "TZ": "${localEnv:CS50_TZ}"
+  },
   "settings": {
     "C_Cpp.autocomplete": "Disabled",
     "C_Cpp.codeFolding": "Disabled",
