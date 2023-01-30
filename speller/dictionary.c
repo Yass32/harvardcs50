@@ -42,7 +42,7 @@ bool load(const char *dictionary)
     {
         node *word_node = malloc(sizeof(node));
 
-        strcpy(word_node->buffer, buffer);
+        strcpy(word_node->word, buffer);
         word_node->next = table[hash(buffer)];
         table[hash(buffer)] = word_node;
     }
