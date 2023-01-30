@@ -35,12 +35,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char buffer = char word[LENGTH + 1];
-    /*while (fgets(buffer, sizeof(buffer), dict_file)) //Read each lines of the dictionary
-    {
-    }*/
-
-    while (fscanf(dict_file, "%s", buffer) != 0) //Read strings from file one at a time
+    while (fscanf(dict_file, "%s", word) != EOF) //Read strings from file one at a time
     {
         node *new_node = malloc(sizeof(node)); //Create a new node for each word
 
