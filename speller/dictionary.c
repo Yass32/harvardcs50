@@ -30,7 +30,7 @@ bool load(const char *dictionary)
     }
 
     fclose(dict_file)
-    return false;
+    return true;
 }
 
 // Hashes word to a number
