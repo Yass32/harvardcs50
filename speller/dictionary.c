@@ -32,7 +32,7 @@ bool load(const char *dictionary)
     }
 
     char buffer[LENGTH + 1];
-    while (fread(buffer, sizeof(char), 512, file)) //Read blocks of 512 bytes
+    while (fread(buffer, sizeof(char), 1, dict_file)) //Read blocks of 512 bytes
     {
       //Check if bytes indicates that its a jpeg file
       if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
