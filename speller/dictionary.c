@@ -22,19 +22,14 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
-//Allocate memory for a new node
-node *new_node = malloc(sizeof(node));
+/*Allocate memory for a new node
+node *new_node = malloc(sizeof(node));*/
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dict_file = fopen(dictionary, "r"); //Open file
-
-    if (dict_file == NULL) //Check if file is valid to read
-    {
-      return false;
-    }
+    FILE *dict_file = fopen(dictionary, "r"); //Open dictionary file
 
     char buffer[LENGTH + 1];
     /*while (fread(buffer, sizeof(char), 1, dict_file)) //Read each lines of the dictionary
@@ -43,7 +38,7 @@ bool load(const char *dictionary)
 
     while (fscanf(dict_file, "%s", buffer) != 0)
     {
-        //node *word_node = malloc(sizeof(node));
+        node *new_node = malloc(sizeof(node));
 
         strcpy(word_node->word, buffer);
         word_node->next = table[hash(buffer)];
