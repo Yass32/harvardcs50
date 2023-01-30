@@ -1,4 +1,5 @@
 // Implements a dictionary's functionality
+#include <stdio.h>
 
 #include <ctype.h>
 #include <stdbool.h>
@@ -23,14 +24,14 @@ node *table[N];
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *dictfile = fopen(dictionary, "r"); //Open file
+    FILE *dict_file = fopen(dictionary, "r"); //Open file
 
-    if (dictfile == NULL) //Check if file is valid to read
+    if (dict_file == NULL) //Check if file is valid to read
     {
       return false;
     }
 
-    fclose(dictfile);
+    fclose(dict_file);
     return true;
 }
 
