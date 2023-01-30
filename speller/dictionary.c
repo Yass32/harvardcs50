@@ -40,9 +40,9 @@ bool load(const char *dictionary)
     {
         node *word_node = malloc(sizeof(node));
 
-        strcpy(new_node->word, word);
-        new_node->next = hashtable[hash(word)];
-        hashtable[hash(word)] = new_node;
+        strcpy(word_node->buffer, buffer);
+        word_node->next = table[hash(buffer)];
+        table[hash(buffer)] = word_node;
     }
 
     fclose(dict_file);
