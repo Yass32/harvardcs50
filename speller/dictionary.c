@@ -30,6 +30,10 @@ bool load(const char *dictionary)
 {
     // TODO
     FILE *dict_file = fopen(dictionary, "r"); //Open dictionary file
+    if (file == NULL)
+    {
+        return false;
+    }
 
     char buffer = char word[LENGTH + 1];
     /*while (fgets(buffer, sizeof(buffer), dict_file)) //Read each lines of the dictionary
