@@ -23,11 +23,13 @@ node *table[N];
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *file_dict = fopen(dictionary, "r"); //Open file
-    if (file == NULL) //Check if file is valid to read
+    FILE *dict_file= fopen(dictionary, "r"); //Open file
+    if (dict_file == NULL) //Check if file is valid to read
     {
       return false;
     }
+
+    fclose(dict_file)
     return false;
 }
 
