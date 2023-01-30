@@ -38,9 +38,7 @@ bool load(const char *dictionary)
 
     while (fscanf(dict_file, "%s", buffer) != EOF)
     {
-        node *new_node = malloc(sizeof(node));
-        if (new_node == NULL)
-            return false;
+        node *word_node = malloc(sizeof(node));
 
         strcpy(new_node->word, word);
         new_node->next = hashtable[hash(word)];
