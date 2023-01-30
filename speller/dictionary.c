@@ -29,7 +29,7 @@ bool load(const char *dictionary)
       return false;
     }
 
-    fclose(dict_file)
+    fclose(dict_file);
     return true;
 }
 
