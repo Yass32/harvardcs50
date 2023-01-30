@@ -22,6 +22,9 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+//Allocate memory for a new node
+node *new_node = malloc(sizeof(node));
+
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
@@ -40,7 +43,7 @@ bool load(const char *dictionary)
 
     while (fscanf(dict_file, "%s", buffer) != 0)
     {
-        node *word_node = malloc(sizeof(node));
+        //node *word_node = malloc(sizeof(node));
 
         strcpy(word_node->word, buffer);
         word_node->next = table[hash(buffer)];
