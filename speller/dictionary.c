@@ -36,9 +36,9 @@ bool load(const char *dictionary)
     {
     }*/
 
-    while (fscanf(dict_file, "%s", buffer) != 0)
+    while (fscanf(dict_file, "%s", buffer) != 0) //Read strings from file one at a time
     {
-        node *new_node = malloc(sizeof(node));
+        node *new_node = malloc(sizeof(node)); //
 
         strcpy(word_node->word, buffer);
         word_node->next = table[hash(buffer)];
