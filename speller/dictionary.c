@@ -36,7 +36,16 @@ bool load(const char *dictionary)
     {
     }*/
 
-    
+    while (fscanf(dict_file, "%s", buffer) != EOF)
+    {
+        node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
+            return false;
+
+        strcpy(new_node->word, word);
+        new_node->next = hashtable[hash(word)];
+        hashtable[hash(word)] = new_node;
+    }
 
     fclose(dict_file);
     return true;
