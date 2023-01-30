@@ -1,5 +1,6 @@
 // Implements a dictionary's functionality
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <ctype.h>
 #include <stdbool.h>
@@ -32,7 +33,7 @@ bool load(const char *dictionary)
     }
 
     char buffer[LENGTH + 1];
-    /*while (fread(buffer, sizeof(char), 1, dict_file)) //Read blocks of 512 bytes
+    /*while (fread(buffer, sizeof(char), 1, dict_file)) //Read each lines of the dictionary
     {
     }*/
 
