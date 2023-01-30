@@ -31,7 +31,7 @@ bool load(const char *dictionary)
     // TODO
     FILE *dict_file = fopen(dictionary, "r"); //Open dictionary file
 
-    char buffer[LENGTH + 1];
+    char buffer = char word[LENGTH + 1];
     /*while (fread(buffer, sizeof(char), 1, dict_file)) //Read each lines of the dictionary
     {
     }*/
