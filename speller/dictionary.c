@@ -113,13 +113,13 @@ bool unload(void)
     for (int i = 1; i <= N; i++)
     {
         node *cursor = table[i];
-        while (cursor != NULL)
+        while (cursor != NULL) //Freeing linked lists
         {
             node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
         }
-        retrun true;
+        return true;
     }
     return false;
 }
