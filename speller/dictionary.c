@@ -121,8 +121,9 @@ bool unload(void)
                 cursor = cursor->next;
                 free(tmp);
             }
+            retrun true;
         //}
-        return true;
+        return false;
 
         /*while (cursor != NULL)
         {
