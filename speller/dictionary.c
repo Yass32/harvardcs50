@@ -112,106 +112,14 @@ bool unload(void)
     // TODO
     for (int i = 1; i <= N; i++)
     {
-        //if (table[i] != NULL)
-        //{
-            node *cursor = table[i];
-            while (cursor != NULL)
-            {
-                node *tmp = cursor;
-                cursor = cursor->next;
-                free(tmp);
-            }
-            retrun true;
-        //}
-        return false;
-
-        /*while (cursor != NULL)
+        node *cursor = table[i];
+        while (cursor != NULL)
         {
             node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
         }
-
-        if (tmp == NULL && cursor == NULL)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
+        retrun true;
     }
     return false;
 }
-
-
-
-/*
-unsigned int hash(const char *word)
-{
-    unsigned int hash = 0;
-    for (int i = 0, n = strlen(word); i < n; i++)
-        hash = (hash << 2) ^ word[i];
-    return hash % HASHTABLE_SIZE;
-}
-
-bool load(const char *dictionary)
-{
-    // Initialize hash table
-    for (int i = 0; i < HASHTABLE_SIZE; i++)
-        hashtable[i] = NULL;
-
-    // Open dictionary
-    FILE *file = fopen(dictionary, "r");
-    if (file == NULL)
-        return false;
-
-    // Buffer for a word
-    char word[LENGTH + 1];
-
-    // Insert words into hash table
-    while (fscanf(file, "%s", word) != EOF)
-    {
-        node *new_node = malloc(sizeof(node));
-        if (new_node == NULL)
-            return false;
-
-        strcpy(new_node->word, word);
-        new_node->next = hashtable[hash(word)];
-        hashtable[hash(word)] = new_node;
-    }
-
-    // Close dictionary
-    fclose(file);
-
-    // Indicate success
-    return true;
-}
-
-bool check(const char *word)
-{
-    node *cursor = hashtable[hash(word)];
-    while (cursor != NULL)
-    {
-        if (strcasecmp(cursor->word, word) == 0)
-            return true;
-        cursor = cursor->next;
-    }
-    return false;
-}
-
-unsigned int size(void)
-{
-    unsigned int count = 0;
-    for (int i = 0; i < HASHTABLE_SIZE; i++)
-    {
-        node *cursor = hashtable[i];
-        while (cursor != NULL)
-        {
-            count++;
-            cursor = cursor->next;
-        }
-    }
-    return count;
-}
-*/
