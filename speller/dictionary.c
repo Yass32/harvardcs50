@@ -66,7 +66,7 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     //return toupper(word[0]) - 'A';
-    int value = strlen(word) % N; //Using hash function example 3; Math using all letters
+    int value = strlen(word) % N; //Got some insight from Javatpoint.com and used hash function example 3; Math using all letters
     if(value > N)
     {
         return value % N;
