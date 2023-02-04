@@ -1,0 +1,2 @@
+
+A better way this aura might be by finding the song with the highest energy, valence and danceability values
