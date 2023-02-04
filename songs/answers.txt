@@ -1,2 +1,2 @@
-I would characterize their audio aura 
+I would characterize their audio aura by setting the most common aura mood at the top and the least common at the bottom
 A better way this aura might be by finding the song with the highest energy, valence and danceability values
