@@ -3,20 +3,8 @@
 
 SELECT movies.title, ratings.rating
 FROM movies
-JOIN ratings ON movies.id = ratings.movie_id
-
-
-SELECT * FROM (
-    SELECT title FROM movies
-    WHERE year = 2010
-    ORDER BY title
-    )
-UNION
-SELECT * FROM (
-    SELECT rating FROM ratings
-    WHERE movie_id IN (SELECT id FROM movies WHERE year = 2010)
-    ORDER BY rating DESC
-    );
+FULL OUTER JOIN ratings ON movies.id = ratings.movie_id
+ORDER BY ratings.rating DESC, movies.title;
 
 
 --(SELECT title AS titles1 FROM movies WHERE year = 2010)
