@@ -11,5 +11,5 @@ CREATE TABLE NewTable AS
 CREATE TABLE new_table AS
 SELECT titles1, ratings1
 FROM movies
-JOIN ratings
-ON table1.column = table2.column;
+JOIN ratings;
+--ON table1.column = table2.column;
