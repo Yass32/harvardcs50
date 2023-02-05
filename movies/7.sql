@@ -3,7 +3,7 @@
 
 SELECT movies.title, ratings.rating
 FROM movies
-JOIN ratings ON 
+JOIN ratings ON movies.id = ratings.movie_id
 
 
 SELECT * FROM (
