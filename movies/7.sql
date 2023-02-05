@@ -7,3 +7,9 @@ FROM customers;
 CREATE TABLE NewTable AS
 (SELECT title AS titles1 FROM movies WHERE year = 2010 ORDER BY title )
 (SELECT rating AS ratings1 FROM ratings WHERE movie_id IN (SELECT id FROM movies WHERE year = 2010) ORDER BY rating DESC) ;
+
+CREATE TABLE new_table AS
+SELECT titles1, ratings1
+FROM movies
+JOIN ratings
+ON table1.column = table2.column;
