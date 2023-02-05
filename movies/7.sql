@@ -3,7 +3,7 @@
 
 SELECT movies.title, ratings.rating
 FROM movies
-FULL OUTER JOIN ratings ON movies.id = ratings.movie_id
+JOIN ratings ON movies.id = ratings.movie_id
 ORDER BY ratings.rating DESC, movies.title;
 
 
