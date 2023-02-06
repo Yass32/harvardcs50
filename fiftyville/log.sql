@@ -23,6 +23,6 @@ SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND 
 --I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 
 --Check atm withdrawal transactions made on legget street
-SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw' AND 25;
+SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
 
 
