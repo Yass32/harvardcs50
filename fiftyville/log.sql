@@ -71,7 +71,7 @@ SELECT city FROM airports WHERE id IN (
         SELECT id FROM airports WHERE city = 'Fiftyville'
     ) AND day = 29 AND month = 7 AND hour = 8
 );
-
+--NEW York City
 
 SELECT destination_airport_id FROM flights WHERE origin_airport_id IN (
     SELECT id FROM airports WHERE city = 'Fiftyville'
@@ -86,3 +86,8 @@ SELECT name FROM people WHERE passport_number IN (
         ) AND day = 29 AND month = 7 AND hour = 8
     )
 );
+
+--Check for accomplice by finding who called Bruce
+SELECT receiver FROM phone_calls WHERE caller IN (
+    SELECT phone_number FROM people WHERE name = 'Bruce'
+)
