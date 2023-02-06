@@ -3,4 +3,4 @@
 --Convert database to excel to better understand the tables and their interconnections
 
 --Get Crime report for the day time and place the crime took place
-SELECT description FROM crime_scene_reports WHERE day = 2
+SELECT description FROM crime_scene_reports WHERE day = 28 A
