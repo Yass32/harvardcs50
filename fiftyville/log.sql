@@ -48,4 +48,4 @@ SELECT name FROM people WHERE id IN (
 --The thief then asked the person on the other end of the phone to purchase the flight ticket.
 
 --Check calls on the day of theft that lasted less than 60 secs
-SELECT caller FROM 
+SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60;
