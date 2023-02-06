@@ -53,7 +53,7 @@ SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60;
 
 --Check owners of numbers
 SELECT name FROM people WHERE phone_number IN (
-    SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60
+    SELECT caller FROM phone_calls WHERE day = 28 AND month = 7 AND duration < 60
 );
 --Owners [Kenny, Sofia, Benista, Taylor, Diana, Kelsey, Bruce, Carina]
 
@@ -61,3 +61,8 @@ SELECT name FROM people WHERE phone_number IN (
 ---MAIN SUSPECTS [Diana, Bruce]
 
 
+--Get fiftyville airport id
+SELECT id FROM airports WHERE city = 'Fiftyville';
+
+--Check for all early flights leaving fiftyville on july 29
+SELECT destination_airport_id FROM flights WHERE  day = 28 AND month = 7 AND hour
