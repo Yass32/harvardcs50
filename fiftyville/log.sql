@@ -49,4 +49,10 @@ SELECT name FROM people WHERE id IN (
 
 --Check calls on the day of theft that lasted less than 60 secs
 SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60;
--- Suspects Number [(130) 555-0289, (499) 555-9472, (367) 555-5533, (499) 555-9472, (286) 555-6063, (770) 555-1861, (031) 555-6622, ]
+-- Suspects Number [(130) 555-0289, (499) 555-9472, (367) 555-5533, (499) 555-9472, (286) 555-6063, (770) 555-1861, (031) 555-6622, (826) 555-1652, (338) 555-6650]
+
+--Check owners of numbers
+SELECT name FROM people WHERE phone_number IN (
+    SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60
+);
+--Owners []
