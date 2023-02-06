@@ -65,8 +65,8 @@ SELECT name FROM people WHERE phone_number IN (
 SELECT id FROM airports WHERE city = 'Fiftyville';
 -- 8
 
---Check for all early flights leaving fiftyville on july 29
-SELECT destination_airport_id, id FROM flights WHERE origin_airport_id IN (
+--Check destination for all early flights leaving fiftyville on july 29
+SELECT destination_airport_id FROM flights WHERE origin_airport_id IN (
     SELECT id FROM airports WHERE city = 'Fiftyville'
 ) AND day = 29 AND month = 7 AND hour = 8;
 -- 4, 36
