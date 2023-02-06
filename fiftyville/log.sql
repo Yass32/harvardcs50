@@ -38,7 +38,7 @@ SELECT name FROM people WHERE id IN (
         SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw'
     )
 );
---Suspect acc number owners []
+--Suspect acc number owners [Kenny, Iman, Benista, Taylor, Brooke, Luca, Diana, Bruce]
 
 --According to Raymond(witness 3)As the thief was leaving the bakery, they called someone who talked to them for less than a minute.
 --In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
