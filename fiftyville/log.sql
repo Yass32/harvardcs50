@@ -22,7 +22,7 @@ SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND 
 SELECT name FROM people WHERE license_plate IN (
     SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND hour = 10 AND minute BETWEEN 15 AND 25 ORDER BY minute
 );
-
+--Suspects [Vanessa, Barry, Iman, Sofia, Luca, Diana, Kelsey, Bruce]
 
 
 --According to Eugene(witness 2) I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
@@ -30,7 +30,9 @@ SELECT name FROM people WHERE license_plate IN (
 
 --Check atm withdrawal transactions made on legget street
 SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
--- Suspect acc number [28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199]
+--Suspect acc number [28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199]
+
+--Check for owners of account numbers
 
 
 --According to Raymond(witness 3)As the thief was leaving the bakery, they called someone who talked to them for less than a minute.
