@@ -72,3 +72,10 @@ SELECT destination_airport_id, id FROM flights WHERE origin_airport_id IN (
 -- 4, 36
 
 --Check for name using passport number gotten by flight id
+SELECT name FROM people WHERE passport_number IN (
+    SELECT passport_number FROM passengers WHERE flight_id IN (
+        SELECT id FROM flights WHERE origin_airport_id IN (
+            SELECT id FROM airports WHERE city = 'Fiftyville'
+        ) AND day = 29 AND month = 7 AND hour = 8
+    )
+);
