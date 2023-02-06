@@ -56,3 +56,8 @@ SELECT name FROM people WHERE phone_number IN (
     SELECT caller FROM phone_calls  WHERE day = 28 AND month = 7 AND duration < 60
 );
 --Owners [Kenny, Sofia, Benista, Taylor, Diana, Kelsey, Bruce, Carina]
+
+
+---MAIN SUSPECTS [Diana, Bruce]
+
+
