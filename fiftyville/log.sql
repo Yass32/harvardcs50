@@ -22,3 +22,5 @@ SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND 
 --According to Eugene(witness 2) I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
 --I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 
+
+
