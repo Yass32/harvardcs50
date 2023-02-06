@@ -68,4 +68,5 @@ SELECT id FROM airports WHERE city = 'Fiftyville';
 --Check for all early flights leaving fiftyville on july 29
 SELECT destination_airport_id, hour FROM flights WHERE origin_airport_id IN (
     SELECT id FROM airports WHERE city = 'Fiftyville'
-) AND day = 28 AND month = 7 AND hour = 8;
+) AND day = 29 AND month = 7 AND hour = 8;
+-- 4
