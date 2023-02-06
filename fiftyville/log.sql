@@ -27,3 +27,6 @@ SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm
 -- Suspect acc number [28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199]
 
 
+--According to Raymond(witness 3)As the thief was leaving the bakery, they called someone who talked to them for less than a minute.
+--In the call, I heard the thief say that they were planning to take the earliest flight out of Fiftyville tomorrow.
+--The thief then asked the person on the other end of the phone to purchase the flight ticket.
