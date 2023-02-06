@@ -15,8 +15,14 @@ SELECT transcript FROM interviews WHERE day = 28 AND month = 7;
 --If you have security footage from the bakery parking lot, you might want to look for cars that left the parking lot in that time frame.
 
 --Check bakery security log for cars exiting within 10mins of 10:15
-SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND hour = 10 AND minute BETWEEN 15 AND 25;
+SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND hour = 10 AND minute BETWEEN 15 AND 25 ORDER BY minute;
 --Suspect plates [5P2BI95, 94KL13X, 6P58WS2, 4328GD8, G412CB7, L93JTIZ, 322W7JE, 0NTHK55]
+
+--Check for owners of suspect license plate
+SELECT name FROM people WHERE license_plate IN (
+    SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND hour = 10 AND minute BETWEEN 15 AND 25 ORDER BY minute
+);
+
 
 
 --According to Eugene(witness 2) I don't know the thief's name, but it was someone I recognized. Earlier this morning, before I arrived at Emma's bakery,
