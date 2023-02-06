@@ -3,4 +3,6 @@
 --Convert database to excel to better understand the tables and their interconnections
 
 --Get Crime report for the day time and place the crime took place
-SELECT description FROM crime_scene_reports WHERE day = 28 AND month = 7 AND street = 'Humphrey st
+SELECT description FROM crime_scene_reports WHERE day = 28 AND month = 7 AND street = 'Humphrey Street';
+
+--
