@@ -24,5 +24,13 @@ SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND 
 
 --Check atm withdrawal transactions made on legget street
 SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+-- Suspect acc number [28500762,76054385, 49610011, 16153065, 25506511, 81061156, 26013199      |
+| 28296815       |
+| 76054385       |
+| 49610011       |
+| 16153065       |
+| 25506511       |
+| 81061156       |
+| 26013199]
 
 
