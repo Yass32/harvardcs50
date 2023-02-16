@@ -62,7 +62,7 @@ input[type="text"]:hover {
 }
 
 button:hover {
-    f
+    font-weight: bold;
 }
 
 button:active {
