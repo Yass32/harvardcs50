@@ -10,8 +10,9 @@
             document.addEventListener('DOMContentLoaded', function() {
                 let button = document.querySelector("button");
                 button.addEventListener("click", function() {
-                    let mcq = document.querySelector(".mcq");
-                    if (mcq.value == "wrong")
+                    let mcqw = document.querySelector("#wrong");
+                    let mcqc = document.querySelector("#correct");
+                    if (mcqw)
                     {
                         button.style.backgroundColor = "red";
                     }
