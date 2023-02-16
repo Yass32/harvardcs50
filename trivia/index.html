@@ -7,17 +7,24 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+
+            //Read whole Document Object Model from top to bottom
             document.addEventListener('DOMContentLoaded', function() {
+
+            //When the correct button is clicked change color and add feedback
                 const correct = document.querySelector("#correct");
                 correct.addEventListener("click", function() {
                     correct.style.backgroundColor = "green";
                     document.querySelector("#feedback1").innerHTML = "Correct";
                 });
 
-                const wrong = document.querySelectorAll("#wrong");
-                wrong.addEventListener("click", function() {
-                    correct.style.backgroundColor = "red";
+            //When the incorrect button is clicked change color and add feedback
+                const incorrect = document.querySelectorAll("#wrong");
+                for (let i = 0; i < incorrect.lenght; i++) {
+                    incorrect.addEventListener("click", function() {
+                        incorrect.style.backgroundColor = "red";
                 });
+                }
             });
         </script>
     </head>
@@ -33,10 +40,10 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Who was the first president of the United States of America?</h3>
                 <br>
-                <button id="wrong">Barack Obama</button>
-                <button id="wrong">Franklin Pierce</button>
-                <button id="wrong">Bill Clinton</button>
-                <button id="wrong">Abraham Lincoln</button>
+                <button id="incorrect">Barack Obama</button>
+                <button id="incorrect">Franklin Pierce</button>
+                <button id="incorrect">Bill Clinton</button>
+                <button id="incorrect">Abraham Lincoln</button>
                 <button id="correct">George Washington</button>
                 <br>
                 <p id="feedback1"></p>
