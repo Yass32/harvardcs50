@@ -34,9 +34,11 @@
                     const input = querySelector("input")
                     if (input.value === "1939") {
                         answer.style.backgroundColor = "green";
+                        document.querySelector("#feedback2").innerHTML = "Correct";
                     }
                     else {
                         answer.style.backgroundColor = "red";
+                        ducoment.querySelector("#feedback2").innerHTML = "Incorrect";
                     }
                 })
             });
