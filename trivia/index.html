@@ -19,11 +19,13 @@
                 });
 
             //When the incorrect button is clicked change color and add feedback
-                const incorrect = document.querySelectorAll("#wrong");
-                for (let i = 0; i < incorrect.lenght; i++) {
-                    incorrect.addEventListener("click", function() {
-                        incorrect.style.backgroundColor = "red";
-                });
+                const incorrect = document.querySelectorAll("#incorrect");
+                for (let i = 0; i < incorrect.length; i++)
+                {
+                    incorrect[i].addEventListener("click", function() {
+                        incorrect[i].style.backgroundColor = "red";
+                        document.querySelector("#feedback2").innerHTML = "Incorrect";
+                        });
                 }
             });
         </script>
