@@ -9,9 +9,8 @@
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelector("button").addEventListener("click", function() {
-                    let mcq = document.querySelectorAll(".mcq").value;
-                    let mcq = document.querySelectorAll(".mcq").value;
-                    if (mcq == wrong)
+                    let mcq = document.querySelectorAll("#id").value;
+                    if (mcq == "wrong")
                     {
                         f
                     }
@@ -57,7 +56,7 @@
                 <br>
                 <textarea rows="6" cols="50" maxlength="80"></textarea>
                 <br>
-                <button>Submit</button>
+                <button id = year>Submit</button>
             </div>
         </div>
     </body>
