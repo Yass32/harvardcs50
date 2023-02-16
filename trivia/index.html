@@ -8,8 +8,9 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function() {
-                const button = document.querySelector("button").addEventListener("click", function() {
-                    let mcq = document.querySelectorAll("#id").value;
+                let button = document.querySelector("button");
+                button.addEventListener("click", function() {
+                    let mcq = document.querySelector("#id").value;
                     if (mcq == "wrong")
                     {
                         button.style.backgroundColor = "red";
@@ -20,7 +21,6 @@
                     }
                 });
             });
-
         </script>
     </head>
     <body>
