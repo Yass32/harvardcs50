@@ -38,13 +38,15 @@
                     }
                     else {
                         answer.style.backgroundColor = "red";
-                        ducoment.querySelector("#feedback2").innerHTML = "Incorrect";
+                        document.querySelector("#feedback2").innerHTML = "Incorrect";
                     }
                 })
 
 
                 cont submit = document.querySelector("#submit");
-                submit.addEventListener("click", function())
+                submit.addEventListener("click", function() {
+                    submit.style.backgroundColor = "green";
+                })
             });
         </script>
     </head>
