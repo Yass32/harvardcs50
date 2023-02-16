@@ -10,17 +10,12 @@
             document.addEventListener('DOMContentLoaded', function() {
                 const correct = document.querySelector("#correct");
                 correct.addEventListener("click", function() {
+                    button.style.backgroundColor = "green";
+                });
+
+                const wrong = document.querySelector("#wrong");
+                wrong.addEventListener("click", function() {
                     button.style.backgroundColor = "red";
-                    let mcqw = document.querySelector("#wrong");
-                    let mcqc = document.querySelector("#correct");
-                    if (mcqw)
-                    {
-                        button.style.backgroundColor = "red";
-                    }
-                    else
-                    {
-                        button.style.backgroundColor = "green";
-                    }
                 });
             });
         </script>
