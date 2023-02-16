@@ -32,6 +32,12 @@
                 const answer = document.querySelector("#check");
                 answer.addEventListener("click", function() {
                     const input = querySelector("input")
+                    if (input.value === "1939") {
+                        answer.style.backgroundColor = "green";
+                    }
+                    else {
+                        answer.style.backgroundColor = ""
+                    }
                 })
             });
         </script>
