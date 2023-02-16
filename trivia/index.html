@@ -31,7 +31,7 @@
             //Check whether the answer submitted in the textfield is correct
                 const answer = document.querySelector("#check");
                 answer.addEventListener("click", function() {
-                    const input = querySelector("input")
+                    const input = document.querySelector("input")
                     if (input.value === "1939") {
                         answer.style.backgroundColor = "green";
                         document.querySelector("#feedback2").innerHTML = "Correct";
