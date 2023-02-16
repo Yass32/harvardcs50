@@ -51,12 +51,12 @@ button, input[type="submit"] {
 }
 
 
-input[type="text"] {
+input[type="text"], textarea {
     line-height: 1.8;
     width: 25%;
 }
 
-input[type="text"]:hover {
+input[type="text"]:hover, textarea:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
