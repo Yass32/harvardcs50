@@ -15,7 +15,6 @@ grid-template-rows: 100vh;
 .sidebar {
 padding: 10px;
 text-align: center;
-position: fixed;
 width: 20vw;
 height: 100vh;
 background-color:  #1034A6;
