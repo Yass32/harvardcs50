@@ -1,0 +1,140 @@
+body {
+    font-family: Saira Extra Condensed;
+    margin: 0;
+}
+
+/* Define the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 100vh;
+}
+
+
+/* Style the sidebar */
+.sidebar {
+  padding: 10px;
+  text-align: center;
+  width: 20vw;
+  height: 100vh;
+  background-color:  #1034A6;
+}
+
+
+/* Style the main content area */
+.main {
+  background-color: #fff;
+  border: 1px solid rgb(192, 32, 32);
+  text-align: justify;
+  padding: 5%;
+}
+
+img[class] {
+  border-radius: 50%;
+  height: 25vh;
+  width: 13vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: center;
+  justify-content: center;
+}
+
+hr {
+  position: relative;
+  top: 20px;
+  border: none;
+  height: 3px;
+  background: #495057;
+  margin-bottom: 50px;
+}
+
+.blue {color: #1034A6;}
+
+#gradient {
+  background: -webkit-linear-gradient(#1034A6, #495057);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+
+/*Remove default characteristics of <a>*/
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top:50%;
+  bottom:50%;
+  font-weight: bold;
+}
+
+.sidebar li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: black;
+  padding: 10px;
+}
+
+.page-transition {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+  /* Your CSS styles for smaller screens go here */
+  body {
+    font-size: 2vw;
+  }
+}
