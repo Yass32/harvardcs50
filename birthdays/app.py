@@ -42,7 +42,7 @@ def index():
         '''name = db.execute("SELECT name FROM birthdays")
         month = db.execute("SELECT month FROM birthdays")
         day = db.execute("SELECT day FROM birthdays")'''
-        birthday = db.execute("SELECT * FROM birthdays")
-        return render_template("index.html", birthday=birthday) #name=name, month=month, day=day)
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", birthdays=birthdays) #name=name, month=month, day=day)
 
 
