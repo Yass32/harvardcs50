@@ -12,7 +12,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
-ENTRIES = db.execute(SELEC)
+#ENTRIES = db.execute(SELEC)
 
 
 @app.after_request
@@ -40,7 +40,8 @@ def index():
 
         # TODO: Display the entries in the database on index.html
         name = db.execute("SELECT name FROM birthdays")
-        birthday = db.execute("SELECT month, day FROM birthdays")
-        return render_template("index.html", name=name, birthday=birthday)
+        month = db.execute("SELECT month FROM birthdays")
+        day = db.execute("SELECT day FROM birthdays")
+        return render_template("index.html", name=name, month=month, day=day)
 
 
