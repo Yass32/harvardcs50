@@ -37,8 +37,8 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for name in ENTRIES %}
                             <tr>
-                                <td>{{name}}</td>
-                                <td>{{month}} / {{day}}</td>
+                                <td>{{ENTRIES[name]}}</td>
+                                <td>{{ENTRIES[month]}} / {{ENTRIES[day]}}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
