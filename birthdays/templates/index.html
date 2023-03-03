@@ -35,10 +35,10 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        {% for i in {{birthdays}} %}
+                        {% for birthday in birthdays %}
                             <tr>
-                                <td>{{birthdays[i]["name"]}}</td>
-                                <td>{{birthdays[i][month]}} / {{birthdays[i][day]}}</td>
+                                <td>{{birthday.name}}</td>
+                                <td>{{birthday.month}}/{{birthday.day}}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
