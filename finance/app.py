@@ -120,6 +120,7 @@ def register():
         j
 
     username = request.form.get("username")
+    password = request.
     return apology("TODO")
 
 
