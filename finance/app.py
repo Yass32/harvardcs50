@@ -115,7 +115,6 @@ def quote():
 def register():
     """Register user"""
     username = request.form.get("username")
-    
     return apology("TODO")
 
 
