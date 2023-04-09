@@ -96,6 +96,8 @@ def login():
 @app.route("/logout")
 def logout():
     """Log user out"""
+    if request.method == POST:
+        j
 
     # Forget any user_id
     session.clear()
@@ -114,7 +116,7 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    
+
     username = request.form.get("username")
     return apology("TODO")
 
