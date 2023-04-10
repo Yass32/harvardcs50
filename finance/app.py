@@ -123,6 +123,7 @@ def register():
         if password == confirmation or username in users or :
             return apology("TODO")
         else:
+            generate
             db.execute("INSERT INTO users")
 
         return render_template("")
