@@ -119,6 +119,9 @@ def register():
     else:
         username = request.form.get("username")
         password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+        if password == confirmation:
+            
         return render_template("")
 
 
