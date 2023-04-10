@@ -8,6 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
 
+
 # Configure application
 app = Flask(__name__)
 
@@ -25,6 +26,9 @@ db = SQL("sqlite:///finance.db")
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
+
+
+users = db.execute("SELECT * FROM users")
 
 
 @app.after_request
