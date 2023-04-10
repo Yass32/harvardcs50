@@ -117,10 +117,11 @@ def register():
     if request.method == GET:
         return render_template("registration.html")
     else:
+        username = request.form.get("username")
+        password = request.form.get("password")
         return render_template("")
 
-    username = request.form.get("username")
-    password = request.
+
     return apology("TODO")
 
 
