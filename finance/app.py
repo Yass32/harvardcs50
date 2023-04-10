@@ -121,7 +121,7 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if password == confirmation:
-            db.execute("INSERT ")
+            db.execute("INSERT INTO users")
         else:
             return apology("TODO")
         return render_template("")
