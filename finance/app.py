@@ -120,7 +120,7 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
-        if password != confirmation or username in users or :
+        if password != confirmation or username in users :
             return apology("TODO")
         else:
             hash = generate_password_hash(password)
