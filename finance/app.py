@@ -129,9 +129,9 @@ def register():
             return apology("Username Error")
         if not password or password != confirmation:
             return apology("Password Error")
-        else:
-            hash = generate_password_hash(password)
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+
+        hash = generate_password_hash(password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         return render_template()
 
