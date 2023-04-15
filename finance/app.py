@@ -128,7 +128,7 @@ def register():
             return apology("TODO")
         else:
             hash = generate_password_hash(password)
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?, ?,)", username, hash)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         return render_template()
 
