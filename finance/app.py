@@ -127,7 +127,7 @@ def register():
     else:
         if not username or username in users:
             return apology("Username Error")
-        if not password or password != confirmation:
+        if not password or password != confirmation or password in users:
             return apology("Password Error")
 
         hash = generate_password_hash(password)
