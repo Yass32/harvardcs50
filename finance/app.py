@@ -141,11 +141,9 @@ def register():
         if username in users:
             return apology("Username Error")
 
-
         hash = generate_password_hash(password)
         ##insert new user into users table
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-
 
         ##Log user in
         id = db.execute("SELECT id FROM users WHERE username = ?", username)
