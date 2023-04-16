@@ -125,7 +125,7 @@ def register():
     if request.method == "GET":
         return render_template("registration.html")
     else:
-        if not username or username in users:
+        if not username:
             return apology("Username Error")
         if username in users:
             return apology("Username Taken", 200)
