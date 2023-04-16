@@ -145,9 +145,11 @@ def register():
         hash = generate_password_hash(password)
         ##insert new user into users table
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        return render_template("login.html")
+
 
         ##Log user in
+        id = db.execute("SELECT ")
+        session["user_id"]=
 
 
 
