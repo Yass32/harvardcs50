@@ -127,6 +127,8 @@ def register():
     else:
         if not username or username in users:
             return apology("Username Error")
+        if username in users:
+            return apology("Username Taken", 200)
         if not password or password != confirmation or password in users:
             return apology("Password Error")
 
