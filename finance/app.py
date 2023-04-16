@@ -125,13 +125,24 @@ def register():
     ##When requested via GET display registration form
     if request.method == "GET":
         return render_template("registration.html")
+
     ##When requested via POST, check for errors
     else:
-    ##When requested via POST, check for errors
-        if not username or if username in users:
+        ##If any field is blank return apology
+        if not username:
             return apology("Username Error")
-        if not password or password != confirmation or password in users:
+        if not password:
             return apology("Password Error")
+
+        ##If password and confirmation doesn't match retunr apology
+        if password != confirmation:
+            return apology("Password Error")
+
+        ##If username is already taken 
+        if username in users:
+            return apology("Username Error")
+
+
 
         hash = generate_password_hash(password)
         ##insert new user into users table
