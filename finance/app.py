@@ -142,7 +142,6 @@ def register():
             return apology("Username Error")
 
 
-
         hash = generate_password_hash(password)
         ##insert new user into users table
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
