@@ -138,7 +138,7 @@ def register():
             return apology("Password Error")
 
         ##If username is already taken
-        if username is in users:
+        if username in users:
             return apology("Username Error")
 
 
