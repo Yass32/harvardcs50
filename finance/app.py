@@ -122,17 +122,25 @@ def register():
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
 
+    ##When requested via GET display registration form
     if request.method == "GET":
         return render_template("registration.html")
+    ##When requested via POST, check for errors
     else:
+    ##When requested via POST, check for errors
         if not username or username in users:
             return apology("Username Error")
         if not password or password != confirmation or password in users:
             return apology("Password Error")
 
         hash = generate_password_hash(password)
+        ##insert new user into users table
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         return render_template("login.html")
+
+        ##Log user in
+
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
