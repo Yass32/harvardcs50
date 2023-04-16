@@ -129,9 +129,9 @@ def register():
     else:
         ##If any field is blank return apology
         if not username:
-            return apology("Username Error")
+            return apology("Username Missing")
         if not password:
-            return apology("Password Error")
+            return apology("Password Missing")
 
         ##If password and confirmation doesn't match retunr apology
         if password != confirmation:
@@ -139,7 +139,7 @@ def register():
 
         ##If username is already taken
         if username in users:
-            return apology("Username Error")
+            return apology("Username Taken")
 
         hash = generate_password_hash(password)
         ##insert new user into users table
