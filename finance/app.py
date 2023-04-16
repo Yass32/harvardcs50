@@ -130,6 +130,8 @@ def register():
     ##When requested via POST, check for errors
         if not username or username in users:
             return apology("Username Error")
+        if username in users:
+            return apology("Username Taken")
         if not password or password != confirmation or password in users:
             return apology("Password Error")
 
