@@ -148,8 +148,8 @@ def register():
 
 
         ##Log user in
-        id = db.execute("SELECT ")
-        session["user_id"]=
+        id = db.execute("SELECT id FROM users WHERE username = ?", username)
+        session["user_id"] = id
 
 
 
