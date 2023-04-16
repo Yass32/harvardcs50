@@ -138,8 +138,8 @@ def register():
         if password != confirmation:
             return apology("Password Error")
 
-        ##If username is already taken 
-        if username in users:
+        ##If username is already taken
+        if username is in users:
             return apology("Username Error")
 
 
