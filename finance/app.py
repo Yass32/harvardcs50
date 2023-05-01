@@ -114,7 +114,7 @@ def quote():
     if request.method == "GET":
         return render_template("quote.html")
     else:
-        return render_template("quoted.html")
+        return render_template("quoted.html", name=name, price=price, symbol=symbol)
     return apology("TODO")
 
 
