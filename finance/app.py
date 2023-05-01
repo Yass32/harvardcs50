@@ -115,6 +115,7 @@ def quote():
         return render_template("quote.html")
     else:
         symbol = request.form.get("symbol")
+        lookup
         return render_template("quoted.html", name=name, price=price, symbol=symbol)
     return apology("TODO")
 
