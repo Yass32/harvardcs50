@@ -163,8 +163,7 @@
         "workbench.editor.enablePreview": false,
         "workbench.editor.untitled.hint": "hidden",
         "workbench.editorAssociations": {
-          "*.wav": "vscode.audioPreview",
-          "README.md": "lab50.editor"
+          "*.wav": "vscode.audioPreview"
         },
         "workbench.iconTheme": "vs-minimal",
         "workbench.preferredDarkColorTheme": "GitHub Dark Default",
@@ -186,7 +185,7 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:9f871958b77d7db612ac12b349edc0a415a4e1c4",
+  "image": "ghcr.io/cs50/codespace:236678bff288e158f5283deafd65464d79985144",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "remoteEnv": {
     "CS50_GH_USER": "${localEnv:GITHUB_USER}",
