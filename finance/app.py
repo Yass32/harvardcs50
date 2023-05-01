@@ -153,7 +153,7 @@ def register():
         ##If username is already taken
 
         #Query database for username
-        rows = db.execute("SELECT * FROM users")
+        rows = db.execute("SELECT * FROM users WHERE username = username")
         if username in users:
             return apology("Username Taken")
 
