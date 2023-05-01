@@ -164,12 +164,12 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
-        #id = db.execute("SELECT id FROM users WHERE username = ?", username)
+        id = db.execute("SELECT id FROM users WHERE username = ?", username)
         #session["user_id"] = id
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = id
 
         #Redirect user to homepage
-        return render_template("/")
+        return redirect("/")
 
 
 @app.route("/sell", methods=["GET", "POST"])
