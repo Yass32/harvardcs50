@@ -153,8 +153,8 @@ def register():
         ##If username is already taken
 
         #Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = username")
-        if username in users:
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        if len(rows) >= 1:
             return apology("Username Taken")
 
         hash = generate_password_hash(password)
