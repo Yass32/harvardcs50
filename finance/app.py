@@ -155,6 +155,8 @@ def register():
         id = db.execute("SELECT id FROM users WHERE username = ?", username)
         session["user_id"] = id
 
+        return render_template("login.html")
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
