@@ -115,9 +115,16 @@ def quote():
         return render_template("quote.html")
     else:
         symbol = request.form.get("symbol")
+
+        #If lookup is successful, name, price and symbol is returned else apologize
         stock = lookup(symbol)
-        return render_template("quoted.html", name = stock["name"], price=stock["price"], symbol=stock["symbol"])
-    return apology("TODO")
+        if stock is None:
+            return apology("Stock does not exist")
+        else:
+            return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
+
+
+
 
 
 @app.route("/register", methods=["GET", "POST"])
