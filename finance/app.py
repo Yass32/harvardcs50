@@ -159,13 +159,14 @@ def register():
 
         #For security generate a hash of user password
         hash = generate_password_hash(password)
-        
+
         ##insert new user into users table
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
-        id = db.execute("SELECT id FROM users WHERE username = ?", username)
-        session["user_id"] = id
+        #id = db.execute("SELECT id FROM users WHERE username = ?", username)
+        #session["user_id"] = id
+        session["user_id"] = rows[0]["id"]
 
         #Redirect user to homepage
         return render_template("/")
