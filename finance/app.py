@@ -151,6 +151,9 @@ def register():
             return apology("Password Error")
 
         ##If username is already taken
+
+        #Query database for username
+        rows = db.execute("SELECT * FROM users")
         if username in users:
             return apology("Username Taken")
 
