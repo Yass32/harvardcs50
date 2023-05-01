@@ -146,10 +146,12 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
-        id = db.execute("SELECT id FROM users WHERE username = ?", username)
+        login()
+
+        '''id = db.execute("SELECT id FROM users WHERE username = ?", username)
         session["user_id"] = id
 
-        return render_template("login.html")
+        return render_template("login.html")'''
 
 
 @app.route("/sell", methods=["GET", "POST"])
