@@ -196,14 +196,11 @@ def register():
         hash = generate_password_hash(password)
 
         ##insert new user into users table
-        try:
-            new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        except:
-            return apology("Username Taken")
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
-        #rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = new_user
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        session["user_id"] = rows[0]["id"]
 
         #Redirect user to homepage
         login()
