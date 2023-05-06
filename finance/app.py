@@ -43,7 +43,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    
+
     return apology("TODO")
 
 
@@ -51,6 +51,10 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    if request.method == GET:
+        dd
+    else:
+        
     return apology("TODO")
 
 
