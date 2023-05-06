@@ -189,7 +189,7 @@ def register():
 
         ##Query database to see if username is already taken
         if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
-            return apology("Username Taken")
+            return apology("Username Taken" 200)
 
 
         #For security generate a hash of user password
