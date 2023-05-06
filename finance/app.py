@@ -203,7 +203,6 @@ def register():
         session["user_id"] = rows[0]["id"]
 
         #Redirect user to homepage
-        login()
         return redirect("/")
 
         return render_template("login.html")
