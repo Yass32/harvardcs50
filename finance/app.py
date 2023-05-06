@@ -129,6 +129,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    
     """Register user"""
     '''
     ##Forget any user id
@@ -174,41 +175,41 @@ def register():
 
 
 
-        ##If any field is blank return apology
-        if not username:
-            return apology("Username Missing")
-        elif not password:
-            return apology("Password Missing")
+    ##If any field is blank return apology
+    if not username:
+        return apology("Username Missing")
+    elif not password:
+        return apology("Password Missing")
 
-        ##If password and confirmation doesn't match retunr apology
-        if password != confirmation:
-            return apology("Password Error")
-
-
-
-        ##Query database to see if username is already taken
-        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
-            return apology("Username Taken")
+    ##If password and confirmation doesn't match retunr apology
+    if password != confirmation:
+        return apology("Password Error")
 
 
-        #For security generate a hash of user password
-        hash = generate_password_hash(password)
 
-        ##insert new user into users table
-        try:
-            new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        except:
-            return apology("Username Taken")
+    ##Query database to see if username is already taken
+    if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
+        return apology("Username Taken")
 
-        ##Log user in
-        #rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = new_user
 
-        #Redirect user to homepage
-        return redirect("/")
+    #For security generate a hash of user password
+    hash = generate_password_hash(password)
 
-        return render_template("login.html")
-        login()
+    ##insert new user into users table
+    try:
+        new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+    except:
+        return apology("Username Taken")
+
+    ##Log user in
+    #rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+    session["user_id"] = new_user
+
+    #Redirect user to homepage
+    return redirect("/")
+
+    return render_template("login.html")
+    login()
 
 
 
