@@ -130,6 +130,7 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+    '''
     ##Forget any user id
     session.clear()
 
@@ -168,6 +169,7 @@ def register():
             return redirect("/")
         except:
             return apology('Username has already been registered')
+            '''
 
 
 
@@ -184,14 +186,7 @@ def register():
 
 
 
-        #Query database for username
-        '''rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if len(rows) > 0:
-            return apology("Username Taken", 200)'''
-
-        ##If username is already taken
-        '''if db.execute("SELECT * FROM users WHERE username = ?", username):
-            return apology("Username Taken", 200)'''
+        ##Query database to see if username is already taken
         if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
             return apology("Username Taken")
 
