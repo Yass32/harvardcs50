@@ -165,6 +165,7 @@ def register():
         # Redirect user to home page
         #
         return redirect("/")
+    
 
         ##If any field is blank return apology
         if not username:
