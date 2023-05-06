@@ -176,12 +176,13 @@ def register():
 
         ##Log user in
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = new_user
 
         #Redirect user to homepage
+        return redirect("/")
         return render_template("login.html")
         login()
-        return redirect("/")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
