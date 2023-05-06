@@ -165,7 +165,8 @@ def register():
         # Redirect user to home page
         #
         return redirect("/")
-        '''##If any field is blank return apology
+
+        ##If any field is blank return apology
         if not username:
             return apology("Username Missing")
         elif not password:
@@ -206,7 +207,7 @@ def register():
         return redirect("/")
 
         return render_template("login.html")
-        login()'''
+        login()
 
 
 
