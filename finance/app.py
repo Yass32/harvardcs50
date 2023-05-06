@@ -27,7 +27,7 @@ if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
 
-users = db.execute("SELECT * FROM users")
+#users = db.execute("SELECT * FROM users")
 
 
 @app.after_request
@@ -130,6 +130,10 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+    ##Forget any user id
+    session.clear()
+
+    ##Get info from form
     username = request.form.get("username")
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
@@ -143,19 +147,26 @@ def register():
         ##If any field is blank return apology
         if not username:
             return apology("Username Missing")
-        if not password:
+        elif not password:
             return apology("Password Missing")
 
         ##If password and confirmation doesn't match retunr apology
         if password != confirmation:
             return apology("Password Error")
 
-        ##If username is already taken
+
 
         #Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if len(rows) >= 1:
+        '''rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        if len(rows) > 0:
+            return apology("Username Taken", 200)'''
+
+        ##If username is already taken
+        '''if db.execute("SELECT * FROM users WHERE username = ?", username):
+            return apology("Username Taken", 200)'''
+        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
             return apology("Username Taken")
+
 
         #For security generate a hash of user password
         hash = generate_password_hash(password)
@@ -164,12 +175,12 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
-        id = db.execute("SELECT id FROM users WHERE username = ?", username)
-        #session["user_id"] = id
-        session["user_id"] = id
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        session["user_id"] = rows[0]["id"]
 
         #Redirect user to homepage
-        return redirect("/")
+        return render_template("login.html")
+        return 
 
 
 @app.route("/sell", methods=["GET", "POST"])
