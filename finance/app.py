@@ -52,9 +52,9 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == GET:
-        dd
+        return render_template()
     else:
-        
+
     return apology("TODO")
 
 
