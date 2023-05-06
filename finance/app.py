@@ -189,7 +189,7 @@ def register():
 
         ##Query database to see if username is already taken
         if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
-            return apology("Username Taken", 200)
+            return apology("Username Taken")
 
 
         #For security generate a hash of user password
@@ -203,9 +203,10 @@ def register():
         session["user_id"] = rows[0]["id"]
 
         #Redirect user to homepage
-        return redirect("/")
+
 
         return render_template("login.html")
+        return redirect("/")
         login()
 
 
