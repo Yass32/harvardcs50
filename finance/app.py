@@ -180,7 +180,8 @@ def register():
 
         #Redirect user to homepage
         return render_template("login.html")
-        return 
+        login()
+        return redirect("/")
 
 
 @app.route("/sell", methods=["GET", "POST"])

@@ -185,7 +185,7 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:236678bff288e158f5283deafd65464d79985144",
+  "image": "ghcr.io/cs50/codespace:c87bdc12fa9251dc50e041332112b37cd8a74c06",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "remoteEnv": {
     "CS50_GH_USER": "${localEnv:GITHUB_USER}",
