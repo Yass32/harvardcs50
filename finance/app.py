@@ -118,7 +118,7 @@ def quote():
 
         #If lookup is successful, name, price and symbol is returned else apologize
         stock = lookup(symbol)
-        if stock is None:
+        if not stock:
             return apology("Stock does not exist")
         else:
             return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
