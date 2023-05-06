@@ -163,26 +163,30 @@ def register():
 
         ##If username is already taken
         '''if db.execute("SELECT * FROM users WHERE username = ?", username):
-            return apology("Username Taken", 200)'''
+            return apology("Username Taken", 200)
         if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
-            return apology("Username Taken")
+            return apology("Username Taken")'''
 
 
         #For security generate a hash of user password
         hash = generate_password_hash(password)
 
         ##insert new user into users table
-        new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        try:
+            new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        except:
+            return apology("Username Taken")
 
         ##Log user in
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        #rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         session["user_id"] = new_user
 
         #Redirect user to homepage
+        return redirect("/")
 
         return render_template("login.html")
         login()
-        return redirect("/")
+
 
 
 
