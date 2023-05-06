@@ -144,7 +144,28 @@ def register():
 
     ##When requested via POST, check for errors
     else:
-        ##If any field is blank return apology
+        if username == "" or len(db.execute('SELECT username FROM users WHERE username = ?', username)) > 0:
+            return apology("Invalid Username")
+
+        if password == "" or password != confirmation:
+            return apology("Invalid Password")
+
+        # Add new user to users db (includes: username and HASH of password)
+        #
+        db.execute('INSERT INTO users (username, hash) VALUES(?, ?)', username, generate_password_hash(password))
+
+        # Query database for username
+        #
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+
+        # Remember user that has logged in
+        #
+        session["user_id"] = rows[0]["id"]
+
+        # Redirect user to home page
+        #
+        return redirect("/")
+        '''##If any field is blank return apology
         if not username:
             return apology("Username Missing")
         elif not password:
@@ -185,7 +206,7 @@ def register():
         return redirect("/")
 
         return render_template("login.html")
-        login()
+        login()'''
 
 
 
