@@ -206,6 +206,7 @@ def register():
         session["user_id"] = new_user
 
         #Redirect user to homepage
+        login()
         return redirect("/")
 
         return render_template("login.html")
