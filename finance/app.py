@@ -172,7 +172,10 @@ def register():
         hash = generate_password_hash(password)
 
         ##insert new user into users table
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        try:
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        except:
+            return apology("Error")
 
         ##Log user in
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
