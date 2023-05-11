@@ -58,6 +58,9 @@ def buy():
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
         shares = request.form.get("shares")
+        if shares < 0:
+            return apology("Shares Error")
+        return redirect("/")
 
     return apology("TODO")
 
