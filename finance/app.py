@@ -51,7 +51,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    if request.method == GET:
+    if request.method == "GET":
         return render_template("buystock.html")
     else:
         symbol = request.form.get("symbol")
