@@ -246,7 +246,7 @@ CREATE TABLE portfolio (
     stocks TEXT NOT NULL,
     price REAL NOT NULL,
     time REAL NOT NULL,
-    FOREIGN KEY (username_id) REFERENCES users
+    FOREIGN KEY (username_id) REFERENCES users(id)
 );
 CREATE UNIQUE INDEX username ON portfolio (username);
 
