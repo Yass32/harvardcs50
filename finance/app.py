@@ -55,13 +55,16 @@ def buy():
         return render_template("buystock.html")
     else:
         symbol = request.form.get("symbol")
-        if not symbol or not lookup(symbol):
+        stock_price = lookup(symbol)
+        if not symbol or not stock_price:
             return apology("Symbol error")
         shares = request.form.get("shares")
         if shares < 0:
             return apology("Shares Error")
 
-        
+        cash = db.execute("SELECT ")
+
+
         return redirect("/")
 
     return apology("TODO")
