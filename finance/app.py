@@ -241,4 +241,6 @@ CREATE TABLE portfolio (
     FOREIGN KEY (username_id) REFERENCES users
 );
 CREATE UNIQUE INDEX username ON portfolio (username);
+
+SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
 '''
