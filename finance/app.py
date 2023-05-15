@@ -239,4 +239,5 @@ CREATE TABLE portfolio (
     stocks TEXT NOT NULL,
     price REAL NOT NULL,
     time REAL NOT NULL,
-)
+);
+CREATE UNIQUE INDEX username ON portfolio (username);
