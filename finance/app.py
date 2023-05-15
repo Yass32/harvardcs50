@@ -229,3 +229,13 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
+
+
+
+
+CREATE TABLE purchases (
+    id INTEGER FOREIGN KEY NOT NULL,
+    username TEXT NOT NULL,
+    stocks TEXT NOT NULL,
+    price 
+)
