@@ -237,5 +237,6 @@ CREATE TABLE purchases (
     id INTEGER FOREIGN KEY NOT NULL,
     username TEXT NOT NULL,
     stocks TEXT NOT NULL,
-    price 
+    price REAL NOT NULL;
+    time
 )
