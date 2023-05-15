@@ -232,12 +232,13 @@ def sell():
 
 
 
-
+'''
 CREATE TABLE portfolio (
-    id INTEGER FOREIGN KEY NOT NULL,
-    username TEXT NOT NULL,
+    username_id INTEGER NOT NULL,
     stocks TEXT NOT NULL,
     price REAL NOT NULL,
     time REAL NOT NULL,
+    FOREIGN KEY (username_id) REFERENCES users
 );
 CREATE UNIQUE INDEX username ON portfolio (username);
+'''
