@@ -62,7 +62,8 @@ def buy():
         if shares < 0:
             return apology("Shares Error")
 
-        cash = db.execute("SELECT ")
+        cash = db.execute("SELECT cash FROM users")
+        
 
 
         return redirect("/")
