@@ -67,7 +67,8 @@ def buy():
         if cash < price:
             return apology("Insufficient cash")
         else:
-            cash - price = db.execute("")
+            db.execute("UPDATE users SET cash = ?", cash - price)
+            
 
 
         return redirect("/")
