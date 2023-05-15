@@ -62,8 +62,10 @@ def buy():
         if shares < 0:
             return apology("Shares Error")
 
-        cash = db.execute("SELECT cash FROM users")
-        if cash <
+        current_user = session["user_id"]
+        cash = db.execute("SELECT cash FROM users where id = ?", current_user)
+        if cash < price:
+            return apology("Insufficient cash")
 
 
         return redirect("/")
