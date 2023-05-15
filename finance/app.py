@@ -233,10 +233,10 @@ def sell():
 
 
 
-CREATE TABLE purchases (
+CREATE TABLE portfolio (
     id INTEGER FOREIGN KEY NOT NULL,
     username TEXT NOT NULL,
     stocks TEXT NOT NULL,
-    price REAL NOT NULL;
-    time
+    price REAL NOT NULL,
+    time REAL NOT NULL,
 )
