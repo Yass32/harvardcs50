@@ -3,6 +3,7 @@
     "vscode": {
       "extensions": [
         "/opt/cs50/extensions/cs50-0.0.1.vsix",
+        "/opt/cs50/extensions/explain50-1.0.0.vsix",
         "/opt/cs50/extensions/phpliteadmin-0.0.1.vsix",
         "cs50.ddb50",
         "cs50.extension-uninstaller",
@@ -185,7 +186,7 @@
     8080,
     8082
   ],
-  "image": "ghcr.io/cs50/codespace:c87bdc12fa9251dc50e041332112b37cd8a74c06",
+  "image": "ghcr.io/cs50/codespace:ba8d15dbed5b0bf7846feff417a5820ceda11970",
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand",
   "remoteEnv": {
     "CS50_GH_USER": "${localEnv:GITHUB_USER}",
