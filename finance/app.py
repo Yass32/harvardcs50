@@ -68,12 +68,24 @@ def buy():
             return apology("Insufficient cash")
         else:
             db.execute("UPDATE users SET cash = ?", cash - price)
-            
+
 
 
         return redirect("/")
 
     return apology("TODO")
+'''
+CREATE TABLE portfolio (
+    username_id INTEGER NOT NULL,
+    stocks TEXT NOT NULL,
+    price REAL NOT NULL,
+    time REAL NOT NULL,
+    FOREIGN KEY (username_id) REFERENCES users(id)
+);
+CREATE UNIQUE INDEX username ON portfolio (username);
+
+SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
+'''
 
 
 @app.route("/history")
@@ -243,15 +255,3 @@ def sell():
 
 
 
-'''
-CREATE TABLE portfolio (
-    username_id INTEGER NOT NULL,
-    stocks TEXT NOT NULL,
-    price REAL NOT NULL,
-    time REAL NOT NULL,
-    FOREIGN KEY (username_id) REFERENCES users(id)
-);
-CREATE UNIQUE INDEX username ON portfolio (username);
-
-SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
-'''
