@@ -8,13 +8,13 @@
     <form action="/sell" method="post">
         <div class="mb-3">
             <label for="symbol">Choose your stocks</label><br>
-            <select class="form-select" aria-label="Default select example">
+            <select id="symbol" name="symbol" class="form-select" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
-            <input required autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+            <!--<input required autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">-->
         </div>
         <div class="mb-3">
             <input required class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" type="text">
