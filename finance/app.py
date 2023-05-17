@@ -277,6 +277,7 @@ def sell():
     else:
         if shares < 0 or shares > user_shares:
             return apology("Shares error")
+        
 
 
     return redirect("/")
