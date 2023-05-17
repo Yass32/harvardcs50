@@ -278,7 +278,7 @@ def sell():
         if shares < 0 or shares > user_shares:
             return apology("Shares error")
         profit = lookup(stocks) * shares
-        db.execute("")
+        db.execute("UPDATE users SET cash = ")
 
 
     return redirect("/")
