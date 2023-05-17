@@ -235,7 +235,7 @@ def register():
 
 
         ##Query database to see if username is already taken
-        if len(db.execute("SELECT * FROM users WHERE username = ?", username)) > 0:
+        if (db.execute("SELECT * FROM users WHERE username = ?", username)) is None:
             return apology("Username Taken")
 
 
