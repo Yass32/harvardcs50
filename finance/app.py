@@ -48,10 +48,9 @@ def index():
     stock = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
     price = db.execute("SELECT price FROM portfolio WHERE username_id = ?", current_user)
-    portfolio = db.execute("SELECT stocks, shares, price FROM portfolio GROUP BY shares HAVING username_id = ?", current_user)
-    value = portfolio["shares"] * portfolio["price"]
-    total = value * cash
-    return render_template("index.html", stock = portfolio["stock"], shares = portfolio["shares"], price = portfolio["price"], value = value, total = total)
+    portfolio = db.execute("SELECT stocks, shares, price, total FROM portfolio GROUP BY shares HAVING username_id = ?", current_user)
+    balance = portfolio["total"] * cash
+    return render_template("index.html", stock = portfolio["stock"], shares = portfolio["shares"], price = portfolio["price"], total = portfolio["total"], balance = balance)
 
     return apology("TODO")
 
@@ -66,6 +65,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         price = lookup(symbol)
+        total = price * shares
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
         if shares < 0:
@@ -77,7 +77,7 @@ def buy():
             return apology("Insufficient cash")
         else:
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - price, current_user)
-            db.execute("INSERT INTO portfolio (stocks, shares, price, username_id) VALUES (?, ?, ?, (SELECT id FROM users WHERE id = ?) )", symbol, shares, price, current_user)
+            db.execute("INSERT INTO portfolio (stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, (SELECT id FROM users WHERE id = ?) )", symbol, shares, price, total, current_user)
 
 
 
