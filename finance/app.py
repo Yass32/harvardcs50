@@ -43,7 +43,10 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    
+    current_user = session["user_id"]
+    stock = db.execute("SELECT stocks FROM portfolio WHERE username_id IN (SELECT id WHERE id = ?)", current_user)
+    shares = db.execute("SELECT shares FROM portfolio WHERE username")
+    return render_template("index.html", stock = stock, shares = shares, price = price, value = value, total = total)
 
     return apology("TODO")
 
@@ -89,6 +92,12 @@ CREATE TABLE portfolio (
 CREATE UNIQUE INDEX username ON portfolio (username);
 
 SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
+
+Is this : current_user = session["user_id"]
+    stock = db.execute("SELECT stocks FROM portfolio WHERE username_id IN (SELECT id WHERE id = ?)", current_user)
+the same as this : current_user = session["user_id"]
+    stock = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
+
 '''
 
 
