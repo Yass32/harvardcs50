@@ -272,13 +272,15 @@ def sell():
     current_user = session["user_id"]
     user_stocks = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
+    cash = db.execute("SELECT cash FROM users WHERE username_id = ?", current_user)
     if request.method == "GET" :
         return render_template("sell.html")
     else:
         if shares < 0 or shares > user_shares:
             return apology("Shares error")
         profit = lookup(stocks) * shares
-        db.execute("UPDATE users SET cash = ")
+        db.execute("UPDATE portfolio SET shares = ?", user_shares - shares)
+        db.execute("UPDATE users SET cash = ?", profit + cash)
 
 
     return redirect("/")
