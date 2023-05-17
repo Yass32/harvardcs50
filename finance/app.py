@@ -266,12 +266,17 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    stocks = request.form.get("symbol")
+    symbol = request.form.get("symbol")
     shares = int(request.form.get("shares"))
+
+    current_user = session["user_id"]
+    stocks = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     if request.method == "GET" :
         return render_template("sell.html")
     else:
-        c
+        if shares < 0 :
+            return apology("Shares error")
+        
 
     return redirect("/")
 
