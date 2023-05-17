@@ -226,13 +226,11 @@ def register():
 
         ##If any field is blank return apology
         if not username:
-            return apology("Username Missing")
-        elif not password:
-            return apology("Password Missing")
-
+            return apology("Username Error")
         ##If password and confirmation doesn't match retunr apology
-        if password != confirmation:
+        if not password or password != confirmation :
             return apology("Password Error")
+
 
 
 
