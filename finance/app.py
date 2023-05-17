@@ -205,7 +205,7 @@ def register():
 
             ##Log user in
             id = db.execute("SELECT id FROM users WHERE username = ?", username)
-            session["user_id"] = id["id"]
+            session["user_id"] = id[0]["id"]
 
             #Redirect user to homepage
             return redirect("/")
