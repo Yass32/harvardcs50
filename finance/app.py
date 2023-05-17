@@ -48,6 +48,7 @@ def index():
     stock = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
     price = db.execute("SELECT price FROM portfolio WHERE username_id = ?", current_user)
+    # SELECT stocks, shares, price FROM portfolio
     value = shares * price
     total = value * cash
     return render_template("index.html", stock = stock, shares = shares, price = price, value = value, total = total)
