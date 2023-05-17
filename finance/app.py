@@ -266,7 +266,12 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    if request.
+    stocks = request.form.get("symbol")
+    shares = int(request.form.get("shares"))
+    if request.method == "GET" :
+        return render_template("sell.html")
+    else:
+        c
 
     return redirect("/")
 
