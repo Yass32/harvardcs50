@@ -46,6 +46,7 @@ def index():
     current_user = session["user_id"]
     stock = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
+    shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
     return render_template("index.html", stock = stock, shares = shares, price = price, value = value, total = total)
 
     return apology("TODO")
