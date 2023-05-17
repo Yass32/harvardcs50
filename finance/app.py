@@ -266,8 +266,9 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    
 
-    return apology("TODO")
+    return redirect("/")
 
 
 
