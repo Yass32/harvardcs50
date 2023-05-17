@@ -67,7 +67,8 @@ def buy():
         if cash < price:
             return apology("Insufficient cash")
         else:
-            db.execute("UPDATE users SET cash = ?", cash - price)
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - price, current_user)
+            db.execute("INSERT INTO portfolio (stocks, shares, price) VALUES (?, ?, ?, (SELECT id FROM users WHERE id = ?) )", symbol, shares, price, current_user)
 
 
 
@@ -78,6 +79,7 @@ def buy():
 CREATE TABLE portfolio (
     username_id INTEGER NOT NULL,
     stocks TEXT NOT NULL,
+    shares INTEGER NOT NULL DEFAULT 0,
     price REAL NOT NULL,
     time REAL NOT NULL,
     FOREIGN KEY (username_id) REFERENCES users(id)
