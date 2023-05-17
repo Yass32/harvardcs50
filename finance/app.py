@@ -249,7 +249,9 @@ def register():
 
         ##Log user in
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = rows[0]["id"]
+        ##session["user_id"] = rows[0]["id"]
+
+        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", username)
 
         #Redirect user to homepage
 
