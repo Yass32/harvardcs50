@@ -43,7 +43,7 @@ def index():
     current_user = session["user_id"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
     portfolio = db.execute("SELECT stocks, SUM(shares), price, total FROM portfolio GROUP BY stocks HAVING username_id = ?", current_user)
-    balance = portfolio["total"] * cash
+    balance = portfolio["total"] * cash["cash"]
     return render_template("index.html", stock = portfolio["stock"], shares = portfolio["shares"], price = portfolio["price"], total = portfolio["total"], balance = balance)
 
     return apology("TODO")
