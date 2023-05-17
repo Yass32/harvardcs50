@@ -204,8 +204,8 @@ def register():
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
             ##Log user in
-            id = db.execute("SELECT id FROM users WHERE username = ?", username)
-            session["user_id"] = id[0]["id"]
+            rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+            session["user_id"] = rows[0]["id"]
 
             #Redirect user to homepage
             return redirect("/")
