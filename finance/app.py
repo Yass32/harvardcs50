@@ -49,8 +49,7 @@ def index():
     shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
     price = db.execute("SELECT price FROM portfolio WHERE username_id = ?", current_user)
     value = shares * price
-    
-
+    total = value * cash
     return render_template("index.html", stock = stock, shares = shares, price = price, value = value, total = total)
 
     return apology("TODO")
