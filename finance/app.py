@@ -63,12 +63,12 @@ def buy():
         return render_template("buystock.html")
     else:
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         price = lookup(symbol)
-        total = price * int(shares)
+        total = price * shares
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
-        if int(shares) < 0:
+        if shares < 0:
             return apology("Shares Error")
 
         current_user = session["user_id"]
