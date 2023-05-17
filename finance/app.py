@@ -236,22 +236,15 @@ def register():
 
         ##insert new user into users table
         try:
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
-        ##Log user in
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        ##session["user_id"] = rows[0]["id"]
+            ##Log user in
+            session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", username)
 
-        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", username)
-
-        #Redirect user to homepage
-
-
-        #return render_template("login.html")
-        return redirect("/")
-        login()
-
-
+            #Redirect user to homepage
+            return redirect("/")
+        except:
+            return apology("Username is taken")
 
 
 @app.route("/sell", methods=["GET", "POST"])
