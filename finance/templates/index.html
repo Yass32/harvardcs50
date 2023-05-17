@@ -8,11 +8,11 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Stocks</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
                 <th scope="col">Shares</th>
                 <th scope="col">Price</th>
-                <th scope="col">Total Value</th>
+                <th scope="col">Total</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +25,13 @@
                     <td>{{ port.total }}</td>
                 </tr>
             {% endfor %}
+            <tr class="table-dark">
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td>Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
             <tr class="table-dark">
                 <th scope="row"></th>
                 <td></td>
