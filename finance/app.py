@@ -65,10 +65,10 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         price = lookup(symbol)
-        total = price * shares
+        total = price * int(shares)
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
-        if shares < 0:
+        if int(shares) < 0:
             return apology("Shares Error")
 
         current_user = session["user_id"]
@@ -266,7 +266,7 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    
+
     return apology("TODO")
 
 
