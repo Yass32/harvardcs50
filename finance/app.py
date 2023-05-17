@@ -254,7 +254,7 @@ def register():
         #Redirect user to homepage
 
 
-        return render_template("login.html")
+        #return render_template("login.html")
         return redirect("/")
         login()
 
