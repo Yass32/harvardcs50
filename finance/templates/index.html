@@ -19,9 +19,9 @@
             {% for port in portfolio %}
                 <tr>
                     <th scope="row">port</th>
-                    <td>{{ stock }}</td>
-                    <td>{{ shares }}</td>
-                    <td>{{ price }}</td>
+                    <td>{{ port.stock }}</td>
+                    <td>{{ port.shares }}</td>
+                    <td>{{ port.price }}</td>
                     <td>{{ value }}</td>
                 </tr>
             {% endfor %}
