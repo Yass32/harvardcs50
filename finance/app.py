@@ -42,10 +42,7 @@ def index():
     """Show portfolio of stocks"""
     current_user = session["user_id"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
-    stock = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
-    shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
-    price = db.execute("SELECT price FROM portfolio WHERE username_id = ?", current_user)
-    portfolio = db.execute("SELECT stocks, shares, price, total FROM portfolio GROUP BY shares HAVING username_id = ?", current_user)
+    portfolio = db.execute("SELECT stocks, shares, price, total FROM portfolio GROUP BY stock HAVING username_id = ?", current_user)
     balance = portfolio["total"] * cash
     return render_template("index.html", stock = portfolio["stock"], shares = portfolio["shares"], price = portfolio["price"], total = portfolio["total"], balance = balance)
 
