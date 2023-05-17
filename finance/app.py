@@ -227,22 +227,15 @@ def register():
         ##If any field is blank return apology
         if not username:
             return apology("Username Error")
-        ##If password and confirmation doesn't match retunr apology
+        ##If password and confirmation doesn't match return apology
         if not password or password != confirmation :
             return apology("Password Error")
-
-
-
-
-        ##Query database to see if username is already taken
-        if (db.execute("SELECT * FROM users WHERE username = ?", username)) is None:
-            return apology("Username Taken")
-
 
         #For security generate a hash of user password
         hash = generate_password_hash(password)
 
         ##insert new user into users table
+        try:
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
         ##Log user in
