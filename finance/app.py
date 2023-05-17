@@ -27,9 +27,6 @@ if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
 
-#users = db.execute("SELECT * FROM users")
-
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
