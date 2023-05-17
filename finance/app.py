@@ -65,6 +65,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         price = lookup(symbol)
+        price = price["price"]
         total = price * shares
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
@@ -97,8 +98,6 @@ CREATE TABLE portfolio (
 CREATE UNIQUE INDEX username ON portfolio (username);
 
 SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
-
-
 
 '''
 
@@ -278,7 +277,8 @@ def sell():
     else:
         if shares < 0 or shares > user_shares:
             return apology("Shares error")
-        profit = lookup(stocks) * shares
+        price = lookup(stocks)
+        profit = price["price"] * shares
         db.execute("UPDATE portfolio SET shares = ?", user_shares - shares)
         db.execute("UPDATE users SET cash = ?", profit + cash)
 
