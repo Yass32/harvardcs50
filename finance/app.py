@@ -258,6 +258,7 @@ def sell():
     user_stocks = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
     user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
     cash = db.execute("SELECT cash FROM users WHERE username_id = ?", current_user)
+
     if request.method == "GET" :
         return render_template("sell.html")
     else:
