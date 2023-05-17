@@ -78,7 +78,7 @@ def buy():
         else:
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - price, current_user)
             db.execute("INSERT INTO portfolio (stocks, shares, price, username_id) VALUES (?, ?, ?, (SELECT id FROM users WHERE id = ?) )", symbol, shares, price, current_user)
-            h
+            
 
 
 
