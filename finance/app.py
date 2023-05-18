@@ -249,13 +249,13 @@ def sell():
         if shares <= 0 or user_shares[0]["shares"] < shares:
             return apology("Shares error")
 
-
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
 
         stock = lookup(symbol)
         if stock is None:
             return apology("Stock error")
+
         profit = stock["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
