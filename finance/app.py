@@ -204,10 +204,10 @@ def register():
     else:
 
         #If any field is blank return apology
-        if not username :
+        if not username or not password:
             return apology("Username Error")
         #If password and confirmation doesn't match return apology
-        if not password or password != confirmation :
+        if password != confirmation :
             return apology("Password Error")
 
         #For security generate a hash of user password
