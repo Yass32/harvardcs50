@@ -85,8 +85,8 @@ def buy():
         if user_cash < total:
             return apology("Insufficient cash")
         else:
-            updated_cash = user_cash - price
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash - price, current_user)
+            updated_cash = user_cash - total
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
             db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, stocks, shares, price, total, current_user)
             return redirect("/")
 
