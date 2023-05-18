@@ -61,7 +61,9 @@ def buy():
         if not symbol or stock is None:
             return apology("Symbol error")
 
+        stocks = stock["name"]
         price = stock["price"]
+
         total = price * shares
 
         if shares < 0:
