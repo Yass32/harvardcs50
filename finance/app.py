@@ -213,7 +213,7 @@ def register():
         #For security generate a hash of user password
         hash = generate_password_hash(password)
 
-        #insert new user into users table
+        #insert new user into users table, 
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
@@ -255,6 +255,8 @@ def sell():
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
+
+        #Checkk if requested stock is valid
 
         stock = lookup(symbol)
         if stock is None:
