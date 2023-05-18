@@ -247,7 +247,7 @@ def sell():
         price = lookup(stocks)
         profit = price["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ?", portfolio["shares"] - shares, current_user)
-        db.execute("UPDATE users SET cash = ? WHERE username_id = ?", profit + cash, current_user)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
 
     return redirect("/")
