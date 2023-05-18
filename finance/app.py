@@ -232,7 +232,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     stocks = request.form.get("symbol")
-    shares = int(request.form.get("shares"))
+    shares = request.form.get("shares")
 
     current_user = session["user_id"]
     portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
