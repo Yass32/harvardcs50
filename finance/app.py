@@ -168,21 +168,19 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    #When requested via GET, display form to request a stock quote
+    #When form is requested via GET, display form to request a stock quote
     if request.method == "GET":
         return render_template("quote.html")
     else:
+    #When requested via POST lookup up the stock symbol by calling lookup() and displauy results
         symbol = request.form.get("symbol")
-
-        #If lookup is successful, name, price and symbol is returned else apologize
         stock = lookup(symbol)
+
+        #If lookup is successful, a dictionary of stock name, price and symbol is returned else apologize
         if not stock:
             return apology("Stock does not exist")
         else:
             return render_template("quoted.html", name = stock["name"], symbol = stock["symbol"], price = stock["price"])
-
-
-
 
 
 @app.route("/register", methods=["GET", "POST"])
