@@ -62,10 +62,10 @@ def buy():
         if not symbol or stock is None:
             return apology("Symbol error")
 
-        stocks = stock["name"]
+        stock_name = stock["name"]
         price = stock["price"]
 
-        total = price * shares
+        total = 
 
         if shares < 0:
             return apology("Shares Error")
@@ -79,7 +79,7 @@ def buy():
         else:
             updated_cash = user_cash - price
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
-            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, stocks, shares, price, total, current_user)
+            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, stock_name, shares, price, total, current_user)
             return redirect("/")
 
 
