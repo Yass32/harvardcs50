@@ -43,8 +43,8 @@ def index():
     current_user = session["user_id"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
     portfolio = db.execute("SELECT stocks, SUM(shares), price, total FROM portfolio WHERE username_id = ? GROUP BY shares", current_user)
-    balance = int(portfolio[0]["total"] * cash[0]["cash"])
-    return render_template("index.html", portfolio = portfolio, cash = cash, balance = balance)
+    #balance = int(portfolio[0]["total"] * cash[0]["cash"])
+    return render_template("index.html", portfolio = portfolio, cash = cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])
