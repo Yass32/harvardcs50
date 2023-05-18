@@ -7,9 +7,8 @@
 {% block main %}
     <form action="/sell" method="post">
         <div class="mb-3">
-            <label for="symbol">Choose your stocks</label><br>
             <select id="symbol" name="symbol" class="form-select mx-auto w-auto" aria-label="Default select example">
-                <option selected>Stocks</option>
+                <option selected>Choose your stocks</option>
                 {% for stock in portfolio %}
                     <option value="{{stock.symbol}}">{{stock.symbol}}</option>
                 {% endfor %}
