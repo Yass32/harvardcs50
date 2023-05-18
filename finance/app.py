@@ -73,7 +73,7 @@ def buy():
 
         stocks = stock["name"]
         price = stock["price"]
-        total = price * shares
+        total = float(price * shares)
 
 
         current_user = session["user_id"]
