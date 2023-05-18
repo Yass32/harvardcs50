@@ -231,6 +231,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
+    
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
@@ -240,7 +242,7 @@ def sell():
         if shares < 0 :
             return apology("Shares error")
 
-        portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
+
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
 
