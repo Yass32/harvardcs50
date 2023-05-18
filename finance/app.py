@@ -232,7 +232,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     stocks = request.form.get("symbol")
-    shares = request.form.get("shares")
+    shares = int(request.form.get("shares"))
 
     current_user = session["user_id"]
     portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
@@ -242,7 +242,7 @@ def sell():
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
-        if shares < 0 or shares > portfolio["shares"]:
+        if shares < 0 or shares > int(portfolio["shares"]):
             return apology("Shares error")
         price = lookup(stocks)
         profit = price["price"] * shares
