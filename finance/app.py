@@ -231,21 +231,20 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    stocks = request.form.get("symbol")
-    shares = int(request.form.get("shares"))
-
-    current_user = session["user_id"]
-    portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
-    cash = cash[0]["cash"]
-
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
-        if shares < 0 or shares > int(portfolio["shares"]):
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
+
+        current_user = session["user_id"]
+        portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
+        cash = cash[0]["cash"]
+        if shares < 0 :
             return apology("Shares error")
-        price = lookup(stocks)
-        profit = price["price"] * shares
+        stocks = lookup(symbol)
+        profit = stocks["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ?", portfolio["shares"] - shares, current_user)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
