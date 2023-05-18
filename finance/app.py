@@ -64,7 +64,7 @@ def buy():
         stock = lookup(symbol)
         if not symbol or stock is None:
             return apology("Symbol error")
-        if shares < 0:
+        if shares.isdigit() and shares < 0:
             return apology("Shares Error")
 
         stocks = stock["name"]
