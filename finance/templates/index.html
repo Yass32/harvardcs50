@@ -19,10 +19,10 @@
             {% for stock in portfolio %}
                 <tr>
                     <th scope="row">port</th>
-                    <td>{{ port.stock }}</td>
-                    <td>{{ port.shares }}</td>
-                    <td>{{ port.price }}</td>
-                    <td>{{ port.total }}</td>
+                    <td>{{ stock.stocks }}</td>
+                    <td>{{ stock.SUM(shares) }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.total }}</td>
                 </tr>
             {% endfor %}
             <tr class="table-dark">
