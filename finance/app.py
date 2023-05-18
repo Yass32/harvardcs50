@@ -51,35 +51,37 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
+    """Remember User"""
+    current_user = session["user_id"]
+
     """Buy shares of stock"""
     if request.method == "GET":
         return render_template("buystock.html")
     else:
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
-
         stock = lookup(symbol)
         if not symbol or stock is None:
             return apology("Symbol error")
 
-        stock_name = stock["name"]
-        price = stock["price"]
-
-        total = 
-
+        shares = int(request.form.get("shares"))
         if shares < 0:
             return apology("Shares Error")
 
-        current_user = session["user_id"]
+        name = stock["name"]
+        price = stock["price"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
         user_cash = float(cash[0]["cash"])
+        total = user_cash
+
+        for stoc in stock:
+            total += price * shares
 
         if user_cash < total:
             return apology("Insufficient cash")
         else:
             updated_cash = user_cash - price
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
-            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, stock_name, shares, price, total, current_user)
+            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, name, shares, price, total, current_user)
             return redirect("/")
 
 
