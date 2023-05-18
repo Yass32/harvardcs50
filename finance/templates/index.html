@@ -18,7 +18,7 @@
         <tbody>
             {% for stock in portfolio %}
                 <tr>
-                    <th scope="row">port</th>
+                    <td>{{ stock.symbol }}</td>
                     <td>{{ stock.stocks }}</td>   <!--Or portfolio["stocks"]-->
                     <td>{{ stock.shares }}</td>
                     <td>{{ stock.price | usd }}</td>
