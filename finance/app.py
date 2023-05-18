@@ -78,7 +78,7 @@ def buy():
 
         current_user = session["user_id"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
-        user_cash = float(cash[0]["cash"])
+        user_cash = cash[0]["cash"]
 
         if user_cash < total:
             return apology("Insufficient cash")
