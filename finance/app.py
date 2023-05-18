@@ -231,15 +231,17 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    
+
     # Remember which user has logged in
     current_user = session["user_id"]
+
     portfolio = db.execute("SELECT symbol, shares FROM portfolio WHERE username_id = ?", current_user)
 
+    #When requested via GET display selling form
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
-
+    #Form was submitted or requested via POST
         symbol = request.form.get("symbol")
         try:
             shares = int(request.form.get("shares"))
