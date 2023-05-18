@@ -57,9 +57,11 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    #When form requested via GET, displayform to buy a stock
     if request.method == "GET":
         return render_template("buystock.html")
     else:
+    #When form is submitted via POST, purchase the stock as long as user can afford it
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
         if not symbol or stock is None:
@@ -241,7 +243,7 @@ def sell():
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
-    #Form was submitted or requested via POST
+    #When form is submitted via POST
         symbol = request.form.get("symbol")
         try:
             shares = int(request.form.get("shares"))
