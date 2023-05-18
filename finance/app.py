@@ -65,6 +65,7 @@ def buy():
         if not symbol or stock is None:
             return apology("Symbol error")
         if shares.isdigit() and shares < 0:
+            print("No")
             return apology("Shares Error")
 
         stocks = stock["name"]
