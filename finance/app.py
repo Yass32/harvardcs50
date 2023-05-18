@@ -236,7 +236,7 @@ def sell():
 
     current_user = session["user_id"]
     portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
-    cash = db.execute("SELECT cash FROM users WHERE username_id = ?", current_user)
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
     cash = cash[0]["cash"]
 
     if request.method == "GET" :
