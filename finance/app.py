@@ -215,7 +215,7 @@ def register():
 
         ##insert new user into users table
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", (username, hash))
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
             ##Log user in
             rows = db.execute("SELECT * FROM users WHERE username = ?", username)
