@@ -239,7 +239,11 @@ def sell():
     else:
 
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        try:
+            shares = int(request.form.get("shares"))
+        except:
+            return apology("invalid number of shares")
+
         if shares <= 0 :
             return apology("Shares error")
 
