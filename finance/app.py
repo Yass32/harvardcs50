@@ -237,6 +237,7 @@ def sell():
     current_user = session["user_id"]
     portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
     cash = db.execute("SELECT cash FROM users WHERE username_id = ?", current_user)
+    cash = cash[0]["cash"]
 
     if request.method == "GET" :
         return render_template("sell.html")
@@ -245,7 +246,7 @@ def sell():
             return apology("Shares error")
         price = lookup(stocks)
         profit = price["price"] * shares
-        db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ?", user_shares - shares, current_user)
+        db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ?", portfolio["shares"] - shares, current_user)
         db.execute("UPDATE users SET cash = ? WHERE username_id = ?", profit + cash, current_user)
 
 
