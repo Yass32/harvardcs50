@@ -42,7 +42,7 @@ def index():
     """Show portfolio of stocks"""
     current_user = session["user_id"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
-    user_cash = float(cash[0]["cash"])
+    user_cash = cash["cash"]
     portfolio = db.execute("SELECT symbol, stocks, price, total, SUM(shares) as total_shares FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
     balance = user_cash
     for port in portfolio:
