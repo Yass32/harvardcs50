@@ -240,7 +240,7 @@ def sell():
     cash = cash[0]["cash"]
 
     if request.method == "GET" :
-        return render_template("sell.html", )
+        return render_template("sell.html", portfolio = portfolio)
     else:
         if shares < 0 or shares > portfolio["shares"]:
             return apology("Shares error")
