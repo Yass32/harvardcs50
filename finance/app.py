@@ -231,6 +231,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    
+    # Remember which user has logged in
     current_user = session["user_id"]
     portfolio = db.execute("SELECT symbol, shares FROM portfolio WHERE username_id = ?", current_user)
 
