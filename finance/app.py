@@ -262,6 +262,3 @@ def sell():
 
 
     return redirect("/")
-
-
-
