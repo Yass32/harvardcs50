@@ -246,10 +246,11 @@ def sell():
         try:
             shares = int(request.form.get("shares"))
         except:
-            return apology("invalid number of shares")
+            return apology("Shares should be an INTEGER")
+
+        #Check if shares is a valid number and 
 
         user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
-
         if shares <= 0 or user_shares[0]["shares"] < shares:
             return apology("Shares error")
 
