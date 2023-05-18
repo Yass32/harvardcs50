@@ -69,10 +69,11 @@ def buy():
 
         current_user = session["user_id"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
-        if cash < price:
+        user_cash = cash["cash"]
+        if user_cash < price:
             return apology("Insufficient cash")
         else:
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - price, current_user)
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", user_cash - price, current_user)
             db.execute("INSERT INTO portfolio (stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, (SELECT id FROM users WHERE id = ?) )", symbol, shares, price, total, current_user)
 
 
