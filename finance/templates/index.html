@@ -22,7 +22,7 @@
                     <td>{{ stock.stocks }}</td>   <!--Or portfolio["stocks"]-->
                     <td>{{ stock.shares }}</td>
                     <td>{{ stock.price | usd}}</td>
-                    <td>{{ stock.total | usd}}</td>
+                    <td>{{ stock.total | usd}} {{ value | usd }}</td>
                 </tr>
             {% endfor %}
             <tr class="table-dark">
