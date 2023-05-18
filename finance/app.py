@@ -234,15 +234,16 @@ def sell():
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)
     else:
+        current_user = session["user_id"]
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
+        if shares < 0 :
+            return apology("Shares error")
 
-        current_user = session["user_id"]
         portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
-        if shares < 0 :
-            return apology("Shares error")
+
         stocks = lookup(symbol)
         profit = stocks["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ?", portfolio["shares"] - shares, current_user)
