@@ -232,7 +232,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     current_user = session["user_id"]
-    portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
+    portfolio = db.execute("SELECT symbol, shares FROM portfolio WHERE username_id = ?", current_user)
 
     if request.method == "GET" :
         return render_template("sell.html", portfolio = portfolio)

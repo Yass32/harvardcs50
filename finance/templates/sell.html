@@ -11,7 +11,7 @@
             <select id="symbol" name="symbol" class="form-select" aria-label="Default select example">
                 <option selected>Stocks</option>
                 {% for stock in portfolio %}
-                    <option value="{{stock.stocks}}">{{stock.stocks}}</option>
+                    <option value="{{stock.symbol}}">{{stock.symbol}}</option>
                 {% endfor %}
 
             </select>
