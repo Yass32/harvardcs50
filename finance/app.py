@@ -244,7 +244,7 @@ def sell():
         except:
             return apology("invalid number of shares")
 
-        user_shares = db.execute("SELECT shares FROM portfolio WHERE id = ?", current_user)
+        user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
 
         if shares <= 0 or user_shares[0]["shares"] < shares:
             return apology("Shares error")
