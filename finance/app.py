@@ -188,8 +188,8 @@ def quote():
 def register():
 
     """Register user"""
-    ##Forget any user id
-    ##session.clear()
+    Forget any user id
+    session.clear()
 
     ##Get info from form
     username = request.form.get("username")
