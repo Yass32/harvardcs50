@@ -42,10 +42,13 @@ def index():
     """Show portfolio of stocks"""
     current_user = session["user_id"]
     cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
-    cash = cash[0]["cash"]
+    user_cash = float(cash[0]["cash"])
     portfolio = db.execute("SELECT symbol, stocks, SUM(shares), price, total FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
-    #balance = int(portfolio[0]["total"] * cash[0]["cash"])
-    return render_template("index.html", portfolio = portfolio, cash = cash)
+    balance = user_cash
+    for port in portfolio:
+        balance += portfolio[0]["total"] * cash[0]["cash"]
+
+    return render_template("index.html", portfolio = portfolio, cash = user_cash, balance = balance)
 
 
 @app.route("/buy", methods=["GET", "POST"])
