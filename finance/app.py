@@ -77,15 +77,16 @@ def buy():
             return apology("Insufficient cash")
         else:
             updated_cash = user_cash - price
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", (updated_cash, current_user))
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
             db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ? )", symbol, stocks, shares, price, total, current_user)
+            return redirect("/")
 
 
 
 
-        return redirect("/")
 
-    return apology("TODO")
+
+        return apology("TODO")
 '''
 CREATE TABLE portfolio (
     username_id INTEGER NOT NULL,
