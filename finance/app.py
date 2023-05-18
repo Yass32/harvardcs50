@@ -58,8 +58,9 @@ def buy():
     else:
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
-        price = lookup(symbol)
-        price = price["price"]
+
+        stock = lookup(symbol)
+        price = stock["price"]
         total = price * shares
         if not symbol or not lookup(symbol):
             return apology("Symbol error")
