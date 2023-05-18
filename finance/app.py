@@ -188,32 +188,32 @@ def quote():
 def register():
 
     """Register user"""
-    Forget any user id
+    #Forget any user id
     session.clear()
 
-    ##Get info from form
+    #Get info from form
     username = request.form.get("username")
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
 
-    ##When requested via GET display registration form
+    #When requested via GET display registration form
     if request.method == "GET":
         return render_template("registration.html")
 
-    ##When requested via POST, check for errors
+    #When requested via POST, check for errors
     else:
 
-        ##If any field is blank return apology
+        #If any field is blank return apology
         if not username:
             return apology("Username Error")
-        ##If password and confirmation doesn't match return apology
+        #If password and confirmation doesn't match return apology
         if not password or password != confirmation :
             return apology("Password Error")
 
         #For security generate a hash of user password
         hash = generate_password_hash(password)
 
-        ##insert new user into users table
+        #insert new user into users table
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
@@ -259,6 +259,5 @@ def sell():
         profit = stock["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
-
 
     return redirect("/")
