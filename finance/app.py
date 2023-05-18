@@ -64,7 +64,7 @@ def buy():
         stocks = stock["name"]
         price = stock["price"]
 
-        total = price * shares
+        total = int(price * shares)
 
         if shares < 0:
             return apology("Shares Error")
@@ -78,7 +78,7 @@ def buy():
         else:
             updated_cash = user_cash - price
             db.execute("UPDATE users SET cash = ? WHERE id = ?", (updated_cash, current_user))
-            db.execute("INSERT INTO portfolio (stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ? )", symbol, shares, price, total, current_user)
+            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ? )", symbol, stocks, shares, price, total, current_user)
 
 
 
