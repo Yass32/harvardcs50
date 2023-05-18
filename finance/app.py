@@ -235,14 +235,13 @@ def sell():
     shares = int(request.form.get("shares"))
 
     current_user = session["user_id"]
-    user_stocks = db.execute("SELECT stocks FROM portfolio WHERE username_id = ?", current_user)
-    user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
+    portfolio = db.execute("SELECT stocks, shares FROM portfolio WHERE username_id = ?", current_user)
     cash = db.execute("SELECT cash FROM users WHERE username_id = ?", current_user)
 
     if request.method == "GET" :
         return render_template("sell.html")
     else:
-        if shares < 0 or shares > user_shares:
+        if shares < 0 or shares > portfolio["shares"]:
             return apology("Shares error")
         price = lookup(stocks)
         profit = price["price"] * shares
