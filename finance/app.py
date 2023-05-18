@@ -247,8 +247,8 @@ def sell():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
 
-        stocks = lookup(symbol)
-        profit = stocks["price"] * shares
+        stock = lookup(symbol)
+        profit = stock["price"] * shares
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
