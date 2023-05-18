@@ -64,14 +64,13 @@ def buy():
         stock = lookup(symbol)
         if not symbol or stock is None:
             return apology("Symbol error")
+        if shares < 0:
+            return apology("Shares Error")
 
         stocks = stock["name"]
         price = stock["price"]
-
         total = price * shares
 
-        if shares < 0:
-            return apology("Shares Error")
 
         current_user = session["user_id"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
