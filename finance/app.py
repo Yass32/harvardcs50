@@ -240,7 +240,7 @@ def sell():
 
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
-        if shares < 0 :
+        if shares <= 0 :
             return apology("Shares error")
 
 
