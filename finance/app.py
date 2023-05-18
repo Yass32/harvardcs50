@@ -46,7 +46,7 @@ def index():
     portfolio = db.execute("SELECT symbol, stocks, price, total, SUM(shares) as total_shares FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
     balance = user_cash
     for port in portfolio:
-        balance += portfolio["total_shares"] * portfolio["price"]
+        balance += portfolio["price"]
 
     return render_template("index.html", portfolio = portfolio, cash = user_cash, balance = balance)
 
