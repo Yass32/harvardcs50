@@ -64,7 +64,7 @@ def buy():
         stocks = stock["name"]
         price = stock["price"]
 
-        total = int(price * shares)
+        total = float(price * shares)
 
         if shares < 0:
             return apology("Shares Error")
