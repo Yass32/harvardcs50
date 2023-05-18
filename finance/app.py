@@ -59,13 +59,16 @@ def buy():
         return render_template("buystock.html")
     else:
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
-
         stock = lookup(symbol)
         if not symbol or stock is None:
             return apology("Symbol error")
-        if shares.isdigit() and shares < 0:
-            print("No")
+
+        try:
+            shares = int(request.form.get("shares"))
+        except:
+            return apology("Shares is not an integer")
+
+        if shares < 0:
             return apology("Shares Error")
 
         stocks = stock["name"]
