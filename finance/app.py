@@ -204,7 +204,7 @@ def register():
     else:
 
         #If any field is blank return apology
-        if not username:
+        if not username :
             return apology("Username Error")
         #If password and confirmation doesn't match return apology
         if not password or password != confirmation :
@@ -213,7 +213,7 @@ def register():
         #For security generate a hash of user password
         hash = generate_password_hash(password)
 
-        #insert new user into users table, 
+        #insert new user into users table
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
@@ -224,6 +224,7 @@ def register():
             #Redirect user to homepage
             return redirect("/")
         except:
+            #If username is already taken return an apology
             return apology("Username is taken")
 
 
