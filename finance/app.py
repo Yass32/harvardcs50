@@ -94,8 +94,6 @@ def buy():
 
 
 
-
-        return apology("TODO")
 '''
 CREATE TABLE portfolio (
     username_id INTEGER NOT NULL,
