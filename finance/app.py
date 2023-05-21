@@ -148,8 +148,13 @@ def history():
     """Show history of transactions"""
     #Remeber user logged in
     current_user = session["user_id"]
+    history = db.execute("SELECT * FROM history WHERE username_id = ?", current_user)
+    if not history:
+        return apology("No history")
 
-    return apology("TODO")
+    return render_template("history.html", history = history)
+
+
 
 
 @app.route("/login", methods=["GET", "POST"])

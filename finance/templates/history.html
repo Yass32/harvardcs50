@@ -16,13 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            {% for stock in portfolio %}
+            {% for hist in history %}
                 <tr>
-                    <td>{{ stock.symbol }}</td>
-                    <td>{{ stock.transaction }}</td>   <!--Or portfolio["stocks"]-->
-                    <td>{{ stock.total_shares }}</td>
-                    <td>{{ stock.price | usd }}</td>
-                    <td>{{ stock.date }}</td>
+                    <td>{{ hist.symbol }}</td>
+                    <td>{{ hist.transaction }}</td>   <!--Or portfolio["stocks"]-->
+                    <td>{{ hist.total_shares }}</td>
+                    <td>{{ hist.price | usd }}</td>
+                    <td>{{ hist.date }}</td>
                 </tr>
             {% endfor %}
             <tr class="table-dark">
