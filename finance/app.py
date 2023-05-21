@@ -148,7 +148,7 @@ def history():
     """Show history of transactions"""
     #Remeber user logged in
     current_user = session["user_id"]
-    history = db.execute("SELECT * FROM history WHERE username_id = ?", current_user)
+    history = db.execute("SELECT symbol, transaction_type, shares, price, history FROM history WHERE username_id = ?", current_user)
     if not history:
         return apology("No history")
 
