@@ -18,11 +18,11 @@
         <tbody>
             {% for hist in history %}
                 <tr>
-                    <td>{{ hist.symbol }}</td>
-                    <td>{{ hist.transaction }}</td>   <!--Or portfolio["stocks"]-->
-                    <td>{{ hist.total_shares }}</td>
+                    <td>{{ hist.symbol }}</td> <!--Or portfolio["stocks"]-->
+                    <td>{{ hist.shares }}</td>
                     <td>{{ hist.price | usd }}</td>
-                    <td>{{ hist.date }}</td>
+                    <td>{{ hist.transaction }}</td>
+                    <td>{{ hist.history }}</td>
                 </tr>
             {% endfor %}
             <tr class="table-dark">
