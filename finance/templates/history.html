@@ -9,20 +9,20 @@
         <thead>
             <tr>
                 <th scope="col">Symbol</th>
-                <th scope="col">Name</th>
+                <th scope="col">Transaction</th>
                 <th scope="col">Shares</th>
                 <th scope="col">Price</th>
-                <th scope="col">Total</th>
+                <th scope="col">Date & Time</th>
             </tr>
         </thead>
         <tbody>
             {% for stock in portfolio %}
                 <tr>
                     <td>{{ stock.symbol }}</td>
-                    <td>{{ stock.stocks }}</td>   <!--Or portfolio["stocks"]-->
+                    <td>{{ stock.transaction }}</td>   <!--Or portfolio["stocks"]-->
                     <td>{{ stock.total_shares }}</td>
                     <td>{{ stock.price | usd }}</td>
-                    <td>{{ stock.total | usd }}</td>
+                    <td>{{ stock.date }}</td>
                 </tr>
             {% endfor %}
             <tr class="table-dark">
