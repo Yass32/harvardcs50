@@ -105,17 +105,23 @@ def buy():
 
 
 '''
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username TEXT NOT NULL,
+    hash TEXT NOT NULL,
+    cash NUMERIC NOT NULL DEFAULT 10000.00);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE UNIQUE INDEX username ON users (username);
+
 CREATE TABLE portfolio (
     username_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
     stocks TEXT NOT NULL,
     shares INTEGER NOT NULL DEFAULT 0,
     price REAL NOT NULL,
-    time REAL NOT NULL,
+    total REAL NOT NULL,
     FOREIGN KEY (username_id) REFERENCES users(id)
 );
-CREATE UNIQUE INDEX username ON portfolio (username);
-
-SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE username = "Mike")
 
 '''
 
@@ -126,7 +132,7 @@ def history():
     """Show history of transactions"""
     #Remeber user logged in
     current_user = session["user_id"]
-    
+
     return apology("TODO")
 
 
