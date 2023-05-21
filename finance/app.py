@@ -64,6 +64,8 @@ def buy():
     #When form is submitted via POST, purchase the stock as long as user can afford it
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
+
+        #Check for valid input
         if not symbol or stock is None:
             return apology("Symbol error")
 
