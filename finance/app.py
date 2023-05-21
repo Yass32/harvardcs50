@@ -109,7 +109,8 @@ CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     username TEXT NOT NULL,
     hash TEXT NOT NULL,
-    cash NUMERIC NOT NULL DEFAULT 10000.00);
+    cash NUMERIC NOT NULL DEFAULT 10000.00
+);
 CREATE TABLE sqlite_sequence(name,seq);
 CREATE UNIQUE INDEX username ON users (username);
 
@@ -120,16 +121,8 @@ CREATE TABLE portfolio (
     shares INTEGER NOT NULL DEFAULT 0,
     price REAL NOT NULL,
     total REAL NOT NULL,
+    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
     FOREIGN KEY (username_id) REFERENCES users(id)
-
-
-CREATE TABLE Users (
-  id INT,
-  full_name VARCHAR(50),
-  date_of_birth DATE,
-  last_login DATETIME,
-  registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
-);
 );
 
 '''
