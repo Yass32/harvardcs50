@@ -98,7 +98,9 @@ def buy():
             updated_cash = user_cash - total
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
             db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ?)", symbol, stocks, shares, price, total, current_user)
-            db.execute("INSERT INTO history (username_id, transaction_type) VALUES (?, ?)", current_user, "buy")
+
+            #Record the history
+            db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)", current_user, symbol, "buy", shares, price)
             return redirect("/")
 
 
@@ -290,6 +292,7 @@ def sell():
         profit = stock["price"] * shares
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
-        db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares) VALUES (?, ?)", current_user, symbol, "buy", shares, )
+        #Record history
+        db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)", current_user, symbol, "sell", shares, stock["price"])
 
     return redirect("/")
