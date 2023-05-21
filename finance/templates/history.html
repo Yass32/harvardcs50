@@ -20,8 +20,8 @@
                 <tr>
                     <td>{{ hist.symbol }}</td> <!--Or portfolio["stocks"]-->
                     <td>{{ hist.shares }}</td>
-                    <td>{{ hist.price | usd }}</td>
-                    <td>{{ hist.transaction }}</td>
+                    <td>{{ hist.price }}</td>
+                    <td>{{ hist.transaction_type }}</td>
                     <td>{{ hist.history }}</td>
                 </tr>
             {% endfor %}
