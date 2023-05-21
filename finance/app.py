@@ -125,6 +125,8 @@ SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE us
 def history():
     """Show history of transactions"""
     #Remeber user logged in
+    current_user = session["user_id"]
+    
     return apology("TODO")
 
 
