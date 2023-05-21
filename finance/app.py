@@ -98,7 +98,7 @@ def buy():
             updated_cash = user_cash - total
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
             db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ?)", symbol, stocks, shares, price, total, current_user)
-            db.execute("INSERT INTO history (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ?)", symbol, stocks, shares, price, total, current_user)
+            db.execute("INSERT INTO history (username_id, transaction_type) VALUES (?, ?)", current_user, "buy")
             return redirect("/")
 
 
