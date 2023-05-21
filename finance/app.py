@@ -81,7 +81,7 @@ def buy():
         price = stock["price"]
         total = price * shares
 
-
+        #Remeber user logged in
         current_user = session["user_id"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
         user_cash = cash[0]["cash"]
