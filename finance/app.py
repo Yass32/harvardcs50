@@ -267,7 +267,6 @@ def sell():
         cash = cash[0]["cash"]
 
         #Checkk if requested stock is valid
-
         stock = lookup(symbol)
         if stock is None:
             return apology("Stock error")
