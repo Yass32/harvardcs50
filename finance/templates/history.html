@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th scope="col">Symbol</th>
-                <th scope="col">Transaction</th>
                 <th scope="col">Shares</th>
                 <th scope="col">Price</th>
+                <th scope="col">Transaction</th>
                 <th scope="col">Date & Time</th>
             </tr>
         </thead>
@@ -25,6 +25,7 @@
                     <td>{{ hist.history }}</td>
                 </tr>
             {% endfor %}
+            <!--
             <tr class="table-dark">
                 <th scope="row"></th>
                 <td></td>
@@ -39,6 +40,7 @@
                 <td>Total:</td>
                 <td>{{ balance | usd }}</td>
             </tr>
+            -->
         </tbody>
 
 
