@@ -125,10 +125,6 @@ CREATE TABLE portfolio (
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (username_id) REFERENCES users(id)
     );
-
-    ALTER TABLE portfolio ADD date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
-    ALTER TABLE portfolio ADD transaction TEXT NOT NULL;
-
 '''
 
 
