@@ -123,8 +123,7 @@ CREATE TABLE portfolio (
     total REAL NOT NULL,
     transaction TEXT NOT NULL,
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (username_id) REFERENCES users(id)
-);
+    FOREIGN KEY (username_id) REFERENCES users(id));
 
 '''
 
