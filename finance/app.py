@@ -121,6 +121,15 @@ CREATE TABLE portfolio (
     price REAL NOT NULL,
     total REAL NOT NULL,
     FOREIGN KEY (username_id) REFERENCES users(id)
+
+
+CREATE TABLE Users (
+  id INT,
+  full_name VARCHAR(50),
+  date_of_birth DATE,
+  last_login DATETIME,
+  registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+);
 );
 
 '''
