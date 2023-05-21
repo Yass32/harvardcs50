@@ -121,6 +121,7 @@ CREATE TABLE portfolio (
     shares INTEGER NOT NULL DEFAULT 0,
     price REAL NOT NULL,
     total REAL NOT NULL,
+    transaction TEXT NOT NULL,
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
     FOREIGN KEY (username_id) REFERENCES users(id)
 );
