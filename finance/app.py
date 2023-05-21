@@ -271,8 +271,11 @@ def sell():
         if stock is None:
             return apology("Stock error")
 
-        profit = stock["price"] * shares
+        #Sell specified number of shares of stock
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
+        
+        #Update user's cash
+        profit = stock["price"] * shares
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
     return redirect("/")
