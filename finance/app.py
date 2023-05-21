@@ -126,6 +126,8 @@ CREATE TABLE portfolio (
     FOREIGN KEY (username_id) REFERENCES users(id)
     );
 
+    ALTER TABLE table_name ADD column_name datatype;
+
 '''
 
 
