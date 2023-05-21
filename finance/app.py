@@ -127,6 +127,7 @@ CREATE TABLE portfolio (
     );
 
     ALTER TABLE portfolio ADD date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+    ALTER TABLE portfolio ADD transaction TEXT NOT NULL;
 
 '''
 
