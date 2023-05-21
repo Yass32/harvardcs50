@@ -2,4 +2,4 @@ cs50
 Flask
 Flask-Session
 requests
-API KEY
+export API_KEY=pk_c546b8eeb5d64a78ac6a1e61b6d96f7a
