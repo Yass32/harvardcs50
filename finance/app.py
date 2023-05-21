@@ -289,6 +289,7 @@ def sell():
         #Update user's cash
         profit = stock["price"] * shares
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
-        db.execute("INSERT INTO history (username_id, transaction_type) VALUES (?, ?)", current_user, "buy")
+
+        db.execute("INSERT INTO history (username_id, symbol, transaction_type) VALUES (?, ?)", current_user, "buy")
 
     return redirect("/")
