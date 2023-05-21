@@ -124,6 +124,7 @@ SELECT stocks FROM portfolio WHERE username_id IN (SELECT id FROM users WHERE us
 @login_required
 def history():
     """Show history of transactions"""
+    #Remeber user logged in
     return apology("TODO")
 
 
@@ -273,7 +274,7 @@ def sell():
 
         #Sell specified number of shares of stock
         db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
-        
+
         #Update user's cash
         profit = stock["price"] * shares
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
