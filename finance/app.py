@@ -40,12 +40,16 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    #Remeber user logged in
     current_user = session["user_id"]
+    #Display user's current cash balance
     cash = db.execute("SELECT * FROM users WHERE id = ?", current_user)
     if not cash:
         return apology("No cash")
     user_cash = cash[0]["cash"]
     portfolio = db.execute("SELECT symbol, stocks, price, total, SUM(shares) as total_shares FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
+
+    #Total value of stocks and cash together
     balance = user_cash
     for port in portfolio:
         balance += port["total"]
