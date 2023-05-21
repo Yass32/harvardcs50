@@ -122,7 +122,7 @@ CREATE TABLE portfolio (
     price REAL NOT NULL,
     total REAL NOT NULL,
     transaction TEXT NOT NULL,
-    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (username_id) REFERENCES users(id)
     );
 
