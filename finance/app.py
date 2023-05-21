@@ -86,9 +86,11 @@ def buy():
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
         user_cash = cash[0]["cash"]
 
+        #Ensure user have enough cash to afford the stock
         if user_cash < total:
             return apology("Insufficient cash")
         else:
+        #Run SQL statement on database to purchase stoch and update cask to reflect purchased stock
             updated_cash = user_cash - total
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
             db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ? )", symbol, stocks, shares, price, total, current_user)
