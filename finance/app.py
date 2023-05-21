@@ -108,6 +108,8 @@ def buy():
 
 
 '''
+SQL Tables
+
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     username TEXT NOT NULL,
@@ -128,6 +130,15 @@ CREATE TABLE portfolio (
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (username_id) REFERENCES users(id)
     );
+CREATE TABLE history (
+    username_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    transaction_type TEXT NOT NULL,
+    shares INTEGER NOT NULL DEFAULT 0,
+    price REAL NOT NULL,
+    history TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (username_id) REFERENCES users(id)
+);
 '''
 
 
