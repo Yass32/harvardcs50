@@ -10,10 +10,11 @@
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Old Password" type="password">
         </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
-        <a href="forget.html">Forget your password?</a>
-        <a>Change your password?</a>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="New Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change</button>
     </form>
 {% endblock %}
