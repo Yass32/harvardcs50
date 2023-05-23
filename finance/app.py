@@ -290,7 +290,7 @@ def forget():
         return render_template("forget.html")
     else:
         try:
-            db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
+            db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(password), username)
             return render_template("login.html")
         except:
             return apology("Username doesnt exist")
@@ -304,10 +304,16 @@ def change():
     new_password = request.form.get("new_password")
 
     if request.method == "GET":
-        return render_template("forget.html")
+        return render_template("change.html")
     else:
-        db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
-        return render_template("login.html")
+        row = db.execute("SELECT * FROM users WHERE username = ?", username)
+        if row[0]["hash"]
+
+        try:
+            db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
+            return render_template("login.html")
+        except:
+            return apology("Username doesnt exist")
 
 
 
