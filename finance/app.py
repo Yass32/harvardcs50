@@ -289,16 +289,10 @@ def forget():
     if request.method == "GET":
         return render_template("forget.html")
     else:
-        row = db.execute("SELECT * FROM users WHERE username = ?", username)
-        row[0]["hash"] = generate_password_hash(password)
-        return render_template
-
-
-
-
-
-
-
+        try:
+            db.execute("SELECT username FROM users WHERE")
+        db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
+        return render_template("login.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
@@ -306,6 +300,12 @@ def change():
     username = request.form.get("username")
     old_password = request.form.get("old_password")
     new_password = request.form.get("new_password")
+
+    if request.method == "GET":
+        return render_template("forget.html")
+    else:
+        db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
+        return render_template("login.html")
 
 
 
