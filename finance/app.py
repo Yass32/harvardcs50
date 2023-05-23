@@ -283,17 +283,20 @@ def sell():
 
 @app.route("/forget", methods=["GET", "POST"])
 def forget():
-    username = request.form.get("username")
-    password = request.form.get("password")
-
     if request.method == "GET":
         return render_template("forget.html")
     else:
+        username = request.form.get("username")
+        password = request.form.get("password")
+        # Validate the username and password
+        if not username or password:
+            return apology("Please fill in all fields")
+
         try:
             db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(password), username)
             return render_template("login.html")
         except:
-            return apology("Username doesnt exist")
+            return apology("Username does not exist")
 
 
 
@@ -308,17 +311,17 @@ def change():
 
         # Validate the username, old_password, and new_password
         if not username or not old_password or not new_password:
-            return apology("You did not fill in all the fields")
+            return apology("Please fill in all fields")
 
         row = db.execute("SELECT * FROM users WHERE username = ?", username)
         if not row or row[0]["hash"] != generate_password_hash(old_password):
-            return apology("Username or/and Password is incorrect")
+            return apology("Username or Password is incorrect")
 
         try:
             db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
             return render_template("login.html")
         except:
-            return apology("Username doesnt exist")
+            return apology("Username does not exist")
 
 
 
