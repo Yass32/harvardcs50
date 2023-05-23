@@ -322,7 +322,7 @@ def change():
             #print(row) [{'id': 2, 'username': 'yass', 'hash': 'pbkdf2:sha256:260000$QHAMHLL5pgf96d9c$533b438ede781e0c51ab6931e419fe76afbd6683dc2502fbef9c880201f5d9b5', 'cash': 8204.85}]
             #print(row[0]["hash"]) pbkdf2:sha256:260000$QHAMHLL5pgf96d9c$533b438ede781e0c51ab6931e419fe76afbd6683dc2502fbef9c880201f5d9b5
             #print(old_password) 12
-            print(generate_password_hash(password))
+            print(generate_password_hash(old_password))
 
             flash('Incorrect current password. Please try again.', 'danger')
             return apology("Password is not correct")
