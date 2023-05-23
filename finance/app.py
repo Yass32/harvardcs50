@@ -104,44 +104,6 @@ def buy():
             return redirect("/")
 
 
-
-
-
-'''
-SQL Tables
-
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    username TEXT NOT NULL,
-    hash TEXT NOT NULL,
-    cash NUMERIC NOT NULL DEFAULT 10000.00
-);
-CREATE TABLE sqlite_sequence(name,seq);
-CREATE UNIQUE INDEX username ON users (username);
-
-CREATE TABLE portfolio (
-    username_id INTEGER NOT NULL,
-    symbol TEXT NOT NULL,
-    stocks TEXT NOT NULL,
-    shares INTEGER NOT NULL DEFAULT 0,
-    price REAL NOT NULL,
-    total REAL NOT NULL,
-    transaction TEXT NOT NULL,
-    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (username_id) REFERENCES users(id)
-    );
-CREATE TABLE history (
-    username_id INTEGER NOT NULL,
-    symbol TEXT NOT NULL,
-    transaction_type TEXT NOT NULL,
-    shares INTEGER NOT NULL DEFAULT 0,
-    price REAL NOT NULL,
-    history TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (username_id) REFERENCES users(id)
-);
-'''
-
-
 @app.route("/history")
 @login_required
 def history():
@@ -153,8 +115,6 @@ def history():
         return apology("No history")
 
     return render_template("history.html", history_transactions = history_transactions)
-
-
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -312,3 +272,38 @@ def sell():
         db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)", current_user, symbol, "sell", shares, stock["price"])
 
     return redirect("/")
+
+
+'''
+SQL Tables
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username TEXT NOT NULL,
+    hash TEXT NOT NULL,
+    cash NUMERIC NOT NULL DEFAULT 10000.00
+);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE UNIQUE INDEX username ON users (username);
+
+CREATE TABLE portfolio (
+    username_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    stocks TEXT NOT NULL,
+    shares INTEGER NOT NULL DEFAULT 0,
+    price REAL NOT NULL,
+    total REAL NOT NULL,
+    transaction TEXT NOT NULL,
+    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (username_id) REFERENCES users(id)
+    );
+CREATE TABLE history (
+    username_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    transaction_type TEXT NOT NULL,
+    shares INTEGER NOT NULL DEFAULT 0,
+    price REAL NOT NULL,
+    history TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (username_id) REFERENCES users(id)
+);
+'''
