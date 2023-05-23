@@ -40,36 +40,37 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    #Remeber user logged in
+    # Remeber user logged in
     current_user = session["user_id"]
-    #Display user's current cash balance
+    # Display user's current cash balance
     cash = db.execute("SELECT * FROM users WHERE id = ?", current_user)
     if not cash:
         return apology("No cash")
     user_cash = cash[0]["cash"]
-    portfolio = db.execute("SELECT symbol, stocks, price, total, SUM(shares) as total_shares FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
+    portfolio = db.execute(
+        "SELECT symbol, stocks, price, total, SUM(shares) as total_shares FROM portfolio WHERE username_id = ? GROUP BY symbol", current_user)
 
-    #Total value of stocks and cash together
+    # Total value of stocks and cash together
     balance = user_cash
     for port in portfolio:
         balance += port["total"]
 
-    return render_template("index.html", portfolio = portfolio, cash = user_cash, balance = balance)
+    return render_template("index.html", portfolio=portfolio, cash=user_cash, balance=balance)
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
     """Buy shares of stock"""
-    #When form requested via GET, displayform to buy a stock
+    # When form requested via GET, displayform to buy a stock
     if request.method == "GET":
         return render_template("buystock.html")
     else:
-    #When form is submitted via POST, purchase the stock as long as user can afford it
+        # When form is submitted via POST, purchase the stock as long as user can afford it
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
 
-        #Check for valid input
+        # Check for valid input
         if not symbol or stock is None:
             return apology("Symbol error")
 
@@ -85,22 +86,24 @@ def buy():
         price = stock["price"]
         total = price * shares
 
-        #Remeber user logged in
+        # Remember user logged in
         current_user = session["user_id"]
         cash = db.execute("SELECT cash FROM users where id = ?", current_user)
         user_cash = cash[0]["cash"]
 
-        #Ensure user have enough cash to afford the stock
+        # Ensure user have enough cash to afford the stock
         if user_cash < total:
             return apology("Insufficient cash")
         else:
-        #Run SQL statement on database to purchase stoch and update cask to reflect purchased stock
+            # Run SQL statement on database to purchase stoch and update cask to reflect purchased stock
             updated_cash = user_cash - total
             db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, current_user)
-            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ?)", symbol, stocks, shares, price, total, current_user)
+            db.execute("INSERT INTO portfolio (symbol, stocks, shares, price, total, username_id) VALUES (?, ?, ?, ?, ?, ?)",
+                       symbol, stocks, shares, price, total, current_user)
 
-            #Record the history
-            db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)", current_user, symbol, "buy", shares, price)
+            # Record the history
+            db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)",
+                       current_user, symbol, "buy", shares, price)
             return redirect("/")
 
 
@@ -108,15 +111,16 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    #Remeber user logged in
+    # Remeber user logged in
     current_user = session["user_id"]
 
-    #Display all of a user’s transactions ever, listing row by row each and every buy and every sell
-    history_transactions = db.execute("SELECT symbol, transaction_type, shares, price, history FROM history WHERE username_id = ?", current_user)
+    # Display all of a user’s transactions ever, listing row by row each and every buy and every sell
+    history_transactions = db.execute(
+        "SELECT symbol, transaction_type, shares, price, history FROM history WHERE username_id = ?", current_user)
     if not history:
         return apology("No history")
 
-    return render_template("history.html", history_transactions = history_transactions)
+    return render_template("history.html", history_transactions=history_transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -170,62 +174,61 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    #When form is requested via GET, display form to request a stock quote
+    # When form is requested via GET, display form to request a stock quote
     if request.method == "GET":
         return render_template("quote.html")
     else:
-    #When requested via POST lookup up the stock symbol by calling lookup() and displauy results
+        # When requested via POST lookup up the stock symbol by calling lookup() and displauy results
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
 
-        #If lookup is successful, a dictionary of stock name, price and symbol is returned else apologize
+        # If lookup is successful, a dictionary of stock name, price and symbol is returned else apologize
         if stock is None:
             return apology("Stock does not exist")
         else:
-            return render_template("quoted.html", name = stock["name"], symbol = stock["symbol"], price = stock["price"])
+            return render_template("quoted.html", name=stock["name"], symbol=stock["symbol"], price=stock["price"])
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
     """Register user"""
-    #Forget any user id
+    # Forget any user id
     session.clear()
 
-    #Get info from form
+    # Get info from form
     username = request.form.get("username")
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
 
-    #When requested via GET display registration form
+    # When requested via GET display registration form
     if request.method == "GET":
         return render_template("registration.html")
 
-    #When requested via POST, check for errors
+    # When requested via POST, check for errors
     else:
 
-        #If any field is blank return apology
+        # If any field is blank return apology
         if not username or not password:
             return apology("Username Error")
-        #If password and confirmation doesn't match return apology
-        if password != confirmation :
+        # If password and confirmation doesn't match return apology
+        if password != confirmation:
             return apology("Password Error")
 
-        #For security generate a hash of user password
+        # For security generate a hash of user password
         hash = generate_password_hash(password)
 
-        #insert new user into users table
+        # insert new user into users table
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
-            ##Log user in
+            # Log user in
             rows = db.execute("SELECT * FROM users WHERE username = ?", username)
             session["user_id"] = rows[0]["id"]
 
-            #Redirect user to homepage
+            # Redirect user to homepage
             return redirect("/")
         except:
-            #If username is already taken return an apology
+            # If username is already taken return an apology
             return apology("Username is taken")
 
 
@@ -239,18 +242,18 @@ def sell():
 
     portfolio = db.execute("SELECT symbol, shares FROM portfolio WHERE username_id = ?", current_user)
 
-    #When requested via GET display selling form
-    if request.method == "GET" :
-        return render_template("sell.html", portfolio = portfolio)
+    # When requested via GET display selling form
+    if request.method == "GET":
+        return render_template("sell.html", portfolio=portfolio)
     else:
-    #When form is submitted via POST
+        # When form is submitted via POST
         symbol = request.form.get("symbol")
         try:
             shares = int(request.form.get("shares"))
         except:
             return apology("Shares should be an INTEGER")
 
-        #Check if shares is a valid number and user has the required amount
+        # Check if shares is a valid number and user has the required amount
         user_shares = db.execute("SELECT shares FROM portfolio WHERE username_id = ?", current_user)
         if shares <= 0 or user_shares[0]["shares"] < shares:
             return apology("Shares error")
@@ -258,20 +261,22 @@ def sell():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", current_user)
         cash = cash[0]["cash"]
 
-        #Checkk if requested stock is valid
+        # Check if requested stock is valid
         stock = lookup(symbol)
         if stock is None:
             return apology("Stock error")
 
-        #Sell specified number of shares of stock
-        db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?", portfolio[0]["shares"] - shares, current_user, symbol)
+        # Sell specified number of shares of stock
+        db.execute("UPDATE portfolio SET shares = ? WHERE username_id = ? AND symbol = ?",
+                   portfolio[0]["shares"] - shares, current_user, symbol)
 
-        #Update user's cash
+        # Update user's cash
         profit = stock["price"] * shares
         db.execute("UPDATE users SET cash = ? WHERE id = ?", profit + cash, current_user)
 
-        #Record history
-        db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)", current_user, symbol, "sell", shares, stock["price"])
+        # Record history
+        db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)",
+                   current_user, symbol, "sell", shares, stock["price"])
 
     return redirect("/")
 
