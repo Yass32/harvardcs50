@@ -318,7 +318,9 @@ def change():
         password = generate_password_hash(old_password)
         if not row :
             return apology("Username is incorrect")
-        if not check_password_hash(row[0]["hash"], password):
+
+        stored_hash = row[0]["hash"]
+        if not check_password_hash(stored_hash, password):
             return apology("Password is incorrect")
 
         try:
