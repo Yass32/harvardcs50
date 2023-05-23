@@ -281,6 +281,38 @@ def sell():
     return redirect("/")
 
 
+@app.route("/sell", methods=["GET", "POST"])
+def forget():
+    username = request.form.get("username")
+    password = request.form.get("password")
+
+    if request.method == "GET":
+        return render_template("forget.html")
+    else:
+        row = db.execute("SELECT * FROM users WHERE username = ?", username)
+        row[0]["hash"] = generate_password_hash(password)
+        return render_template
+
+
+
+
+
+
+
+
+
+@app.route("/sell", methods=["GET", "POST"])
+def change():
+    username = request.form.get("username")
+    old_password = request.form.get("old_password")
+    new_password = request.form.get("new_password")
+
+
+
+
+
+
+
 '''
 SQL Tables
 
