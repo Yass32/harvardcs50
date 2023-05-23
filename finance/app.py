@@ -319,6 +319,10 @@ def change():
             return apology("Username is incorrect")
 
         if not check_password_hash(row[0]["hash"], old_password):
+            print(row)
+            print(row[0]["hash"])
+            print(old_password)
+
             flash('Incorrect current password. Please try again.', 'danger')
             return apology("Password is not correct")
 
