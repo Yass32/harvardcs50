@@ -318,9 +318,6 @@ def change():
         if not row:
             return apology("Username is incorrect")
 
-        if row[0]["hash"] != generate_password_hash(old_password):
-            return apology("Password is incorrect")
-
         if not check_password_hash(row[0]["hash"], old_password):
             flash('Incorrect current password. Please try again.', 'danger')
             return apology("Password is not correct")
