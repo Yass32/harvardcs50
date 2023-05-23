@@ -110,6 +110,8 @@ def history():
     """Show history of transactions"""
     #Remeber user logged in
     current_user = session["user_id"]
+
+    #Display all of a user’s transactions ever, listing row by row each and every buy and every sell
     history_transactions = db.execute("SELECT symbol, transaction_type, shares, price, history FROM history WHERE username_id = ?", current_user)
     if not history:
         return apology("No history")
