@@ -305,7 +305,6 @@ def forget():
             return apology("Username does not exist")
 
 
-
 @app.route("/change", methods=["GET", "POST"])
 def change():
     if request.method == "GET":
