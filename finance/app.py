@@ -104,6 +104,7 @@ def buy():
             # Record the history
             db.execute("INSERT INTO history (username_id, symbol, transaction_type, shares, price) VALUES (?, ?, ?, ?, ?)",
                        current_user, symbol, "buy", shares, price)
+            flash('You have bought your stocks successfully.', 'success')
             return redirect("/")
 
 
@@ -150,6 +151,8 @@ def login():
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
+
+        flash('You have logged in successfully.', 'success')
 
         # Redirect user to home page
         return redirect("/")
@@ -224,6 +227,8 @@ def register():
             # Log user in
             rows = db.execute("SELECT * FROM users WHERE username = ?", username)
             session["user_id"] = rows[0]["id"]
+
+            flash('You have registered successfully.', 'success')
 
             # Redirect user to homepage
             return redirect("/")
