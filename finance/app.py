@@ -336,16 +336,6 @@ def change():
             return apology("Username does not exist")
 
 
-
-
-
-
-
-
-
-
-
-
 '''
 SQL Tables
 
