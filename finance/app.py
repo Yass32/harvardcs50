@@ -299,24 +299,27 @@ def forget():
 
 @app.route("/change", methods=["GET", "POST"])
 def change():
-    username = request.form.get("username")
-    old_password = request.form.get("old_password")
-    new_password = request.form.get("new_password")
-
-    if not username or not old_password or not new_password:
-        return apology("You did not fill in all the fields")
-
     if request.method == "GET":
         return render_template("change.html")
     else:
+        username = request.form.get("username")
+        old_password = request.form.get("old_password")
+        new_password = request.form.get("new_password")
+
+        # Validate the username, old_password, and new_password
+        if not username or not old_password or not new_password:
+            return apology("You did not fill in all the fields")
+
         row = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if not row or row[0]["hash"] == generate_password_hash(old_password):
-            try:
-                db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
-                return render_template("login.html")
-            except:
-                return apology("Username doesnt exist")
-        return apology("Username or/and Password is incorrect")
+        if not row or row[0]["hash"] != generate_password_hash(old_password):
+            return apology("Username or/and Password is incorrect")
+
+        try:
+            db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
+            return render_template("login.html")
+        except:
+            return apology("Username doesnt exist")
+
 
 
 
