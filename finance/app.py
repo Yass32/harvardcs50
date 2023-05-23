@@ -289,7 +289,7 @@ def forget():
         username = request.form.get("username")
         password = request.form.get("password")
         # Validate the username and password
-        if not username or password:
+        if not username or not password:
             return apology("Please fill in all fields")
 
         try:
