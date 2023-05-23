@@ -322,10 +322,12 @@ def change():
             return apology("Password is incorrect")
 
         if not check_password_hash(row[0]["hash"], old_password):
+            flash('Incorrect current password. Please try again.', 'danger')
             return apology("Password is not correct")
 
         try:
             db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
+            flash('Your password has been updated successfully.', 'success')
             return render_template("login.html")
         except:
             return apology("Username does not exist")
