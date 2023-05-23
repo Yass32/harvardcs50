@@ -281,7 +281,7 @@ def sell():
     return redirect("/")
 
 
-@app.route("/sell", methods=["GET", "POST"])
+@app.route("/forget", methods=["GET", "POST"])
 def forget():
     username = request.form.get("username")
     password = request.form.get("password")
@@ -290,9 +290,11 @@ def forget():
         return render_template("forget.html")
     else:
         try:
-            db.execute("SELECT username FROM users WHERE")
-        db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
-        return render_template("login.html")
+            db.execute("UPDATE users SET hash = ? WHERE username = ", generate_password_hash(password), username)
+            return render_template("login.html")
+        except:
+            return apology("Username doesnt exist")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
