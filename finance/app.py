@@ -315,11 +315,14 @@ def change():
 
         # To check if the hash of the old password provided by the user matches the hashed password stored in the database
         row = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if not row :
+        if not row:
             return apology("Username is incorrect")
 
-        if not check_password_hash(row[0]["hash"], old_password):
+        if row[0]["hash"] != generate_password_hashold_password:
             return apology("Password is incorrect")
+
+        if not check_password_hash(row[0]["hash"], old_password):
+            return apology("Password is not correct")
 
         try:
             db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), username)
