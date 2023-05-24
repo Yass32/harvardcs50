@@ -1,7 +1,6 @@
 # CS50 - Harvard University
 By Yassir Zoaka
 
-## CS50 Lectures
 ## Lecture 0 - Scratch
    Create a scratch project
 ## Lecture 1 - C
