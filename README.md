@@ -29,7 +29,7 @@ By Yassir Zoaka
       Movies: Write SQL queries to answer questions about a database of movies
       Fiftyville: Solve a mystery of who stole the CS50 duck through a series of SQL queries
 ## Lecture 8 - HTML, CSS, JavaScript
-      Trivia: Write a webpage that lets users answer trivia questions
+      Trivia: Create a webpage that lets users answer trivia questions
       Homepage: Create a home page about yourself using HTML, CSS, and JavaScript
 ## Lecture 9 – Flask
       Birthdays: Create a web application to keep track of friends’ birthdays
